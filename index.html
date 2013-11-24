@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Catrobat</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" href="http://catrobat.org/favicon.ico?v=1" />
+  <meta name="google-site-verification" content="33BwFHgU9gNh23a0Dohh2QoaXHApF0C5xCUEFiu22Ds" />
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript">
+    var setHeight = new Array('#start', '#apps_pocketpaint', '#apps_pocketcode', '#press');
+
+    $(document).ready(function() {
+      for(var i=0; i < setHeight.length; i++) {
+        $(setHeight[i]).height($(window).height() - $('#header').outerHeight());
+      }
+      $('#start').width($(window).width());
+
+      $(window).resize(function(){
+        for(var i=0; i < setHeight.length; i++) {
+          $(setHeight[i]).height($(window).height() - $('#header').outerHeight());
+        }
+        $('#start').width($(window).width());
+      });
+    });
+
+    function scroll(position) {
+      $('html, body').animate({scrollTop: $(position).offset().top - $('#header').outerHeight()}, 500);
+    }
+  </script>
+</head>
+<body>
+
+<div id="header">
+   <div class="div_center">
+    <div id="header_title" onclick="scroll('#start');"><img src="images/logo_transparent.png" style="position:fixed; top:19px; left:25px;" />CATROBAT</div>
+    <div class="menuItem"  onclick="scroll('#contact');">CONTACT</div>
+    <div class="menuItem"  onclick="window.open('http://developer.catrobat.org/');">FOR DEVELOPERS</div>
+    <div class="menuItem"  onclick="scroll('#press');">PRESS</div>
+    <div class="menuItem"  onclick="scroll('#apps_pocketcode');">POCKET CODE APP</div>
+  </div>
+</div>
+<div class="clear"></div>
+  
+<div id="start">
+  <div class="start_container">
+    <div>
+      Free educational<br>apps for children<br>and teenagers.
+    </div>
+    <div>
+      <i>Create and play !</i>
+    </div>
+  </div>
+  <div class="arrow_down" onclick="scroll('#apps_pocketcode');"><img src="images/arrow_down.png"></div>
+</div>
+<div class="clear"></div>
+
+<div id="apps_pocketcode">
+  <div class="div_center">
+    <div class="content_apps">
+      <a style="text-decoration: none; color: #000000;" href="https://play.google.com/store/apps/details?id=org.catrobat.catroid">
+        <img src="images/pocketcode.jpg">
+        <div>Pocket Code allows you to create your own games, animations, interactive music videos, and many kind of other apps, directly on your phone or tablet.<br><br>
+        <img src="images/ongoogleplay.png" width="100%" />
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="arrow_down" onclick="scroll('#press');"><img src="images/arrow_down.png"></div>
+</div>
+<div class="clear"></div>
+
+<div id="press">
+  <div class="div_center">
+    <div id="press_left">
+      <div id="press_title">PRESS</div>
+<!--      <div id="press_text">Download here text and pictures for your next report.</div> -->
+      <br>
+      <div class="press_article">
+      <a  style="text-decoration: none; color: #000000;" href="http://goo.gl/djpvjT">
+        <img src="images/gp-edu-apps-n7.jpg" class="press_img">
+        <div>
+	  <div><b>Google is promoting Pocket Code</b></div>
+          <div>14. November 2013</div>
+          <div>Google is promoting Pocket Code heavily during the launch of Google Play for Education!</div>
+          <div class="button">READ MORE</div>
+        </div>
+       </a>
+      </div>
+      <div class="clear"></div>
+      <hr>
+ <div class="press_article">
+      <a  style="text-decoration: none; color: #000000;" href="http://www.google-melange.com/gsoc/org/google/gsoc2013/catroid_project">
+        <img src="images/soc-logo-google-color.jpg" class="press_img">
+        <div>
+          <div><b>Google Summer of Code 2013</b></div>
+          <div>8. April 2013</div>
+          <div>Google decided to select us again as a Google Summer of Code mentoring organization!</div>
+          <div class="button">READ MORE</div>
+        </div>
+       </a>
+      </div>
+      <div class="clear"></div>
+      <hr>
+ <div class="press_article">
+      <a  style="text-decoration: none; color: #000000;" href="http://youtu.be/-EEYH5KcOoE">
+        <img src="images/stprmm2013-003_kl.jpg" class="press_img">
+        <div>
+          <div><b>National Innovation Award</b></div>
+          <div>7. March 2013</div>
+          <div>We won the Austrian National Innovation Award
+2013 in the category Multimedia! This prize is awarded only every
+second year by the Austrian Minister for Economics, Youth Development
+and Family Matters.</div>
+          <div class="button">READ MORE</div>
+        </div>
+       </a>
+      </div>
+      <div class="clear"></div>
+      <hr>
+ <!--
+ <div class="press_article">
+       <a  style="text-decoration: none; color: #000000;" href="">
+       <img src="images/presseseite.jpg" class="press_img">
+        <div>
+          <div><b>Pocket Code - Create and Play</b></div>
+          <div>20.10.2013</div>
+          <div>This is a press text Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
+          <div class="button">READ MORE</div>
+        </div>
+       </a>
+      </div>
+      <div class="clear"></div>
+      <hr>
+-->
+    </div>
+    <div id="press_right">
+      <div id="press_contact">
+          <img src="images/email_dark.jpg"><br>
+          <span>Press Contact</span><br>
+          <b>Wolfgang Slany</b>
+          <br>
+          &nbsp;&nbsp;<a style="text-decoration: none; color: #000000;" href="mailto:wolfgang.slany@catrobat.org">wolfgang.slany@catrobat.org</a>&nbsp;&nbsp;
+      </div>
+    </div>  </div>
+  <div class="arrow_down" onclick="scroll('#contact');"><img src="images/arrow_down_dark.png"></div>
+</div>
+<div class="clear"></div>  
+
+<div id="contact">
+  <div class="div_center2">
+    <div id="contact_info" class="contact_container">
+      <div id="email"></div>
+      <div>CONTACT</div>
+      <div>
+        <a style="text-decoration: none; color: #FFFFFF;" href="mailto:contact@catrobat.org">contact@catrobat.org</a><br>
+      </div>
+    </div>
+    <div id="contact_follow" class="contact_container">
+      <div>FOLLOW US</div>
+      <div>
+      <a style="text-decoration: none; color: #FFFFFF;" href="http://catrob.at/plus"><div id="googleplus"></div></a>&nbsp; &nbsp; &nbsp; &nbsp; <a style="text-decoration: none; color: #FFFFFF;" href="http://catrob.at/plus">Community</a>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="contact_developer" class="contact_container">
+      <div>FOR DEVELOPERS</div>
+      <div><a style="text-decoration: none; color: #FFFFFF;" href="http://developer.catrobat.org/">developer.catrobat.org</a></div>
+    </div>
+  </div>
+   <div class="clear"></div>
+   <div class="arrow_up" onclick="scroll('#start');"><img src="images/arrow_up.png"></div>
+</div>
+<div class="clear"></div>
+ 
+<div id="footer">
+  <div class="div_center2">
+    <a style="text-decoration: none;" href="http://developer.catrobat.org/credits"><div id="copyright">&copy; 2013, all rights reserved</div></a>
+  </div>
+</div>
+ 
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+   
+</body>
+</html>
