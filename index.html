@@ -36,7 +36,20 @@
     });
 
     function scroll(position) {
-      $('html, body').animate({scrollTop: $(position).offset().top - $('#header').outerHeight()}, 500);
+      if($('#header').offset().top === 0) {
+        if(position === '#apps_pocketcode') {
+          $('html, body').animate({scrollTop: $(position).offset().top - $('#header').outerHeight() + 65}, 500);
+        }
+        if(position === '#press') {
+          $('html, body').animate({scrollTop: $(position).offset().top - $('#header').outerHeight() + 130}, 500);
+        }
+        if(position === '#contact') {
+          $('html, body').animate({scrollTop: $(position).offset().top - $('#header').outerHeight()}, 500);
+        }
+      }
+      else {
+        $('html, body').animate({scrollTop: $(position).offset().top - $('#header').outerHeight()}, 500);
+      }
     }
     
     function resizeHeight() {
