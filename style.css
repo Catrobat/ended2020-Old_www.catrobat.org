@@ -12,7 +12,12 @@ body {
   margin: 0px;
   font-family: 'Titillium Web', Arial, sans-serif;
   font-weight: 400;
-  padding-top: 85px;
+  padding-top: 140px;
+}
+
+a {
+  text-decoration: none;
+  color: #a0a1ae;
 }
 
 hr {
@@ -30,18 +35,9 @@ hr {
   z-index: 100;
   width: 100%;
   background-color: #d9d9d9;
-  height: 75px;
+  height: 130px;
   border-bottom: 10px solid #14162d;
-  margin-top: -85px;
-}
-
-#catrobat_logo {
-  img: url('images/logo_transparent.png');
-  position: relative;
-  left: 0%;
-  margin-left: 10px;
-  margin-bottom: 5px;
-  float:left;
+  margin-top: -140px;
 }
 
 .div_center {
@@ -55,11 +51,12 @@ hr {
 }
 
 #header_title {
-  height: 100%;
-  font-size: 35px;
-  line-height: 75px;
-  letter-spacing: 2px;
-  font-weight: bold;
+  background-image: url('images/logo.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+  height: 120px;
+  width: 120px;
   float: left;
   cursor: pointer;
 }
@@ -67,7 +64,7 @@ hr {
 .menuItem {
   float: right;
   height: 100%;
-  line-height: 75px;
+  line-height: 210px;
   font-weight: bold;
   margin-left: 5%;
   cursor: pointer;
@@ -101,6 +98,7 @@ hr {
 
 .start_container div:nth-child(2) {
   font-size: 35px;
+  letter-spacing: 2px;
 }
 
 .arrow_down {
@@ -109,18 +107,13 @@ hr {
   cursor: pointer;
   text-align: center;
   width: 62px;
+  height: 41px;
   left: 50%;
   margin-left: -31px;
 }
 
-.arrow_up {
-  position: relative;
-  bottom: 10%;
-  cursor: pointer;
-  text-align: center;
-  width: 62px;
-  left: 50%;
-  margin-left: -31px;
+#press .arrow_down {
+  bottom: 5px;  /*Safari on Windows*/
 }
 
 #apps_pocketcode {
@@ -138,28 +131,19 @@ hr {
   min-width: 250px;
   padding:15px;
   background-color: #fff;
-  opacity:0.9;
-  filter:alpha(opacity=90); /* For IE8 and earlier */
-  }
+}
+
+.content_apps img {
+  width: 100%;
+}
 
 .content_apps div:nth-child(2) {
   margin-top: 25px;
   margin-bottom: 15px;
 }
 
-.goto_dev_blog {
-  position: relative;
-  top: 20%;
-  width: 50%;
-  max-width: 361px;
-  min-width: 250px;
-  padding: 15px;
-  background-color: #fd7722;
-  font-size: 25px;
-  color:white;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 13px;
+#press {
+  padding-bottom: 10px;
 }
 
 #press_left {
@@ -174,12 +158,8 @@ hr {
   padding-bottom: 10px;
 }
 
-#press_text {
-  padding-bottom: 20px;
-}
-
 .press_img {
-  min-width: 200px;
+  min-width: 125px;
   max-width: 269px;
   width: 35%;
   float:left;
@@ -207,28 +187,37 @@ hr {
   float: right;
 }
 
-#press_contact {
-  text-align: center;
-  padding: 6px;
-  position: relative;
-  top: 25%;
-  height: 266px;
-  margin-top: -133px;
+#press_right_mobile {
+  display: none;
 }
 
-#press_contact span {
+.press_contact {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  left: 50%;
+  top: 50%;
+  margin-left: -75px;
+  text-align: center;
+  padding: 6px;
+}
+
+.press_contact span {
   font-size: 20px;
   font-weight: bold;
 }
 
+.press_contact a {
+  color: black;
+}
+
 #contact {
   background-color: #14162d;
-  height: 309px;
+  height: 200px;
   padding-top: 50px;
 }
 
 .contact_container {
-  height: 260px;
   width: 33%;
   min-width: 240px;
   color: #a0a1ae;
@@ -253,20 +242,19 @@ hr {
   padding-left: 75px;
 }
 
-#contact_follow {
+#contact_follow{
   text-align: center;
 }
 
-#facebook {
-  background-image: url('images/facebook.jpg');
-  background-repeat: no-repeat;
-  width: 23px;
-  height: 23px;
-  position: relative;
-  left: 50%;
-  margin-left: -60px;
-  margin-bottom: 5px;
-  float:left;
+#community {
+  position:relative;
+  width:110px;
+  left:50%;
+  margin-left:-55px;
+}
+
+#community a :nth-child(1) {
+  float: left;
 }
 
 #twitter {
@@ -277,18 +265,6 @@ hr {
   position: relative;
   left: 50%;
   margin-left: -60px;
-  float:left;
-}
-
-#googleplus {
-  background-image: url('images/googleplus.png');
-  background-repeat: no-repeat;
-  width: 23px;
-  height: 23px;
-  position: relative;
-  left: 52%;
-  margin-left: -60px;
-  margin-bottom: 5px;
   float:left;
 }
 
@@ -314,19 +290,15 @@ hr {
   display: table-cell;
   line-height: 150px;
   color: #a0a1ae;
-  height: 100%;
+  height: 150px;
 }
 
 .clear {
   clear: both;
 }
 
-#apps_pocketpaint .div_center, #apps_pocketcode .div_center, #press .div_center {
+#apps_pocketcode .div_center, #press .div_center {
   height: 100%;
-}
-
-.content_apps :first-child {
-  width: 100%;
 }
 
 @media screen and (max-width: 1100px) {
@@ -335,7 +307,7 @@ hr {
   }
 }
 
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 865px) {
   .div_center {
     width: 95%;
   }
@@ -354,24 +326,46 @@ hr {
     font-size: 20px;
   }
   
-  .contact_container {
-    width: 50%;
+  #press_right {
+    display: none;
   }
   
-  #contact_follow, #contact_developer {
-    height: 135px;
+  #press_right_mobile {
+    display: block;
+  }
+  
+  #press_left {
+    width: 100%;
+  }
+  
+  .contact_container {
+    clear: both;
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .contact_container div:first-child, #contact_info div:nth-child(2){
+    margin-bottom: 0px;
+  }
+  
+  #contact_info :nth-child(1) {
+    position: relative;
+    left: 50%;
+    margin-left: -25px;
+  }
+  
+  #contact_info :nth-child(2) {
+    clear: both;
+  }
+  
+  #contact_developer {
     text-align: center;
   }
   
-  .menuItem {
-    margin-left: 15px;
-  }
-}
-
-@media screen and (max-width: 710px) {
-  .goto_dev_blog {
-    font-size: 18px;
-    top: 110px;
+  #contact {
+    height: 250px;
+    padding-top: 10px;
   }
 }
 
@@ -413,41 +407,34 @@ hr {
     line-height: 45px;
     height: 140px;
     font-size: 35px;
-  }
-
-  .start_container div:nth-child(2) {
-    font-size: 25px;
-  }
-  
-  .arrow_down {
-    bottom: 45px;
-  }
+  } 
   
   .content_apps {
     top: 5%;
   }
+}
+
+
+@media screen and (max-width: 500px) {
   
-  .content_apps div:nth-child(2) {
-    margin-top: 0px;
-    margin-bottom: 5px;
+  #footer_logo {
+    float: none;
+    position: relative;
+    width: 150px;
+    left: 50%;
+    margin-left: -75px;
   }
   
-  #contact {
-    height: 550px;
+  #copyright {
+    float: left;
+    height: 50px;
+    line-height: normal;
+    color: #a0a1ae;
+    position: relative;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    text-align: center;
   }
   
-  .contact_container {
-    min-width: 100%;
-    height: auto;
-  }
-  
-  .contact_container div:first-child, #contact_info div:nth-child(2){
-    margin-bottom: 0px;
-    margin-top: 20px;
-  }
-  
-  .goto_dev_blog {
-    font-size: 18px;
-    top: 25px;
-  }
 }
