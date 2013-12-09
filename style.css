@@ -27,6 +27,7 @@ hr {
 }
 
 #header {
+  -webkit-transform: translate3d(0,0,0);
   background-image: url('images/background_header.jpg');
   background-repeat: no-repeat;
   background-position: center;
