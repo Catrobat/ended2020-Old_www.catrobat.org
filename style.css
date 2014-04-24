@@ -176,7 +176,7 @@ img {
 }
 
 #background-pocketcode {
-  background-image: url('images/background_pocketcode.jpg');
+  background-image: url('images/background_pocketcode.png');
   background-repeat: no-repeat;
   background-position: right;
   background-size: 60%;
@@ -468,12 +468,4 @@ img {
   section {
     min-height: 610px;
   }
-
-  /*#pocketcode {*/
-  /*min-height: 700px;*/
-  /*}*/
-
-  /*#pocketcode-info {*/
-  /*margin: 5px auto 0px auto;*/
-  /*}*/
 }
