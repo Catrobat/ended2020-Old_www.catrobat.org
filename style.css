@@ -1,18 +1,10 @@
-/* 
-    Document   : style
-    Created on : 05.11.2013, 17:48:17
-    Author     : marko
-    Description:
-        Purpose of the stylesheet follows.
-*/
-
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:600,600italic,700,700italic,400,400italic);
 
-body {
-  margin: 0px;
+html, body {
+  margin: 0;
   font-family: 'Titillium Web', Arial, sans-serif;
-  font-weight: 400;
-  padding-top: 140px;
+  font-size: 16px;
+  height: 100%;
 }
 
 a {
@@ -20,35 +12,46 @@ a {
   color: #a0a1ae;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 hr {
-  margin-top: 10px;
   margin-bottom: 40px;
   border: 1px solid #14162d;
+  clear: both;
+}
+
+nav {
+  z-index: 1000;
+}
+
+section {
+  height: 100%;
+  min-height: 100%;
+  padding-top: 70px; /* height of collapsed header*/
 }
 
 #header {
-  -webkit-transform: translate3d(0,0,0);
   background-image: url('images/background_header.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 80% 100%;
-  position: fixed;
-  z-index: 100;
-  width: 100%;
   background-color: #d9d9d9;
-  height: 130px;
+  position: fixed;
+  width: 100%;
+  height: 140px;
+  border: 0px;
   border-bottom: 10px solid #14162d;
-  margin-top: -140px;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+  transition: height .5s;
+  border-radius: 0px;
 }
 
-.div_center {
-  width: 80%;
-  margin:0 auto;
-}
-
-.div_center2 {
-  width: 70%;
-  margin: 0 auto;
+section, #header {
+  min-width: 320px;
 }
 
 #header_title {
@@ -60,145 +63,166 @@ hr {
   width: 120px;
   float: left;
   cursor: pointer;
+  -webkit-transition: height .5s, width .5s;
+  -moz-transition: height .5s, width .5s;
+  transition: height .5s, width .5s;
+}
+
+#bs-example-navbar-collapse-1 {
+  border-top: 0px;
+}
+
+#bs-example-navbar-collapse-1 > ul,
+#header .navbar-header button{
+  margin-top: 80px;
+  border-color: #000;
+  -webkit-transition: margin-top .5s, width .5s;
+  -moz-transition: margin-top .5s, width .5s;
+  transition: margin-top .5s, width .5s;
+}
+
+.navbar-header > button > span {
+  background-color: #000 !important;
 }
 
 .menuItem {
-  float: right;
-  height: 100%;
-  line-height: 210px;
   font-weight: bold;
-  margin-left: 5%;
   cursor: pointer;
 }
 
+.menuItem > a {
+  color: #000 !important;
+  padding-right: 0px !important;
+  padding-left: 50px !important;
+}
+
+.header-collapse {
+  height: 75px !important;
+}
+
+.header-collapse #header_title {
+  height: 62px;
+  width: 250px;
+}
+
+.header-collapse #bs-example-navbar-collapse-1 > ul,
+.header-collapse .navbar-header button{
+  margin-top: 10px !important;
+}
+
+.centered {
+  height: 100%;
+  width: 80%;
+  margin: auto;
+}
+
+.arrow-down {
+  cursor: pointer;
+  width: 62px;
+  height: 41px;
+  margin: -46px auto 5px auto;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
 #start {
+  padding-top: 140px; /* height of header */
   background-image: url('images/startseite.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  /*text-align: center;*/
+  /*display: table-cell;*/
+  /*vertical-align: bottom;*/
+}
+
+#start-container {
+  width: 520px;
+  margin: 75px auto 0px auto;
+  font-size: 65px;
+  font-weight: bold;
+  color: white;
+}
+
+#start-container > div:nth-child(2) {
+  font-style: italic;
+  font-size: 60%;
+  margin-top: 20px;
+}
+
+#pocketcode-info {
+  float: left;
+  width: 361px;
+  margin-top: 150px;
+}
+
+#pocketcode > div > div:nth-child(2) {
+  height: 100%;
+}
+
+#pocketcode-info {
+  background: #fff;
+}
+
+#pocketcode-info > div:nth-child(2){
+  margin: 25px 0px 15px 0px;
+}
+
+#pocketcode-info > div:nth-child(3){
   text-align: center;
-  display: table-cell;
-  vertical-align: bottom;
 }
 
-.start_container {
-  position: relative;
-  left:50%;
-  bottom: 15%;
-  width:520px;
-  margin-left:-260px;
-  color:white;
-  font-weight:bold;
-  text-align:left;
-}
-
-.start_container div:nth-child(1) {
-   height:300px;
-   font-size: 65px;
-}
-
-.start_container div:nth-child(2) {
-  font-size: 35px;
-  letter-spacing: 2px;
-}
-
-.arrow_down {
-  position: relative;
-  bottom: 10%;
-  cursor: pointer;
-  text-align: center;
-  width: 62px;
-  height: 41px;
-  left: 50%;
-  margin-left: -31px;
-}
-
-#press .arrow_down {
-  bottom: 5px;  /*Safari on Windows*/
-}
-
-#apps_pocketcode {
+#background-pocketcode {
   background-image: url('images/background_pocketcode.jpg');
   background-repeat: no-repeat;
-  background-position: 90% 50%;
+  background-position: right;
   background-size: 60%;
+  height: 100%;
 }
 
-.content_apps {
-  position: relative;
-  top: 20%;
-  width: 50%;
-  max-width: 361px;
-  min-width: 250px;
-  padding:15px;
-  background-color: #fff;
+#news {
+  padding-bottom: 41px;
+  height: auto;
 }
 
-.content_apps img {
-  width: 100%;
-}
-
-.content_apps div:nth-child(2) {
-  margin-top: 25px;
-  margin-bottom: 15px;
-}
-
-#press {
-  padding-bottom: 10px;
-}
-
-#press_left {
-  float:left;
-  height:100%;
-  width: 70%;
-}
-
-#press_title {
+#news #news_title {
   font-size: 40px;
   font-weight: bold;
-  padding-bottom: 10px;
+  margin: 10px 0px 10px 0px;
 }
 
-.press_img {
+#news .news_article {
+  padding-bottom: 20px;
+}
+
+#news .news_article > img {
   min-width: 125px;
   max-width: 269px;
   width: 35%;
-  float:left;
+  float: left;
   margin-right: 25px;
+  margin-bottom: 10px;
 }
 
-.press_article {
-  padding-bottom: 10px;
-}
-
-.button {
-  float:right;
-  background-color: #fd7722;
-  color:white;
-  font-weight: bold;
-  padding: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-#press_right {
+#news_left {
+  float: left;
   height: 100%;
-  float: right;
+  width: 75%;
 }
 
-#press_right_mobile {
-  display: none;
+#news_right {
+  float: right;
+  height: 100%;
 }
 
 .press_contact {
   position: relative;
   width: 150px;
   height: 150px;
-  left: 50%;
-  top: 50%;
-  margin-left: -75px;
+  top: 75px;
   text-align: center;
   padding: 6px;
 }
@@ -212,15 +236,34 @@ hr {
   color: black;
 }
 
+.button {
+  float:right;
+  background-color: #fd7722;
+  color:white;
+  font-weight: bold;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+#news_right_mobile {
+  display: none;
+}
+
+#contact-footer {
+  clear: both;
+}
+
 #contact {
   background-color: #14162d;
-  height: 200px;
+  height: 50%;
   padding-top: 50px;
 }
 
 .contact_container {
   width: 33%;
-  min-width: 240px;
+  min-width: 225px;
   color: #a0a1ae;
   float: left;
 }
@@ -294,148 +337,143 @@ hr {
   height: 150px;
 }
 
-.clear {
-  clear: both;
-}
-
-#apps_pocketcode .div_center, #press .div_center {
-  height: 100%;
-}
-
-@media screen and (max-width: 1100px) {
-  .div_center2{
+@media screen and (max-width: 1024px) {
+  .centered {
     width: 90%;
   }
+
+  #background-pocketcode {
+    background-size: 50%;
+  }
 }
 
-@media screen and (max-width: 865px) {
-  .div_center {
-    width: 95%;
+@media screen and (max-width: 800px) {
+
+  #pocketcode-info {
+    float: none;
+    margin: 20px auto 0px auto;
   }
-  
-  .start_container {
-    width:400px;
-    margin-left:-200px;
+
+  #background-pocketcode {
+    background-position: top;
+    height: 350px;
   }
-  
-  .start_container div:nth-child(1) {
-    height:225px;
+}
+
+@media screen and (max-width: 767px) {
+
+  #header-mobile {
+    display: block;
+  }
+
+  #bs-example-navbar-collapse-1 > ul {
+    margin-top: 20px !important;
+    background-color: #14162d;
+  }
+
+  .menuItem > a {
+    color: #fff !important;
+  }
+
+  #start-container {
+    width: 400px;
     font-size: 50px;
   }
 
-  .start_container div:nth-child(2) {
-    font-size: 20px;
+  #news_left {
+    float: none;
+    width: 100%;
   }
-  
-  #press_right {
+
+  #news_right {
     display: none;
   }
-  
-  #press_right_mobile {
+
+  #news_right_mobile {
     display: block;
   }
-  
-  #press_left {
-    width: 100%;
+
+  .press_contact {
+    margin: auto;
+    top: auto;
+    margin-top: 0px;
   }
-  
+
   .contact_container {
-    clear: both;
-    text-align: center;
-    margin-top: 15px;
-    width: 100%;
+    float: none;
+    text-align: center !important;
+    margin: -15px auto 30px auto;
   }
-  
-  .contact_container div:first-child, #contact_info div:nth-child(2){
-    margin-bottom: 0px;
-  }
-  
-  #contact_info :nth-child(1) {
-    position: relative;
-    left: 50%;
-    margin-left: -25px;
-  }
-  
-  #contact_info :nth-child(2) {
-    clear: both;
-  }
-  
-  #contact_developer {
-    text-align: center;
-  }
-  
-  #contact {
-    height: 250px;
-    padding-top: 10px;
+
+  #email {
+    float: none;
+    width: 50px;
+    margin: auto;
   }
 }
 
 @media screen and (max-width: 600px) {
-  body {
-    padding-top: 60px;
-  }
-  
-  .div_center2{
-    width: 70%;
-  }
-  
-  #header {
-    height: 50px;
-    margin-top: -60px;
-  }
-  
-  #header_title {
-    font-size: initial;
-    line-height: 23px;
-    letter-spacing: 0px;
-    margin-right: 5%;
-  }
-
-  .menuItem {
-    float: left;
-    line-height: 23px;
-    margin-left: auto;
-    margin-right: 5%;
-  }
-  
-  .start_container {
-    width:280px;
-    margin-left:-140px;
-    bottom: 10%;
-  }
-  
-  .start_container div:nth-child(1) {
-    line-height: 45px;
-    height: 140px;
-    font-size: 35px;
-  } 
-  
-  .content_apps {
-    top: 5%;
+  #background-pocketcode {
+    background-size: 65%;
   }
 }
 
-
 @media screen and (max-width: 500px) {
-  
+
   #footer_logo {
     float: none;
-    position: relative;
-    width: 150px;
-    left: 50%;
-    margin-left: -75px;
+    margin: auto;
   }
-  
+
   #copyright {
-    float: left;
-    height: 50px;
-    line-height: normal;
-    color: #a0a1ae;
-    position: relative;
-    left: 50%;
-    width: 200px;
-    margin-left: -100px;
+    width: 100%;
+    height: 100px;
     text-align: center;
   }
-  
+
+  #copyright a:hover {
+    color: #a0a1ae;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+  .centered {
+    width: 100%;
+  }
+
+  .header-collapse #header_title {
+
+  }
+
+  #start-container {
+    width: 290px;
+    font-size: 38px;
+  }
+
+  #pocketcode-info > div, #pocketcode-info div:nth-child(1) img {
+    width: 320px;
+  }
+
+  #background-pocketcode {
+    background-size: 80%;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  #start-container {
+    margin-top: 25px;
+  }
+
+  section {
+    min-height: 610px;
+  }
+
+  /*#pocketcode {*/
+  /*min-height: 700px;*/
+  /*}*/
+
+  /*#pocketcode-info {*/
+  /*margin: 5px auto 0px auto;*/
+  /*}*/
 }
