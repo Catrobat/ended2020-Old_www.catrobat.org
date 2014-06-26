@@ -107,7 +107,7 @@ section, #header {
 
 .header-collapse #bs-example-navbar-collapse-1 > ul,
 .header-collapse .navbar-header button{
-  margin-top: 10px !important;
+  margin-top: 13px !important;
 }
 
 .centered {
@@ -120,7 +120,7 @@ section, #header {
   cursor: pointer;
   width: 62px;
   height: 41px;
-  margin: -46px auto 5px auto;
+  margin: -60px auto 5px auto;
 }
 
 img {
@@ -173,6 +173,10 @@ img {
 
 #pocketcode-info > div:nth-child(3){
   text-align: center;
+}
+
+#pocketcode-info > div:nth-child(3) > a > img {
+  width: 65%;
 }
 
 #background-pocketcode {
@@ -318,6 +322,7 @@ img {
 
 #footer {
   height: 150px;
+  margin-top: 25px;
 }
 
 #footer_logo {
@@ -332,9 +337,19 @@ img {
 #copyright {
   float: right;
   display: table-cell;
-  line-height: 150px;
+  line-height: 240px;
   color: #a0a1ae;
   height: 150px;
+}
+
+#copyright :hover {
+  color: #a0a1ae;
+}
+
+@media screen and (max-width: 1090px) {
+  #background-pocketcode {
+    background-size: 55%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -362,12 +377,26 @@ img {
 
 @media screen and (max-width: 767px) {
 
+  #header {
+    height: 75px !important;
+  }
+
+  #header_title {
+    height: 62px;
+    width: 250px;
+  }
+
+  #bs-example-navbar-collapse-1 > ul,
+  .navbar-header button{
+    margin-top: 13px !important;
+  }
+
   #header-mobile {
     display: block;
   }
 
   #bs-example-navbar-collapse-1 > ul {
-    margin-top: 20px !important;
+    margin-top: 10px !important;
     background-color: #14162d;
   }
 
@@ -429,6 +458,7 @@ img {
     width: 100%;
     height: 100px;
     text-align: center;
+    line-height: 100px;
   }
 
   #copyright a:hover {

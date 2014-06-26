@@ -239,10 +239,14 @@
 <script src="intro/js/bootstrap.min.js"></script>
 <script type="text/javascript">
   $(window).scroll(function(){
-    if($('#header').offset().top > 10)
+    if($('#header').offset().top > 10 && $(window).width() > 767)
       $('#header').addClass('header-collapse');
     else
       $('#header').removeClass('header-collapse');
+  });
+
+  $('#bs-example-navbar-collapse-1 li').click(function(){
+    $('#bs-example-navbar-collapse-1').collapse('hide');
   });
 </script>
 <script>
