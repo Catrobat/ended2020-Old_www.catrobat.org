@@ -302,7 +302,7 @@ img {
 }
 
 #community a :nth-child(1) {
-  float: left;
+  float: center;
 }
 
 #twitter {
