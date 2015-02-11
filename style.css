@@ -296,9 +296,9 @@ img {
 
 #community {
   position:relative;
-  width:110px;
+  width:150px;
   left:50%;
-  margin-left:-55px;
+  margin-left:-75px;
 }
 
 #community a :nth-child(1) {
