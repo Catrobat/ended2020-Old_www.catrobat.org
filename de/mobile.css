@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+
+/* Override for small screen widths */
+@media screen and (max-width: 900px) {
+
+  .content {
+    padding: 8px 5% 8px 5%;
+  }
+
+  .two-split {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    margin-bottom: 16px;
+  }
+
+  .flex-container-h {
+    display: block;
+    margin: 0;
+  }
+  
+  .flex-container-h > div {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .flex-container-v {
+    margin: 0 0 32px 0;
+  }
+	
+	.flex-container-h > div {
+  	/*padding: 0 16px 0 16px;*/
+	}
+  
+  .max-width {
+    max-width: auto;
+  }
+
+  .promo {
+		min-width: 0;
+  }
+  
+  .promo > div {
+    width: auto;
+  }
+  
+  .extension {
+  }
+  
+  .extension > div {
+    width: auto;
+  }
+
+  .news > div:first-child {
+    display: none;
+  }
+
+  .sub-nav-margin {
+    margin-top: 56px;
+  }
+  
+	.bottom-padding {
+		padding-bottom: 64px;
+	}
+	
+	.screenshot-gallery {
+		display: block;
+	}
+	
+	.screenshot-gallery div {
+		display: block;
+		margin: 4px 0 4px 0;
+	}
+}
