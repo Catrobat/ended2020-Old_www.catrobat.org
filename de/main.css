@@ -5,89 +5,10 @@
   padding: 16px 15% 16px 15%;
 }
 
-.flex-container-h {
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -moz-justify-content: space-between;
-  -ms-justify-content: space-between;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -moz-align-items: flex-start;
-  -ms-align-items: flex-start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
-}
-
-.flex-container-v {
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -moz-flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -moz-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -moz-align-items: flex-start;
-  -ms-align-items: flex-start;
-  -webkit-align-items: flex-start;
-  align-items: flex-start;
-}
-
-.flex-container-v .top-align {
-  margin-bottom: auto;
-}
-
-.flex-container-h > div {
-  padding-left: 32px;
-	padding-right: 32px;
-}
-
 .max-width {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.expandable {
-	position: relative;
-	overflow: hidden;
-}
-
-.expandable > .more {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	text-align: center;
-	padding: 8px 0 8px 0;
-	background: url(../img/view_more.png); /* fallback for non gradient support */
-	background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255, 1));
-	background-size: 100% 100%;
-}
-
-.expandable > .less {
-	position: static;
-	text-align: center;
-	padding: 0;
-	background: none;
-}
-
-.expandable > .more span {
-  text-decoration: line-through;
-}
-
-.expandable > .less span {
-  text-decoration: line-through;
 }
 
 .two-split {
