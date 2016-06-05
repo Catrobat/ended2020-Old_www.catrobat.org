@@ -1,12 +1,27 @@
-<?php
-$stats = @file_get_contents("https://www.openhub.net/p/catrobat");
-@preg_match("/<ul class='unstyled nutshell' id='factoids'>(.*?)<\/ul>/si", $stats, $stats);
-@preg_match_all("/<a.*?>([0-9\,]+).*?<\/a>/si", $stats[0], $stats);
-$stats = $stats[1];
-/*$stats[0] = "X";
-$stats[1] = "Y";
-$stats[2] = "Z";*/
-?>
+<script>
+stats = Array(3);
+if (window.XMLHttpRequest)
+	request = new XMLHttpRequest(); // Mozilla, Safari, Opera
+else if (window.ActiveXObject) {
+	try {
+		request = new ActiveXObject('Msxml2.XMLHTTP'); // IE 5
+	} catch (e) {
+		try {
+			request = new ActiveXObject('Microsoft.XMLHTTP'); // IE 6
+		} catch (e) {}
+	}
+}
+request.open("GET", "utils.php?a=stats", true);
+request.onreadystatechange = function () {
+	if (request.readyState == 4) {
+		stats = JSON.parse(request.responseText);
+		document.getElementById("stats-commits").innerHTML = stats[0];
+		document.getElementById("stats-contributors").innerHTML = stats[1];
+		document.getElementById("stats-linesofcode").innerHTML = stats[2];
+	}
+}
+request.send();
+</script>
 
 <div id="banner" style="background-image: url(img/banner_contribute.jpg);">
   <div>
@@ -88,7 +103,7 @@ $stats[2] = "Z";*/
     <div style="order: 0; background-image: url(img/promo_statistics.png);"></div>
     <div class="flex-container-v">
       <h2>Project statistics on Open HUB</h2>
-      <p>By now Catrobat has had <strong><?=$stats[0]?></strong> commits made by <strong><?=$stats[1]?></strong> contributors representing <strong><?=$stats[2]?></strong> lines of code. These and lots of other interesting statistics about the Catrobat project can be found on Open HUB.</p>
+      <p>By now Catrobat has had <strong id="stats-commits">over 20,000</strong> commits made by <strong id="stats-contributors">over 200</strong> contributors representing <strong id="stats-linesofcode">over 600,000</strong> lines of code. These and lots of other interesting statistics about the Catrobat project can be found on Open HUB.</p>
       <a class="button" href="https://www.openhub.net/p/catrobat" target="_blank">Visit</a>
     </div>
   </div>
