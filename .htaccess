@@ -1,0 +1,19 @@
+<Files "credentials.txt">
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files "*.php">
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files "index.php">
+Order Allow,Deny
+Allow from all
+</Files>
+
+<Files "utils.php">
+Order Allow,Deny
+Allow from all
+</Files>

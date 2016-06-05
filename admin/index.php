@@ -61,14 +61,15 @@ $image = "";
 $link = "";
 $today = true;
 
-$mysqli = @new mysqli("localhost", "catrobat", "catrobat0815");
+$credentials = file("../credentials.txt");
+$mysqli = new mysqli("localhost", trim($credentials[0]), trim($credentials[1]), "catrobat");
 
 if ($mysqli->connect_errno) {
 		$errors++;
 		$err_message .= $mysqli->connect_error . "<br />";
 } else {
 	$mysqli->set_charset("utf8");
-	$query = "CREATE DATABASE IF NOT EXISTS `catrobat`;
+	$query = "CREATE DATABASE IF NOT EXISTS `catrobat` DEFAULT CHARACTER SET utf8;
 USE `catrobat`;
 CREATE TABLE IF NOT EXISTS `news` (
   `id` INT NOT NULL AUTO_INCREMENT,
