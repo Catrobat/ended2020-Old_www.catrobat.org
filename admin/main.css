@@ -38,7 +38,7 @@ table {
 	box-sizing: border-box;
 }
 
-.textbox:not(#news_add_date):not(#news_edit_date):not(#login_user):not(#login_password) {
+.textbox:not(#news_date):not(#login_user):not(#login_password) {
 	width: 60vw;
 }
 

@@ -104,6 +104,7 @@ $backups = array_reverse($backups);
 
 if (isset($_POST["a"]) && !$errors) {
 	if ($_POST["a"] == "login") {
+		// LOGIN
 		session_regenerate_id();
 		$_SESSION["logged_in"] = $_POST["login_password"] == "abcd" && $_POST["login_user"] == "admin";
 		if ($_SESSION["logged_in"]) {
@@ -120,12 +121,17 @@ if (isset($_POST["a"]) && !$errors) {
 			$errors++;
 			$err_message .= "Invalid Login!<br />";
 		}
+		// LOGIN END
 	} else if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+		// These actions can only be performed if logged in!
 		if ($_POST["a"] == "logout") {
+			// LOGOUT
 			$_SESSION = array();
 			session_destroy();
 			header("Location: http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
+			// LOGOUT END
 		} else if ($_POST["a"] == "addnews") {
+			// ADD NEWS
 			$header = $mysqli->real_escape_string(trim(strip_tags($_POST["header"])));
 			$date = $mysqli->real_escape_string(trim($_POST["date"]));
 			$text = $mysqli->real_escape_string(trim($_POST["text"]));
@@ -185,8 +191,9 @@ if (isset($_POST["a"]) && !$errors) {
 				}
 			}
 			die(json_encode($news));
-			
+			// ADD NEWS END
 		} else if ($_POST["a"] == "editnews") {
+			// EDIT NEWS
 			if ($_POST["delete"] == 0) {
 				$id = $_POST["select"];
 				$header = $mysqli->real_escape_string(trim(strip_tags($_POST["header"])));
@@ -259,8 +266,9 @@ if (isset($_POST["a"]) && !$errors) {
 				}
 			}
 			die(json_encode($news));
-			
+			// EDIT NEWS END
 		} else if ($_POST["a"] == "backups") {
+			// BACKUP RESTORE
 			$file = $_POST["select"];
 			if (file_exists("backups/" . $file)) {
 				if (!$mysqli->multi_query(file_get_contents("backups/" . $file))) {
@@ -293,8 +301,9 @@ if (isset($_POST["a"]) && !$errors) {
 				}
 			}
 			die(json_encode($credits));
-			
+			// BACKUP RESTORE END
 		} else if ($_POST["a"] == "addcredits") {
+			// ADD CREDITS
 			$name = $mysqli->real_escape_string(trim(strip_tags($_POST["name"])));
 			if ($name == "") {
 				$errors++;
@@ -318,8 +327,9 @@ if (isset($_POST["a"]) && !$errors) {
 				}
 			}
 			die(json_encode($credits));
-			
+			// ADD CREDITS END
 		} else if ($_POST["a"] == "deletecredits") {
+			// DELETE CREDITS
 			$id = htmlspecialchars(trim(strip_tags($_POST["id"])));
 			$name = htmlspecialchars(trim(strip_tags($_POST["name"])));
 
@@ -339,6 +349,7 @@ if (isset($_POST["a"]) && !$errors) {
 				}
 			}
 			die(json_encode($credits));
+			// DELETE CREDITS END
 		}
 	}
 }
@@ -434,24 +445,21 @@ function sendRequest(params, callback, loadingmsg)
 
 function updateNews(obj) {
 	news = obj;
-	var sel = document.getElementById("news_edit_select");
+	var sel = document.getElementById("news_select");
 	while (sel.options.length > 0) {
 		sel.remove(0);
 	}
+	var option = document.createElement("option");
+	option.text = "- New article -";
+	option.value = -1;
+	sel.add(option);
 	for (var i = 0; i < news.length; i++) {
 		var option = document.createElement("option");
 		option.text = news[i].headline;
 		option.value = news[i].id;
 		sel.add(option);
 	}
-	var header = document.getElementById("news_edit_header");
-	var date = document.getElementById("news_edit_date");
-	var text = document.getElementById("news_edit_text");
-	var url = document.getElementById("news_edit_link");
-	header.value = news[sel.selectedIndex].headline;
-	date.value = news[sel.selectedIndex].date.match(/([0-9]+-[0-9]+-[0-9]+)/)[1];
-	text.value = news[sel.selectedIndex].text;
-	url.value = news[sel.selectedIndex].link;
+	updateEditForm();
 }
 
 function updateCredits(obj) {
@@ -469,47 +477,21 @@ function updateCredits(obj) {
 	filterCredits();
 }
 
-function addNews() {
-	var data = new FormData();
-	var header = document.getElementById("news_add_header");
-	var date = document.getElementById("news_add_date");
-	var text = document.getElementById("news_add_text");
-	var image = document.getElementById("news_add_image");
-	var url = document.getElementById("news_add_link");
-	data.append("a", "addnews");
-	data.append("header", header.value);
-	data.append("date", date.value);
-	data.append("text", text.value);
-	data.append("image", image.files[0]);
-	data.append("link", url.value);
-	sendRequest(data, function(objstring) {
-		updateNews(JSON.parse(objstring));
-		header.value = "";
-		var d = new Date();
-		date.value = d.getFullYear() + "-" + (d.getMonth() < 9 ? "0" : "") + (d.getMonth() + 1) + "-" + (d.getDate() < 10 ? "0" : "") + d.getDate();
-		text.value = "";
-    var newInput = document.createElement("input"); 
-    newInput.type = image.type; 
-    newInput.id = image.id; 
-    newInput.name = image.name; 
-    newInput.className = image.className; 
-		newInput.accep = image.accept;
-		image.parentNode.replaceChild(newInput, image);
-		url.value = "";
-	});
-}
-
 function editNews(del) {
 	var data = new FormData();
-	var sel = document.getElementById("news_edit_select");
-	var header = document.getElementById("news_edit_header");
-	var date = document.getElementById("news_edit_date");
-	var text = document.getElementById("news_edit_text");
-	var image = document.getElementById("news_edit_image");
-	var url = document.getElementById("news_edit_link");
+	var sel = document.getElementById("news_select");
+	var header = document.getElementById("news_header");
+	var date = document.getElementById("news_date");
+	var text = document.getElementById("news_text");
+	var image = document.getElementById("news_image");
+	var url = document.getElementById("news_link");
 	var edit = document.getElementById("news_edit");
-	data.append("a", "editnews");
-	data.append("select", sel.options[sel.selectedIndex].value);
+	if (sel.selectedIndex == 0) {
+		data.append("a", "addnews");
+	} else {
+		data.append("a", "editnews");
+		data.append("select", sel.options[sel.selectedIndex].value);
+	}
 	data.append("header", header.value);
 	data.append("date", date.value);
 	data.append("text", text.value);
@@ -521,17 +503,20 @@ function editNews(del) {
 			updateNews(JSON.parse(objstring));
 		});
 	} else if (!del) {
-		sendRequest(data, function(){});
+		sendRequest(data, function(objstring) {
+			updateNews(JSON.parse(objstring));
+		});
 	}
 }
 
 function addCredits() {
 	var data = new FormData();
-	var name = document.getElementById("credits_name")
+	var name = document.getElementById("credits_name");
 	data.append("a", "addcredits");
 	data.append("name", name.value);
 	sendRequest(data, function(objstring){
 		updateCredits(JSON.parse(objstring));
+		name.value = "";
 	});
 }
 
@@ -561,25 +546,38 @@ function restoreBackup() {
 }
 
 function updateEditForm() {
-	var sel = document.getElementById("news_edit_select");
-	var header = document.getElementById("news_edit_header");
-	var date = document.getElementById("news_edit_date");
-	var text = document.getElementById("news_edit_text");
-	var url = document.getElementById("news_edit_link");
-	header.value = news[sel.selectedIndex].headline;
-	date.value = news[sel.selectedIndex].date.match(/([0-9]+-[0-9]+-[0-9]+)/)[1];
-	text.value = news[sel.selectedIndex].text;
-	url.value = news[sel.selectedIndex].link;
+	var sel = document.getElementById("news_select").selectedIndex;
+	var header = document.getElementById("news_header");
+	var date = document.getElementById("news_date");
+	var text = document.getElementById("news_text");
+	var image = document.getElementById("news_image");
+	var url = document.getElementById("news_link");
+	if (sel >= 1) {
+		header.value = news[sel - 1].headline;
+		date.value = news[sel - 1].date.match(/([0-9]+-[0-9]+-[0-9]+)/)[1];
+		text.value = news[sel - 1].text;
+		url.value = news[sel - 1].link;
+	} else {
+		header.value = "";
+		date.value = "";
+		text.value = "";
+		url.value = "";
+	}
+	
+	var new_image = document.createElement("input"); 
+	new_image.type = image.type; 
+  new_image.id = image.id; 
+  new_image.name = image.name; 
+  new_image.className = image.className; 
+  image.parentNode.replaceChild(new_image, image); 
+	
+	document.getElementById("news_delete").disabled = (sel == 0);
 }
 
-function changeDate() {
-	var today = document.getElementById("news_add_date_today").checked;
-	var date = document.getElementById("news_add_date");
-	if (today) {
-		var d = new Date();
-		date.value = d.getFullYear() + "-" + (d.getMonth() < 9 ? "0" : "") + (d.getMonth() + 1) + "-" + (d.getDate() < 10 ? "0" : "") + d.getDate();
-	}
-	date.disabled = today;
+function setTodayDate() {
+	var date = document.getElementById("news_date");
+	var d = new Date();
+	date.value = d.getFullYear() + "-" + (d.getMonth() < 9 ? "0" : "") + (d.getMonth() + 1) + "-" + (d.getDate() < 10 ? "0" : "") + d.getDate();
 }
 
 function dismiss() {
@@ -603,7 +601,8 @@ function filterCredits() {
 
 <body onload="javascript:setup()">
 
-<div id="errors" onclick="dismiss()">
+<div id="errors" onclick="dismiss()" <?=((!$logged_in && $errors > 0) ? "style=\"opacity:1\"" : "")?>>
+	<?=$err_message?>
 </div>
 
 <div id="success" onclick="dismiss()">
@@ -624,84 +623,48 @@ if ($logged_in == true) { ?>
 Logged in as <b>admin</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="document.getElementById('logout').submit();">Logout</a>
 </form>
 </div>
+
 <div class="expandable" id="1">
-<h1>Add news</h1>
+<h1>News</h1>
   <table>
     <tr>
-      <td><label for="news_add_header">Headline</label></td>
-      <td><input name="news_add_header" type="text" class="textbox" id="news_add_header" value="<?=$header?>" size="100" /></td>
+      <td>&nbsp;</td>
+      <td><select name="news_select" class="textbox" id="news_select" onchange="javascript:updateEditForm()">
+      </select></td>
     </tr>
     <tr>
-      <td><label for="news_add_date">Date</label></td>
-      <td><input name="news_add_date" type="text"  <?=($today ? "disabled=\"disabled\"" : "")?> class="textbox" id="news_add_date" value="<?=$date?>" />
-        <input name="news_add_date_today" type="checkbox" id="news_add_date_today" onclick="javascript:changeDate()" <?=($today ? "checked=\"checked\"" : "")?> />
-        <label for="news_add_date_today">Today</label></td>
+      <td><label for="news_header">Headline</label></td>
+      <td><input name="news_header" type="text" class="textbox" id="news_header" size="100" /></td>
     </tr>
     <tr>
-      <td><label for="news_add_text">Text (HTML)</label></td>
-      <td><textarea name="news_add_text" cols="100" rows="10" class="textbox" id="news_add_text"></textarea></td>
+      <td><label for="news_date">Date</label></td>
+      <td><input name="news_date" type="text" class="textbox" id="news_date">
+      <input name="news_today" type="button" value="Today" onclick="setTodayDate()"/></td>
     </tr>
     <tr>
-      <td><label for="news_add_image">Image (&lt; 1mb)<br />
-      </label></td>
+      <td><label for="news_text">Text (HTML)</label></td>
+      <td><textarea name="news_text" cols="100" rows="10" class="textbox" id="news_text"></textarea></td>
+    </tr>
+    <tr>
+      <td><label for="news_image">Image (&lt; 1mb)</label></td>
       <td><input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-      <input type="file" name="news_add_image" id="news_add_image" accept=".jpeg,.jpg,.png" /></td>
+      <input type="file" name="news_image" id="news_image" accept=".jpeg,.jpg,.png" /></td>
     </tr>
     <tr>
-      <td><label for="news_add_link">Link (optional)</label></td>
-      <td><input name="news_add_link" class="textbox" id="news_add_link" value="" size="100" /></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td><label for="news_link">Link (optional)</label></td>
+      <td><input name="news_link" class="textbox" id="news_link" size="100" /></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><input type="submit" name="news_add" id="news_add" value="Submit" onclick="addNews()"/></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="news_edit" id="news_edit" value="Submit" onclick="editNews(false)" />&nbsp;<input type="submit" name="news_delete" id="news_delete" value="Delete" onclick="editNews(true)" /></td>
     </tr>
   </table>
 </div>
 <div class="expandable" id="2">
-<h1>Edit existing news</h1>
-  <table>
-    <tr>
-      <td>&nbsp;</td>
-      <td><select name="news_edit_select" class="textbox" id="news_edit_select" onchange="javascript:updateEditForm()">
-      </select></td>
-    </tr>
-    <tr>
-      <td><label for="news_edit_header">Headline</label></td>
-      <td><input name="news_edit_header" type="text" class="textbox" id="news_edit_header" size="100" /></td>
-    </tr>
-    <tr>
-      <td><label for="news_edit_date">Date</label></td>
-      <td><input name="news_edit_date" type="text" class="textbox" id="news_edit_date"></td>
-    </tr>
-    <tr>
-      <td><label for="news_edit_text">Text (HTML)</label></td>
-      <td><textarea name="news_edit_text" cols="100" rows="10" class="textbox" id="news_edit_text"></textarea></td>
-    </tr>
-    <tr>
-      <td><label for="news_edit_image">Image (&lt; 1mb)</label></td>
-      <td><input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-      <input type="file" name="news_edit_image" id="news_edit_image" accept=".jpeg,.jpg,.png" />
-      (If selected, replaces previous image)</td>
-    </tr>
-    <tr>
-      <td><label for="news_edit_link">Link (optional)</label></td>
-      <td><input name="news_edit_link" class="textbox" id="news_edit_link" size="100" /></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td><input type="submit" name="news_edit" id="news_edit" value="Apply" onclick="editNews(false)" />&nbsp;<input type="submit" name="news_edit" id="news_edit" value="Delete" onclick="editNews(true)" /></td>
-    </tr>
-  </table>
-</div>
-<div class="expandable" id="3">
 <h1>Credits</h1>
 	<table>
     <tr>
