@@ -19,5 +19,5 @@
   <a href="https://twitter.com/Pocket_Code" target="_blank" title="Visit us on Twitter!"><img src="img/social_twitter.png" alt="Twitter" /></a>
   <a href="https://plus.google.com/communities/116816272940643231129" target="_blank" title="Visit us on Google+!"><img src="img/social_googleplus.png" alt="Google+" /></a>
   <a href="https://www.youtube.com/channel/UCfFkdKeqYADOw8RtFTUR1Dw" target="_blank" title="Visit us on Youtube!"><img src="img/social_youtube.png" alt="Youtube" /></a><br />
-  &nbsp;<br /><a href="?page=imprint" class="link">Imprint</a>|<a href="?page=license" class="link">License</a>|<a href="?page=terms" class="link">Terms of Use and Service</a>|<a href="?page=policies" class="link">Policies</a><br/>&nbsp;<br />&copy; 2016 Catrobat
+  &nbsp;<br /><a href="imprint" class="link">Imprint</a>|<a href="license" class="link">License</a>|<a href="terms" class="link">Terms of Use and Service</a>|<a href="policies" class="link">Policies</a><br/>&nbsp;<br />&copy; <?=date("Y")?> Catrobat
 </div>

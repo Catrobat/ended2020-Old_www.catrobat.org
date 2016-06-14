@@ -11,7 +11,7 @@ if (isset($_GET["sub"])) {
 <!DOCTYPE html>
 <html>
 <head>
-
+<base href="<?=substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/") + 1)?>">
 <meta charset="utf-8">
 <title>Catrobat</title>
 <!-- Style sheet for desktop view -->
@@ -139,44 +139,65 @@ function viewRating(index) {
 
 <ul id="navigation">
 	<li id="menu"><a href="#">&equiv;</a></li>
-  <li id="logo"><a href="?page=home"><img src="img/logo.png" alt="Logo" /></a></li>
-  <li<?=($page == "home" ? " class=\"active\"" : "")?>><a href="?page=home">HOME</a></li>
-  <li<?=($page == "apps" ? " class=\"active\"" : "")?>><a href="?page=apps">APPS</a>
+  <li id="logo"><a href="home"><img src="img/logo.png" alt="Logo" /></a></li>
+  <li<?=($page == "home" ? " class=\"active\"" : "")?>><a href="home">HOME</a></li>
+  <li<?=($page == "apps" ? " class=\"active\"" : "")?>><a href="apps">APPS</a>
     <ul>
-      <li<?=($sub == "code" ? " class=\"active\"" : "")?>><a href="?page=apps&amp;sub=code">POCKET CODE</a></li>
-      <li<?=($sub == "paint" ? " class=\"active\"" : "")?>><a href="?page=apps&amp;sub=paint">POCKET PAINT</a></li>
-      <!--<li<?=($sub == "mindstorms" ? " class=\"active\"" : "")?>><a href="?page=apps&amp;sub=mindstorms">MINDSTORMS</a></li>
-      <li<?=($sub == "phiro" ? " class=\"active\"" : "")?>><a href="?page=apps&amp;sub=phiro">PHIRO</a></li>
-      <li<?=($sub == "drone" ? " class=\"active\"" : "")?>><a href="?page=apps&amp;sub=drone">DRONE</a></li>
-      <li<?=($sub == "arduino" ? " class=\"active\"" : "")?>><a href="?page=apps&amp;sub=arduino">ARDUINO</a></li>-->
+      <li<?=($sub == "code" ? " class=\"active\"" : "")?>><a href="apps/code">POCKET CODE</a></li>
+      <li<?=($sub == "paint" ? " class=\"active\"" : "")?>><a href="apps/paint">POCKET PAINT</a></li>
+      <!--<li<?=($sub == "mindstorms" ? " class=\"active\"" : "")?>><a href="apps/mindstorms">MINDSTORMS</a></li>
+      <li<?=($sub == "phiro" ? " class=\"active\"" : "")?>><a href="apps/phiro">PHIRO</a></li>
+      <li<?=($sub == "drone" ? " class=\"active\"" : "")?>><a href="apps/drone">DRONE</a></li>
+      <li<?=($sub == "arduino" ? " class=\"active\"" : "")?>><a href="apps/arduino">ARDUINO</a></li>-->
     </ul>
   </li>
-  <li<?=($page == "news" ? " class=\"active\"" : "")?>><a href="?page=news">NEWS</a></li>
-  <li<?=($page == "research" ? " class=\"active\"" : "")?>><a href="?page=research">RESEARCH</a></li>
-  <!--<li<?=($page == "press" ? " class=\"active\"" : "")?>><a href="?page=press">PRESS</a>
+  <li<?=($page == "news" ? " class=\"active\"" : "")?>><a href="news">NEWS</a></li>
+  <li<?=($page == "research" ? " class=\"active\"" : "")?>><a href="research">RESEARCH</a></li>
+  <!--<li<?=($page == "press" ? " class=\"active\"" : "")?>><a href="press">PRESS</a>
     <ul>
-      <li<?=($sub == "releases" ? " class=\"active\"" : "")?>><a href="?page=press&amp;sub=releases">PRESS RELEASES</a></li>
-      <li<?=($sub == "prices" ? " class=\"active\"" : "")?>><a href="?page=press&amp;sub=prices">AWARDS</a></li>
-      <li<?=($sub == "resources" ? " class=\"active\"" : "")?>><a href="?page=press&amp;sub=resources">RESOURCES</a></li>
+      <li<?=($sub == "releases" ? " class=\"active\"" : "")?>><a href="press/releases">PRESS RELEASES</a></li>
+      <li<?=($sub == "prices" ? " class=\"active\"" : "")?>><a href="press/prices">AWARDS</a></li>
+      <li<?=($sub == "resources" ? " class=\"active\"" : "")?>><a href="press/resources">RESOURCES</a></li>
     </ul>
   </li>-->
-  <li<?=($page == "contribute" ? " class=\"active\"" : "")?>><a href="?page=contribute">CONTRIBUTE</a>
+  <li<?=($page == "contribute" ? " class=\"active\"" : "")?>><a href="contribute">CONTRIBUTE</a>
     <ul>
-      <li<?=($sub == "partners" ? " class=\"active\"" : "")?>><a href="?page=contribute&amp;sub=partners">PARTNERS</a></li>
-      <!--<li<?=($sub == "faq" ? " class=\"active\"" : "")?>><a href="?page=contribute&amp;sub=faq">FAQ</a></li>-->
-      <li<?=($sub == "credits" ? " class=\"active\"" : "")?>><a href="?page=contribute&amp;sub=credits">CREDITS</a></li>
+      <li<?=($sub == "partners" ? " class=\"active\"" : "")?>><a href="contribute/partners">PARTNERS</a></li>
+      <!--<li<?=($sub == "faq" ? " class=\"active\"" : "")?>><a href="contribute/faq">FAQ</a></li>-->
+      <li<?=($sub == "credits" ? " class=\"active\"" : "")?>><a href="contribute/credits">CREDITS</a></li>
     </ul>
   </li>
   <li><a href="https://edu.catrob.at/" target="_blank" class="analytics">EDU</a></li>
 </ul>
 
+<div id="content-background">
 <?php
 // Include content depending on $page
-if (($page == "apps" || $page == "press" || $page == "contribute") && $sub != "") {
-  include($page . "_" . $sub . ".php");
+// check if $page is valid
+$valid_pages = array("home" => array(),
+										 "apps" => array("code", "paint"),
+										 "news" => array(),
+										 "research" => array(),
+										 "contribute" => array("partners", "credits"),
+										 "imprint" => array(),
+										 "license" => array("additional", "agpl_v3", "ccbysa_v4", "user"),
+										 "policies" => array(),
+										 "terms" => array(),
+                     "404" => array());
+			 
+if (array_key_exists($page, $valid_pages) && ($sub == "" || in_array($sub, $valid_pages[$page]))) {
+	if ($sub != "") {
+		include($page . "_" . $sub . ".php");
+	} else {
+		include($page . ".php"); 
+	}
 } else {
-  include($page . ".php"); 
+	include("404.php");
 }
+?>
+</div>
+
+<?php
 // Include footer
 include("footer.php");
 ?>

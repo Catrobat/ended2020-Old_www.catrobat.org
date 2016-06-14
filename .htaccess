@@ -1,19 +1,37 @@
-<Files "credentials.txt">
-Order Allow,Deny
-Deny from all
-</Files>
+RewriteEngine on
 
-<Files "*.php">
-Order Allow,Deny
-Deny from all
-</Files>
+# disable directory indexing
+Options -Indexes 
 
-<Files "index.php">
-Order Allow,Deny
-Allow from all
-</Files>
+# rewrite all existing files except index.php, utils.php and css, js and image files to the 403 page
+#RewriteCond %{REQUEST_FILENAME} -f
+#RewriteCond %{REQUEST_URI} !\.(css|js|gif|jpe?g|png)$
+#RewriteCond %{REQUEST_URI} !(index|utils)\.php$
+#RewriteRule ^.*$ index.php?page=403
 
-<Files "utils.php">
-Order Allow,Deny
-Allow from all
-</Files>
+# rewrite basic urls of the form catrobat.org/sometext
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([0-9a-z_]+)(/?)$ index.php?page=$1 [NC]
+
+# rewrite basic urls of the form catrobat.org/sometext/moretext
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([0-9a-z_]+)/([0-9a-z_]+)(/?)$ index.php?page=$1&sub=$2 [NC]
+
+# rewrite all other non existing files to the 404 page
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ index.php?page=404 [NC]
+
+<FilesMatch "\..+$">
+ Order allow,deny
+ Deny from all
+ Satisfy All
+</FilesMatch>
+
+<FilesMatch "(^(index|utils)\.php)|(css|js|bmp|jpe?g|png|gif|ico)$">
+ Order allow,deny
+ Allow from all
+ Satisfy All
+</FilesMatch>

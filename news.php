@@ -22,7 +22,7 @@
         <div class="expandable">
           <h2><?=$data["headline"]?></h2>
           <span><?=date("F j, Y", strtotime($data["date"]))?></span><br />
-          <p><?=$data["text"]?></p>
+          <div style="margin: 8px 0 16px 0;"><?=$data["text"]?></div>
           <?php if ($data["link"] != "") { ?>
           <a class="button" href="<?=$data["link"]?>" target="_blank">Visit</a>
           <?php } ?>

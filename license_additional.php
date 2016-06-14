@@ -11,7 +11,7 @@
   under section 7 of the GNU Affero General Public License, version 3, for the parts of the Catrobat system necessary for running a Catrobat Program</h2>
   <br />Version 2.0, 5 October 2012</p>
   <p>Copyright © 2009 Free Software Foundation, Inc. <a href="http://fsf.org/" target="_blank">http://fsf.org</a>
-  <br />Copyright © 2011-2012 Catrobat Team <a href="?page=contribute&sub=credits">Credits</a></p>
+  <br />Copyright © 2011-2012 Catrobat Team <a href="contribute/credits">Credits</a></p>
   <p>This "Additional Term" exception for the "Parts of the Catrobat System Necessary for Running a Catrobat Program" is an additional permission under section 7 of the GNU Affero General Public License, version 3 ("AGPLv3"). It applies to parts of the Catrobat system bearing a notice placed by the copyright holder stating that these parts are governed by AGPLv3 along with this Additional Term.</p>
   <p>When you use code that was developed by the Catrobat team to compile a stand-alone application of a Catrobat Program, the Catrobat system combines portions of the Parts of the Catrobat System Necessary for Running a Catrobat Program and the Catrobat Program which you provided, in form of a stand-alone application. The purpose of this Additional Term is to allow compilation of a non-AGPL (including proprietary) program to use, in this way, the Parts of the Catrobat System Necessary for Running a Catrobat Program.</p>
   <p><strong>0. Definitions.</strong></p>

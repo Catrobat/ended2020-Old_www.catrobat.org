@@ -409,7 +409,7 @@ CREATE TABLE `news` (
   `image` text,
   `link` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 INSERT INTO news VALUES("1","Educators\' platform launched!","2016-01-30 00:00:00","Find, contribute, and share curricular material and tutorials about how Pocket Code can be used in schools!","educatrobat.jpg","http://edu.catrob.at/");
 INSERT INTO news VALUES("2","Be part of the #AliceGameJam with Pocket Code and Scratch!","2015-12-07 00:00:00","Participate in the Alice Game Jame with Pocket Code and Scratch during the Computer Science Education week from 12 7th to 13th! Create and design your own Alice themed game or story and share it with us!<br/>All information needed and some cool tutorial and media-stuff can be found on the special event website!<br/>Let\'s code and be part of something big!","AGJ_HoC.jpg","http://www.alicegamejam.com");
@@ -448,6 +448,8 @@ INSERT INTO news VALUES("34","Our Apps on the OLPC Tablet","2013-07-17 00:00:00"
 INSERT INTO news VALUES("35","National Innovation Award","2013-03-07 00:00:00","We were awarded the Austrian National Innovation Award 2013 in the category Multimedia by the Austrian Minister for Economics and Youth Development!","stprmm2013-003_kl.jpg","http://goo.gl/gBW1JF");
 INSERT INTO news VALUES("36","Google Summer of Code 2016","2016-02-29 00:00:00","Google selected us for the fifth time as a Google Summer of Code mentoring organization!","summerofcode.jpg","https://summerofcode.withgoogle.com/organizations/5495166580293632/");
 INSERT INTO news VALUES("37","Alice Game Jam Review","2016-03-10 00:00:00","Congratulations to the winners of the Alice Game Jam!<br/>Find a review, the winners and further information about this Game Jam on our G+ community page!","alicegamejamreview.jpg","https://plus.google.com/+CatrobatOrgAdmin/posts/TsQJsSzrUop");
+INSERT INTO news VALUES("38","Massive Open Online Course on Pocket Code","2016-04-10 00:00:00","With Google\'s CS4HS award, we created a MOOC for educators that includes 18 videos, many activities and excercises, and that has its own web community!","CS4HS_MOOC.jpg","http://catrob.at/fow");
+INSERT INTO news VALUES("39","Samsung and Catrobat #CodingForKids roadshow in yellow school bus","2016-05-01 00:00:00","@SamsungAT has joined forces with Catrobat to teach computational thinking skills to kids using Pocket Code using only smartphones!","SamsungRoadshow2016.jpg","http://catrob.at/CodingForKidsRoadshow");
 
 
 

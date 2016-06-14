@@ -10,7 +10,7 @@
   <h2>Privacy Policy</h2>
   <p>Version 1.2, 16 April 2013</p>
   <p>Your privacy and safety online are very important to us. To protect your privacy, we limit what we collect and what we publish on the website.</p>
-  <p>Using Catrobat Software Applications and Services (as described in our <a href="?page=terms">Terms of Use</a>)
+  <p>Using Catrobat Software Applications and Services (as described in our <a href="terms">Terms of Use</a>)
 You do not have to tell us anything about yourself to download Catrobat application software. When you download Catrobat software or sign up to a Catrobat website, we give you the option of telling us some things about yourself, but you do not have to fill in any of this information if you want to.</p>
   <p>Although you can try out user contributed programs on Catrobat websites without registering or providing any information, we collect some data on where you click and which parts of the site you visit. This 'click data' helps us figure out ways to improve the websites. We do not sell or rent your information to anyone.</p>
   <br />

@@ -117,7 +117,7 @@ if (isset($_POST["a"]) && !$errors) {
 			&& filesize($fname) == filesize("backups/" . $backups[0]["file"])) {
 				unlink($fname);
 			}
-			header("Location: http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
+			header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/") + 1));
 		} else {
 			$errors++;
 			$err_message .= "Invalid Login!<br />";
@@ -129,7 +129,7 @@ if (isset($_POST["a"]) && !$errors) {
 			// LOGOUT
 			$_SESSION = array();
 			session_destroy();
-			header("Location: http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']);
+			header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/") + 1));
 			// LOGOUT END
 		} else if ($_POST["a"] == "addnews") {
 			// ADD NEWS
@@ -142,10 +142,11 @@ if (isset($_POST["a"]) && !$errors) {
 				$errors++;
 				$err_message .= "Headline must not be empty!<br />";
 			}
-			if (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $date)) {
+			if (strtotime($date) === false) {
 				$errors++;
-				$err_message .= "Invalid date format! Use <em>yyyy-mm-dd</em>!<br />";
+				$err_message .= ($date == "" ? "Date must not be empty!<br />" : "\"$date\" is not a valid date format!<br />");
 			}
+			$date = date("Y-m-d", strtotime($date));
 			if ($text == "") {
 				$errors++;
 				$err_message .= "Text must not be empty!<br />";
@@ -206,10 +207,11 @@ if (isset($_POST["a"]) && !$errors) {
 					$errors++;
 					$err_message .= "Headline must not be empty!<br />";
 				}
-				if (!preg_match("/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/", $date)) {
+				if (strtotime($date) === false) {
 					$errors++;
-					$err_message .= "Invalid date format! Use <em>yyyy-mm-dd</em>!<br />";
+					$err_message .= ($date == "" ? "Date must not be empty!<br />" : "\"$date\" is not a valid date format!<br />");
 				}
+				$date = date("Y-m-d", strtotime($date));
 				if ($text == "") {
 					$errors++;
 					$err_message .= "Text must not be empty!<br />";
@@ -382,12 +384,24 @@ if (!$mysqli->connect_errno) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<base href="<?=substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/") + 1)?>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Catrobat Admin</title>
-<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 <link rel="shortcut icon" href="../img/favicon.ico" /> 
 
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+
 <script type="text/javascript">
+editor = (typeof tinymce != 'undefined');
+if (editor) {
+	tinymce.init({selector: '#news_text',
+								toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright link bullist numlist outdent indent code',
+								plugins: 'code link',
+								menubar: false});
+}
+
 news = {};
 credits = {};
 
@@ -495,8 +509,9 @@ function editNews(del) {
 	}
 	data.append("header", header.value);
 	data.append("date", date.value);
-	data.append("text", text.value);
+	data.append("text", editor ? tinyMCE.activeEditor.getContent() : text.value);
 	data.append("image", image.files[0]);
+	data.append("MAX_FILE_SIZE", "1048576");
 	data.append("link", url.value);
 	data.append("delete", del ? 1 : 0);
 	if (del && confirm("Do you really want to delete the article \"" + header.value + "\"?")) {
@@ -556,12 +571,12 @@ function updateEditForm() {
 	if (sel >= 1) {
 		header.value = news[sel - 1].headline;
 		date.value = news[sel - 1].date.match(/([0-9]+-[0-9]+-[0-9]+)/)[1];
-		text.value = news[sel - 1].text;
+		editor ? tinyMCE.activeEditor.setContent(news[sel - 1].text) : text.value = news[sel - 1].text;
 		url.value = news[sel - 1].link;
 	} else {
 		header.value = "";
 		date.value = "";
-		text.value = "";
+		editor ? tinyMCE.activeEditor.setContent("") : text.value = "";;
 		url.value = "";
 	}
 	
@@ -597,6 +612,13 @@ function filterCredits() {
 		}
 	}
 }
+
+function clearFilter() {
+	document.getElementById("credits_filter").value = "";
+	filterCredits();
+}
+
+
 </script>
 </head>
 
@@ -611,7 +633,7 @@ function filterCredits() {
 
 <div id="loading">
 	<div>
-		<img src="spinner.gif" /><br /><span>Loading...</span>
+		<img src="img/spinner.gif" /><br /><span>Loading...</span>
   </div>
 </div>
 
@@ -639,7 +661,7 @@ Logged in as <b>admin</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="document.
     </tr>
     <tr>
       <td><label for="news_date">Date</label></td>
-      <td><input name="news_date" type="text" class="textbox" id="news_date">
+      <td><input name="news_date" type="date" class="textbox" id="news_date">
       <input name="news_today" type="button" value="Today" onclick="setTodayDate()"/></td>
     </tr>
     <tr>
@@ -647,9 +669,8 @@ Logged in as <b>admin</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="document.
       <td><textarea name="news_text" cols="100" rows="10" class="textbox" id="news_text"></textarea></td>
     </tr>
     <tr>
-      <td><label for="news_image">Image (&lt; 1mb)</label></td>
-      <td><input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-      <input type="file" name="news_image" id="news_image" accept=".jpeg,.jpg,.png" /></td>
+      <td><label for="news_image">Image</label></td>
+      <td><input type="file" name="news_image" id="news_image" accept=".jpeg,.jpg,.png" /></td>
     </tr>
     <tr>
       <td><label for="news_link">Link (optional)</label></td>
@@ -686,7 +707,8 @@ Logged in as <b>admin</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="document.
     </tr>
     <tr>
       <td><label for="credits_filter">Filter</label></td>
-      <td><input name="credits_filter" id="credits_filter" type="text" class="textbox" onkeyup="filterCredits()"/></td>
+      <td><input name="credits_filter" id="credits_filter" type="text" onkeyup="filterCredits()"/>
+      <input type="button" name="credits_filter_clear" id="credits_filter_clear" value="Clear filter" onclick="clearFilter()" /></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
