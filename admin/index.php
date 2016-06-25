@@ -62,16 +62,14 @@ $link = "";
 $today = true;
 
 $credentials = file("../credentials.txt");
-$mysqli = new mysqli("localhost", trim($credentials[0]), trim($credentials[1]), "catrobat");
+$mysqli = new mysqli("localhost", trim($credentials[0]), trim($credentials[1]), "www_catrob_at");
 
 if ($mysqli->connect_errno) {
 		$errors++;
 		$err_message .= $mysqli->connect_error . "<br />";
 } else {
 	$mysqli->set_charset("utf8");
-	$query = "CREATE DATABASE IF NOT EXISTS `catrobat` DEFAULT CHARACTER SET utf8;
-USE `catrobat`;
-CREATE TABLE IF NOT EXISTS `news` (
+	$query = "CREATE TABLE IF NOT EXISTS `news` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `headline` TEXT NOT NULL,
 	`date` DATETIME,
@@ -252,7 +250,7 @@ if (isset($_POST["a"]) && !$errors) {
 			} else if ($_POST["delete"] == 1) {
 				$id = $mysqli->real_escape_string($_POST["select"]);
 				$header = $mysqli->real_escape_string(trim($_POST["header"]));
-				if ($mysqli->query("DELETE FROM `catrobat`.`news` WHERE `id`='$id';")) {
+				if ($mysqli->query("DELETE FROM `news` WHERE `id`='$id';")) {
 					$message .= "News post \"" . $header . "\" deleted!<br />";
 				} else {
 					$errors++;
@@ -278,7 +276,16 @@ if (isset($_POST["a"]) && !$errors) {
 					$errors++;
 					$err_message .= $mysqli->error . "<br />";
 				} else {
-					$message .= "Restored database from backup file \"" . $file . "\"!<br />";
+          do {
+            $result = $mysqli->store_result();
+            if ($mysqli->error != "") {
+              $errors++;
+              $err_message .= $mysqli->error . "<br />";
+            }
+          } while ($mysqli->next_result());
+          if (!$errors) {
+            $message .= "Restored database from backup file \"" . $file . "\"!<br />";
+          }
 				}
 				do {
 					$mysqli->store_result();
@@ -336,7 +343,7 @@ if (isset($_POST["a"]) && !$errors) {
 			$id = htmlspecialchars(trim(strip_tags($_POST["id"])));
 			$name = htmlspecialchars(trim(strip_tags($_POST["name"])));
 
-			if ($mysqli->query("DELETE FROM `catrobat`.`credits` WHERE `id`='$id';")) {
+			if ($mysqli->query("DELETE FROM `credits` WHERE `id`='$id';")) {
 				$message .= "\"" . $name . "\" was removed from the credits!<br />";
 			} else {
 				$errors++;

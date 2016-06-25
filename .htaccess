@@ -3,12 +3,6 @@ RewriteEngine on
 # disable directory indexing
 Options -Indexes 
 
-# rewrite all existing files except index.php, utils.php and css, js and image files to the 403 page
-#RewriteCond %{REQUEST_FILENAME} -f
-#RewriteCond %{REQUEST_URI} !\.(css|js|gif|jpe?g|png)$
-#RewriteCond %{REQUEST_URI} !(index|utils)\.php$
-#RewriteRule ^.*$ index.php?page=403
-
 # rewrite basic urls of the form catrobat.org/sometext
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

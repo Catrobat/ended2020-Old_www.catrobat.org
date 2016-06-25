@@ -11,7 +11,7 @@
   <h3>The Catrobat team includes:</h3>
   <?php 
 	$credentials = file("credentials.txt");
-	$mysqli = new mysqli("localhost", trim($credentials[0]), trim($credentials[1]), "catrobat");
+	$mysqli = new mysqli("localhost", trim($credentials[0]), trim($credentials[1]), "www_catrob_at");
 	if ($result = $mysqli->query("SELECT name FROM `credits` ORDER BY name ASC")) {
 		for ($i = 0; $i < $result->num_rows; $i++) {
 			$data = $result->fetch_array();

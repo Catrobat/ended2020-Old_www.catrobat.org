@@ -75,7 +75,7 @@
     <div style="order: 0; background-image: url(img/promo_pocketdrone.png);"></div>
     <div class="flex-container-v">
       <h2>Drone</h2>
-      <p>With the Drone plugin for Pocket Code users can now take off with their Parrot Drone. A large variety of new brick make it possible to program and control quadcopters on any mobile device. Features like the face detection give more possibilities and control to the user than ever before. By sticking bricks together in a “Lego-Style”-way users can explore the landscape around them from the view of their drone.</p>
+      <p>With the Drone plugin for Pocket Code users can now take off with their Parrot Drone. A large variety of new bricks make it possible to program and control quadcopters on any mobile device. Features like the face detection give more possibilities and control to the user than ever before. By sticking bricks together in a “Lego-Style”-way users can explore the landscape around them from the view of their drone.</p>
       <span><br /><b>Coming soon</b></span><!--<a class="button" href="?page=apps&amp;sub=drone">View details &raquo;</a>-->
     </div>
   </div>
