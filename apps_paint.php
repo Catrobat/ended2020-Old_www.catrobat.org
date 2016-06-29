@@ -46,6 +46,10 @@
 </div>
 
 <div class="content">
+
+  <div class="extension mobile">
+    <div style="order: 0; background-image: url(img/pocketcode_assets.png);"></div>
+  </div>
   <div id="background-assets" class="flex-container-h promo left-align">
     <div class="flex-container-v left-align">
       <h2>Explore our Assets</h2>

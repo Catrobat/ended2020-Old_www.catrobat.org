@@ -45,6 +45,10 @@
 </div>
 
 <div class="content bottom-padding">
+
+  <div class="extension mobile">
+    <div style="order: 0; background-image: url(img/pocketcode_community.png);"></div>
+  </div>
   <div id="background-community" class="flex-container-h promo left-align">
     <div class="flex-container-v left-align">
       <h2>Our Community</h2>
@@ -53,6 +57,9 @@
     </div>
   </div>
   
+  <div class="extension mobile">
+    <div style="order: 0; background-image: url(img/pocketcode_tutorials.png);"></div>
+  </div>
   <div id="background-tutorials" class="flex-container-h promo right-align">
     <div class="flex-container-v left-align">
       <h2>Tutorials</h2>

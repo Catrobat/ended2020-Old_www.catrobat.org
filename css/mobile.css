@@ -40,7 +40,7 @@
 	#navigation > #logo {
   	position: fixed;
 		top: 12px;
-		right: 0;
+		right: calc(50% - 30px);
 	}
 	
 	#navigation > li > ul {
@@ -92,6 +92,11 @@
 	
 	#partners img {
 	  width: 112px;
+  }
+  
+  #banner {
+    height: 192px; /* fallback for non v support */
+    height: 30vh;
   }
 
 	#banner-pocketcode {

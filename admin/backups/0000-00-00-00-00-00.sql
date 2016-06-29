@@ -5,7 +5,7 @@ CREATE TABLE `credits` (
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=455 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=459 DEFAULT CHARSET=utf8;
 
 INSERT INTO credits VALUES("269","Abdelbasset Amara");
 INSERT INTO credits VALUES("408","Adam Ujvari");
@@ -66,6 +66,7 @@ INSERT INTO credits VALUES("310","Christian Burghard");
 INSERT INTO credits VALUES("23","Christian Hartinger");
 INSERT INTO credits VALUES("32","Christian Hofer");
 INSERT INTO credits VALUES("393","Christian Jung");
+INSERT INTO credits VALUES("457","Christian Leopold");
 INSERT INTO credits VALUES("131","Christian Lesjak");
 INSERT INTO credits VALUES("307","Christian M. Hofer");
 INSERT INTO credits VALUES("357","Christian Reisinger");
@@ -190,12 +191,14 @@ INSERT INTO credits VALUES("404","Kirshan Kumar Luhana");
 INSERT INTO credits VALUES("99","Kuang Hui Tseng");
 INSERT INTO credits VALUES("63","Kyoko Slany");
 INSERT INTO credits VALUES("374","Laura Bebek");
+INSERT INTO credits VALUES("456","Leo Novak");
 INSERT INTO credits VALUES("6","Lisa Kehrer");
 INSERT INTO credits VALUES("324","Luca Franceschini");
 INSERT INTO credits VALUES("411","Lukas Fritz");
 INSERT INTO credits VALUES("209","Lukas Krisper");
 INSERT INTO credits VALUES("415","Lukas Loibnegger");
 INSERT INTO credits VALUES("354","Lukas Mayr");
+INSERT INTO credits VALUES("458","Lukas Pichler");
 INSERT INTO credits VALUES("247","Lukas Prokop");
 INSERT INTO credits VALUES("344","Lukas Radacher");
 INSERT INTO credits VALUES("229","Lukas Resch");
@@ -268,6 +271,7 @@ INSERT INTO credits VALUES("109","Nikolaus Koller");
 INSERT INTO credits VALUES("11","Nikolaus Steininger");
 INSERT INTO credits VALUES("355","Nikolaus Tiesenhausen");
 INSERT INTO credits VALUES("222","Norbert Spot");
+INSERT INTO credits VALUES("455","Oliver Papst");
 INSERT INTO credits VALUES("111","Oliver Prentner");
 INSERT INTO credits VALUES("421","Oliver Zott");
 INSERT INTO credits VALUES("36","Othmar Ruprecht");
@@ -404,12 +408,12 @@ DROP TABLE news;
 CREATE TABLE `news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `headline` text NOT NULL,
-  `date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `date` datetime NOT NULL,
   `text` text NOT NULL,
-  `image` text,
+  `image` text NOT NULL,
   `link` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 INSERT INTO news VALUES("1","Educators\' platform launched!","2016-01-30 00:00:00","Find, contribute, and share curricular material and tutorials about how Pocket Code can be used in schools!","educatrobat.jpg","http://edu.catrob.at/");
 INSERT INTO news VALUES("2","Be part of the #AliceGameJam with Pocket Code and Scratch!","2015-12-07 00:00:00","Participate in the Alice Game Jame with Pocket Code and Scratch during the Computer Science Education week from 12 7th to 13th! Create and design your own Alice themed game or story and share it with us!<br/>All information needed and some cool tutorial and media-stuff can be found on the special event website!<br/>Let\'s code and be part of something big!","AGJ_HoC.jpg","http://www.alicegamejam.com");
