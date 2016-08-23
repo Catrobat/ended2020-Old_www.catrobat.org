@@ -4,7 +4,7 @@ if(empty($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] !== "on") {
   exit();
 }
 
-session_set_cookie_params(0, "/admin/", "", true, true);
+session_set_cookie_params(0, "", "", true, true);
 session_start();
 
 function backup_tables($mysqli, $fname) {
@@ -114,7 +114,7 @@ if (isset($_POST["a"]) && !$errors) {
   if ($_POST["a"] == "login") {
     // LOGIN
     session_regenerate_id();
-    $_SESSION["logged_in"] = hash_equals(sha1($_POST["login_password"]), "81fe8bfe87576c3ecb22426f8e57847382917acf") && $_POST["login_user"] == "admin";
+    $_SESSION["logged_in"] = hash_equals(sha1($_POST["login_password"]), "81fe8bfe87576c3ecb22426f8e57847382917acf") && $_POST["login_user"] === "admin";
     if ($_SESSION["logged_in"]) {
       // Do database backup on login
       $fname = "backups/" . date("Y-m-d-H-m-s") . ".sql";
