@@ -1,4 +1,6 @@
 <?php
+include("update.php");
+
 $page = "home";
 $sub = "";
 if (isset($_GET["page"])) {
