@@ -1,11 +1,9 @@
 <?php
 if (isset($_SERVER['HTTPS_X_HUB_SIGNATURE']) && isset($_SERVER['HTTPS_X_GITHUB_EVENT']) && $_SERVER['HTTPS_X_GITHUB_EVENT'] === "push") {
 
-  $credentials = file("credentials.txt");
-
   $payload = file_get_contents('php://input');
   $hmac_delivered = $_SERVER['HTTPS_X_HUB_SIGNATURE'];
-  $hmac_expected = "sha1=" . hash_hmac("sha1", $payload, trim($credentials[3]));
+  $hmac_expected = "sha1=" . hash_hmac("sha1", $payload, $webhooks_secret);
 
   $str = "Date: " . date("Y-m-d H:i:s") . "\n";
   $str .= "Origin: " . $_SERVER["REMOTE_ADDR"] . "\n";

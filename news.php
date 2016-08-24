@@ -10,12 +10,11 @@
   <br />&nbsp;<br />
     
   <?php
-	$credentials = file("credentials.txt");
-	$mysqli = new mysqli("localhost", trim($credentials[0]), trim($credentials[1]), trim($credentials[2]));
-	if ($result = $mysqli->query("SELECT * FROM `news` ORDER BY date DESC")) {
-		for ($i = 0; $i < $result->num_rows; $i++) {
-			$data = $result->fetch_array();
-			?>
+  $mysqli = new mysqli("localhost", $mysql_user, $mysql_password, $mysql_database);
+  if ($result = $mysqli->query("SELECT * FROM `news` ORDER BY date DESC")) {
+    for ($i = 0; $i < $result->num_rows; $i++) {
+      $data = $result->fetch_array();
+      ?>
       <a class="anchor" name="<?=($result->num_rows - $i)?>" id="<?=($result->num_rows - $i)?>"></a>
       <div class="flex-container-h news">
         <div style="order: <?=($i % 2)?>"><img src="img/news/<?=$data["image"]?>" alt="News-Image" /></div>
@@ -30,10 +29,10 @@
       </div>
       <hr />
       <?php
-		}
-		$result->close();
-	}
-	$mysqli->close();
-	?>
+    }
+    $result->close();
+  }
+  $mysqli->close();
+  ?>
 
 </div>

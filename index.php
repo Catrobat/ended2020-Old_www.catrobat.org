@@ -1,4 +1,6 @@
 <?php
+  
+include("credentials.php");
 include("update.php");
 
 $page = "home";

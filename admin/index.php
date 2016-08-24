@@ -7,6 +7,8 @@ if(empty($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] !== "on") {
 session_set_cookie_params(0, "", "", true, true);
 session_start();
 
+include("../credentials.php");
+
 function backup_tables($mysqli, $fname) {
   //get all of the tables
   $tables = array();
@@ -59,6 +61,48 @@ function backup_tables($mysqli, $fname) {
   return TRUE;
 }
 
+function login($user, $pass) {
+
+  $_SESSION["logged_in"] = false;
+
+  if ($user === $super_user && $pass === $super_password) {
+    // Failsafe login
+    $_SESSION["logged_in"] = true;
+    $_SESSION["logged_in_user"] = "Administrator";
+    return 2;
+  }
+
+  $out = 0;
+
+  $ldap_conn = ldap_connect($ldap_server);
+
+  ldap_set_option($ldap_conn, LDAP_OPT_PROTOCOL_VERSION, 3);
+
+  if ($bind = ldap_bind($ldap_conn, $ldap_user, $ldap_pass)) {
+    // Search for user with given name
+    $ldap_search_results = ldap_search($ldap_conn, $ldap_dn, "cn=$user", array("displayname","memberof"));
+    $ldap_record = ldap_get_entries($ldap_conn, $ldap_search_results);
+    $out = -1;
+    if($ldap_record["count"] > 0){
+      $ldap_record = $ldap_record[0];
+      $out = -2;
+      // Try to login as the user
+      if($bind2 = @ldap_bind($ldap_conn, $ldap_record["dn"], $pass)) {
+        // Check if user is in required group to login
+        if (array_search($ldap_group, $ldap_record["memberof"]) !== FALSE) {
+          $_SESSION["logged_in"] = true;
+          $_SESSION["logged_in_user"] = $ldap_record["displayname"][0];
+          $out = 1;
+        } else {
+          $out = -3;
+        }
+      }
+    }
+  }
+  
+  return $out;
+}
+
 $errors = 0;
 $err_message = "";
 $message = "";
@@ -70,8 +114,7 @@ $image = "";
 $link = "";
 $today = true;
 
-$credentials = file("../credentials.txt");
-$mysqli = @new mysqli("localhost", trim($credentials[0]), trim($credentials[1]), trim($credentials[2]));
+$mysqli = new mysqli("localhost", $mysql_user, $mysql_password, $mysql_database);
 
 if ($mysqli->connect_errno) {
     $errors++;
@@ -114,7 +157,7 @@ if (isset($_POST["a"]) && !$errors) {
   if ($_POST["a"] == "login") {
     // LOGIN
     session_regenerate_id();
-    $_SESSION["logged_in"] = hash_equals(sha1($_POST["login_password"]), "81fe8bfe87576c3ecb22426f8e57847382917acf") && $_POST["login_user"] === "admin";
+    $l = login($_POST["login_user"], $_POST["login_password"]);
     if ($_SESSION["logged_in"]) {
       // Do database backup on login
       $fname = "backups/" . date("Y-m-d-H-m-s") . ".sql";
@@ -127,7 +170,7 @@ if (isset($_POST["a"]) && !$errors) {
       header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/") + 1));
     } else {
       $errors++;
-      $err_message .= "Invalid Login!<br />";
+      $err_message .= ($l > -2) ? "Could not connect to login server!<br />" : "Invalid username and/or password!<br />";
     }
     // LOGIN END
   } else if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
@@ -667,7 +710,7 @@ if ($logged_in == true) { ?>
 <div id="logininfo">
 <form action="" method="post" enctype="multipart/form-data" name="logout" id="logout">
 <input name="a" type="hidden" value="logout" />
-Logged in as <b>admin</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="document.getElementById('logout').submit();">Logout</a>
+Logged in as <b><?=$_SESSION["logged_in_user"]?></b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="document.getElementById('logout').submit();">Logout</a>
 </form>
 </div>
 
