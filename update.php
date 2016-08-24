@@ -3,7 +3,7 @@ if (isset($_SERVER['HTTPS_X_HUB_SIGNATURE']) && isset($_SERVER['HTTPS_X_GITHUB_E
 
   $payload = file_get_contents('php://input');
   $hmac_delivered = $_SERVER['HTTPS_X_HUB_SIGNATURE'];
-  $hmac_expected = "sha1=" . hash_hmac("sha1", $payload, $webhooks_secret);
+  $hmac_expected = "sha1=" . hash_hmac("sha1", $payload, webhooks_secret);
 
   $str = "Date: " . date("Y-m-d H:i:s") . "\n";
   $str .= "Origin: " . $_SERVER["REMOTE_ADDR"] . "\n";

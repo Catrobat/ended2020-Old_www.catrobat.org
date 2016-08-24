@@ -65,7 +65,7 @@ function login($user, $pass) {
 
   $_SESSION["logged_in"] = false;
 
-  if ($user === $super_user && $pass === $super_password) {
+  if ($user === super_user && $pass === super_password) {
     // Failsafe login
     $_SESSION["logged_in"] = true;
     $_SESSION["logged_in_user"] = "Administrator";
@@ -74,13 +74,13 @@ function login($user, $pass) {
 
   $out = 0;
 
-  $ldap_conn = ldap_connect($ldap_server);
+  $ldap_conn = ldap_connect(ldap_server);
 
   ldap_set_option($ldap_conn, LDAP_OPT_PROTOCOL_VERSION, 3);
 
-  if ($bind = ldap_bind($ldap_conn, $ldap_user, $ldap_pass)) {
+  if ($bind = ldap_bind($ldap_conn, ldap_user, ldap_pass)) {
     // Search for user with given name
-    $ldap_search_results = ldap_search($ldap_conn, $ldap_dn, "cn=$user", array("displayname","memberof"));
+    $ldap_search_results = ldap_search($ldap_conn, ldap_dn, "cn=$user", array("displayname","memberof"));
     $ldap_record = ldap_get_entries($ldap_conn, $ldap_search_results);
     $out = -1;
     if($ldap_record["count"] > 0){
@@ -89,7 +89,7 @@ function login($user, $pass) {
       // Try to login as the user
       if($bind2 = @ldap_bind($ldap_conn, $ldap_record["dn"], $pass)) {
         // Check if user is in required group to login
-        if (array_search($ldap_group, $ldap_record["memberof"]) !== FALSE) {
+        if (array_search(ldap_group, $ldap_record["memberof"]) !== FALSE) {
           $_SESSION["logged_in"] = true;
           $_SESSION["logged_in_user"] = $ldap_record["displayname"][0];
           $out = 1;
@@ -114,7 +114,7 @@ $image = "";
 $link = "";
 $today = true;
 
-$mysqli = new mysqli("localhost", $mysql_user, $mysql_password, $mysql_database);
+$mysqli = new mysqli("localhost", mysql_user, mysql_password, mysql_database);
 
 if ($mysqli->connect_errno) {
     $errors++;
