@@ -1,16 +1,19 @@
 <?php
-if (isset($_SERVER['HTTPS_X_HUB_SIGNATURE']) && isset($_SERVER['HTTPS_X_GITHUB_EVENT']) && $_SERVER['HTTPS_X_GITHUB_EVENT'] === "push") {
+if (isset($_SERVER['HTTP_X_HUB_SIGNATURE']) && isset($_SERVER['HTTP_X_GITHUB_EVENT']) && $_SERVER['HTTP_X_GITHUB_EVENT'] === "push") {
 
+  // get payload, delivered hash and calculate expected hash
   $payload = file_get_contents('php://input');
-  $hmac_delivered = $_SERVER['HTTPS_X_HUB_SIGNATURE'];
+  $hmac_delivered = $_SERVER['HTTP_X_HUB_SIGNATURE'];
   $hmac_expected = "sha1=" . hash_hmac("sha1", $payload, webhooks_secret);
 
+  // collect some information
   $str = "Date: " . date("Y-m-d H:i:s") . "\n";
   $str .= "Origin: " . $_SERVER["REMOTE_ADDR"] . "\n";
 
   $str .= "Expected HMAC: $hmac_expected\n";
   $str .= "Delivered HMAC: $hmac_delivered\n";
   
+  // check if hashes match
   if (hash_equals ($hmac_expected, $hmac_delivered)) {
     $str .= "HMAC is ok!\n";
     $payload = json_decode($payload);
