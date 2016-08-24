@@ -35,7 +35,7 @@ function backup_tables($mysqli, $fname) {
         for($j=0; $j < $num_fields; $j++)
         {
           $row[$j] = addslashes($row[$j]);
-          $row[$j] = ereg_replace("\n","\\n",$row[$j]);
+          $row[$j] = preg_replace("/\n/","\\n",$row[$j]);
           if (isset($row[$j])) { $return.= '"'.$row[$j].'"' ; } else { $return.= '""'; }
           if ($j < ($num_fields-1)) { $return.= ','; }
         }
@@ -71,7 +71,7 @@ $link = "";
 $today = true;
 
 $credentials = file("../credentials.txt");
-$mysqli = new mysqli("localhost", trim($credentials[0]), trim($credentials[1]), trim($credentials[2]));
+$mysqli = @new mysqli("localhost", trim($credentials[0]), trim($credentials[1]), trim($credentials[2]));
 
 if ($mysqli->connect_errno) {
     $errors++;
@@ -120,8 +120,8 @@ if (isset($_POST["a"]) && !$errors) {
       $fname = "backups/" . date("Y-m-d-H-m-s") . ".sql";
       backup_tables($mysqli, $fname);
       // Check diff between latest backup
-      if (count($backups) && md5_file($fname) == md5_file("backups/" . $backups[0]["file"])
-      && filesize($fname) == filesize("backups/" . $backups[0]["file"])) {
+      if (count($backups) && md5_file($fname) == md5_file("backups/" . $backups[count($backups) - 1]["file"])
+      && filesize($fname) == filesize("backups/" . $backups[count($backups) - 1]["file"])) {
         unlink($fname);
       }
       header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/") + 1));
@@ -757,7 +757,7 @@ Logged in as <b>admin</b>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" onclick="document.
 </div>
 <br />&nbsp;<br />
 <?php } else { ?>
-<div id="logininfo">Not logged in!</div>
+<div id="logininfo">Not logged in! <a href="../">Back to catrobat.org</a></div>
 <div class="expandable" id="3">
 <h1>Login</h1>
 <form id="login" name="login" method="post" action="">

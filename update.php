@@ -1,18 +1,17 @@
 <?php
-if (isset($_SERVER['HTTP_X_HUB_SIGNATURE'])) {
+if (isset($_SERVER['HTTPS_X_HUB_SIGNATURE']) && isset($_SERVER['HTTPS_X_GITHUB_EVENT']) && $_SERVER['HTTPS_X_GITHUB_EVENT'] === "push") {
 
   $credentials = file("credentials.txt");
 
   $payload = file_get_contents('php://input');
-  $hmac_delivered = $_SERVER['HTTP_X_HUB_SIGNATURE'];
-  $hmac_expected = "sha1=" . hash_hmac("sha1", $payload, trim(credentials[3]));
+  $hmac_delivered = $_SERVER['HTTPS_X_HUB_SIGNATURE'];
+  $hmac_expected = "sha1=" . hash_hmac("sha1", $payload, trim($credentials[3]));
 
-  $str = "date: " . date("Y-m-d H:i:s") . "\n";
-  $str .= "origin: " . $_SERVER["REMOTE_ADDR"] . "\n";
+  $str = "Date: " . date("Y-m-d H:i:s") . "\n";
+  $str .= "Origin: " . $_SERVER["REMOTE_ADDR"] . "\n";
 
-  $str .= "expected HMAC: $hmac_expected\n";
-
-  $str .= "delivered HMAC: $hmac_delivered\n";
+  $str .= "Expected HMAC: $hmac_expected\n";
+  $str .= "Delivered HMAC: $hmac_delivered\n";
   
   if (hash_equals ($hmac_expected, $hmac_delivered)) {
     $str .= "HMAC is ok!\n";
@@ -31,7 +30,7 @@ if (isset($_SERVER['HTTP_X_HUB_SIGNATURE'])) {
   }
 
   file_put_contents("lastupdate.log", $str);
-  die(nl2br($str));
+  die($str);
   
 }
 ?>
