@@ -1,6 +1,6 @@
 <?php
 if(empty($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] !== "on") {
-  header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+  header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/") + 1));
   exit();
 }
 
@@ -63,6 +63,7 @@ function backup_tables($mysqli, $fname) {
 
 function login($user, $pass) {
 
+  session_regenerate_id();
   $_SESSION["logged_in"] = false;
 
   if ($user === super_user && $pass === super_password) {
@@ -72,6 +73,8 @@ function login($user, $pass) {
     return 2;
   }
 
+  ldap_set_option(NULL, LDAP_OPT_DEBUG_LEVEL, 7);
+  
   $out = 0;
 
   $ldap_conn = ldap_connect(ldap_server);
@@ -87,7 +90,7 @@ function login($user, $pass) {
       $ldap_record = $ldap_record[0];
       $out = -2;
       // Try to login as the user
-      if($bind2 = @ldap_bind($ldap_conn, $ldap_record["dn"], $pass)) {
+      if($bind2 = ldap_bind($ldap_conn, $ldap_record["dn"], $pass)) {
         // Check if user is in required group to login
         if (array_search(ldap_group, $ldap_record["memberof"]) !== FALSE) {
           $_SESSION["logged_in"] = true;
@@ -99,7 +102,7 @@ function login($user, $pass) {
       }
     }
   }
-  
+  ldap_unbind($ldap_conn);
   return $out;
 }
 
@@ -156,9 +159,7 @@ arsort($backups);
 if (isset($_POST["a"]) && !$errors) {
   if ($_POST["a"] == "login") {
     // LOGIN
-    session_regenerate_id();
-    $l = login($_POST["login_user"], $_POST["login_password"]);
-    if ($_SESSION["logged_in"]) {
+    if (($l = login($_POST["login_user"], $_POST["login_password"])) > 0) {
       // Do database backup on login
       $fname = "backups/" . date("Y-m-d-H-m-s") . ".sql";
       backup_tables($mysqli, $fname);
@@ -167,10 +168,23 @@ if (isset($_POST["a"]) && !$errors) {
       && filesize($fname) == filesize("backups/" . $backups[count($backups) - 1]["file"])) {
         unlink($fname);
       }
-      header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/") + 1));
+      header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/") + 1));
     } else {
       $errors++;
-      $err_message .= ($l > -2) ? "Could not connect to login server!<br />" : "Invalid username and/or password!<br />";
+      switch ($l) {
+        case 0:
+        $err_message .= "Could not connect to login server!<br />";
+        break;
+
+        case -1:
+        case -2:
+        $err_message .= "Invalid username and/or password!<br />";
+        break;
+
+        case -3:
+        $err_message .= "No permission to login!<br />";
+        break;
+      }
     }
     // LOGIN END
   } else if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
@@ -220,7 +234,7 @@ if (isset($_POST["a"]) && !$errors) {
           break;
         }
       }
-      if (!preg_match("/(ftp|http[s]?):\/\/(www.)?[^\.]+[\.]?[\.][a-z0-9]/i", $link) && $link != "") {
+      if (!preg_match("/^(ftp|http[s]?):\/\/(www.)?([^\.]+\.)+[a-z0-9]+.*$/i", $link) && $link != "") {
         $errors++;
         $err_message .= "\"" . $link . "\" is not a valid link!<br />";
       }
@@ -283,7 +297,7 @@ if (isset($_POST["a"]) && !$errors) {
             break;
           }
         }
-        if (!preg_match("/(ftp|http[s]?):\/\/(www.)?[^\.]+[\.]?[\.][a-z0-9]/i", $link) && $link != "") {
+        if (!preg_match("/^(ftp|http[s]?):\/\/(www.)?([^\.]+\.)+[a-z0-9]+.*$/i", $link) && $link != "") {
           $errors++;
           $err_message .= "\"" . $link . "\" is not a valid link!<br />";
         }
