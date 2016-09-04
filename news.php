@@ -10,7 +10,7 @@
   <br />&nbsp;<br />
     
   <?php
-  $mysqli = new mysqli("localhost", mysql_user, mysql_password, mysql_database);
+  $mysqli = new mysqli(mysql_host, mysql_user, mysql_password, mysql_database);
   if ($result = $mysqli->query("SELECT * FROM `news` ORDER BY date DESC")) {
     for ($i = 0; $i < $result->num_rows; $i++) {
       $data = $result->fetch_array();

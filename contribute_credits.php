@@ -10,7 +10,7 @@
   <h1>Credits</h1>
   <h3>The Catrobat team includes:</h3>
   <?php 
-  $mysqli = new mysqli("localhost", mysql_user, mysql_password, mysql_database);
+  $mysqli = new mysqli(mysql_host, mysql_user, mysql_password, mysql_database);
   if ($result = $mysqli->query("SELECT name FROM `credits` ORDER BY name ASC")) {
     for ($i = 0; $i < $result->num_rows; $i++) {
       $data = $result->fetch_array();

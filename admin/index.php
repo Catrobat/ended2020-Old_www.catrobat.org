@@ -1,10 +1,11 @@
 <?php
-if(empty($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] !== "on") {
-  header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/") + 1));
-  exit();
-}
+// HTTPS enforcing by PHP not required since server runs in container and TLS is slapped on it from the outside
+//if(empty($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] !== "on") {
+//  header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/") + 1));
+//  exit();
+//}
 
-session_set_cookie_params(0, "", "", true, true);
+//session_set_cookie_params(0, "", "", true, true);
 session_start();
 
 include("../credentials.php");
@@ -77,9 +78,10 @@ function login($user, $pass) {
   
   $out = 0;
 
-  $ldap_conn = ldap_connect(ldap_server);
+  $ldap_conn = ldap_connect(ldap_server, ldap_port);
 
   ldap_set_option($ldap_conn, LDAP_OPT_PROTOCOL_VERSION, 3);
+  ldap_set_option($ldap_conn, LDAP_OPT_NETWORK_TIMEOUT, 4);
 
   if ($bind = ldap_bind($ldap_conn, ldap_user, ldap_pass)) {
     // Search for user with given name
@@ -117,7 +119,7 @@ $image = "";
 $link = "";
 $today = true;
 
-$mysqli = new mysqli("localhost", mysql_user, mysql_password, mysql_database);
+$mysqli = new mysqli(mysql_host, mysql_user, mysql_password, mysql_database);
 
 if ($mysqli->connect_errno) {
     $errors++;
@@ -168,7 +170,8 @@ if (isset($_POST["a"]) && !$errors) {
       && filesize($fname) == filesize("backups/" . $backups[count($backups) - 1]["file"])) {
         unlink($fname);
       }
-      header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/") + 1));
+      header("Location: http://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/") + 1));
+      exit();
     } else {
       $errors++;
       switch ($l) {
@@ -193,7 +196,7 @@ if (isset($_POST["a"]) && !$errors) {
       // LOGOUT
       $_SESSION = array();
       session_destroy();
-      header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/") + 1));
+      header("Location: http://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/") + 1));
       // LOGOUT END
     } else if ($_POST["a"] == "addnews") {
       // ADD NEWS
