@@ -72,13 +72,15 @@ function login($user, $pass) {
     $_SESSION["logged_in"] = true;
     $_SESSION["logged_in_user"] = "Administrator";
     return 2;
+  } else if ($user === super_user) {
+    return -2;
   }
 
   ldap_set_option(NULL, LDAP_OPT_DEBUG_LEVEL, 7);
   
   $out = 0;
 
-  $ldap_conn = ldap_connect(ldap_server, ldap_port);
+  $ldap_conn = ldap_connect(ldap_server);
 
   ldap_set_option($ldap_conn, LDAP_OPT_PROTOCOL_VERSION, 3);
   ldap_set_option($ldap_conn, LDAP_OPT_NETWORK_TIMEOUT, 4);
@@ -191,7 +193,14 @@ if (isset($_POST["a"]) && !$errors) {
     }
     // LOGIN END
   } else if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
-    // These actions can only be performed if logged in!
+    // These actions can only be performed if logged in, log them in a file!
+    if (!file_exists("../logs") && !is_dir("../logs")) {
+      mkdir("../logs");         
+    } 
+    $logfile = fopen("../logs/edits.log", "a");
+    fwrite($logfile, date("[Y-m-d H:m:s]") . "[" . $_SESSION["logged_in_user"] . "] " . implode(", ", $_POST) . "\n");
+    fclose($logfile);
+    
     if ($_POST["a"] == "logout") {
       // LOGOUT
       $_SESSION = array();
@@ -305,7 +314,7 @@ if (isset($_POST["a"]) && !$errors) {
           $err_message .= "\"" . $link . "\" is not a valid link!<br />";
         }
         if (!$errors) {
-          if ($mysqli->query("UPDATE `catrobat`.`news` SET `headline`='$header', `date`='$date 00:00:00', `text`='$text', " . (isset($_FILES["image"]) && is_uploaded_file($_FILES["image"]["tmp_name"]) ? "`image`='$image'," : "") . "`link`='$link' WHERE `id`='$id';")) {
+          if ($mysqli->query("UPDATE `news` SET `headline`='$header', `date`='$date 00:00:00', `text`='$text', " . (isset($_FILES["image"]) && is_uploaded_file($_FILES["image"]["tmp_name"]) ? "`image`='$image'," : "") . "`link`='$link' WHERE `id`='$id';")) {
             $message .= "News post \"" . $header . "\" successfully edited!<br />";
             if (isset($_FILES["image"]) && is_uploaded_file($_FILES["image"]["tmp_name"])) {
               move_uploaded_file($_FILES["image"]["tmp_name"], "../img/news/" .$image);
@@ -420,7 +429,7 @@ if (isset($_POST["a"]) && !$errors) {
       }
       $mysqli->store_result();
 
-      echo("ERRORS: " . $errors . "<br />" . $err_message . $message);
+      echo("ERRORS: $errors<br />" . $err_message . $message);
       $credits = array();
       if ($result = $mysqli->query("SELECT * FROM `credits`")) {
         while ($data = $result->fetch_array()) {
@@ -429,6 +438,16 @@ if (isset($_POST["a"]) && !$errors) {
       }
       die(json_encode($credits));
       // DELETE CREDITS END
+    } else if ($_POST["a"] == "update") {
+      // MANUAL UPDATE
+      $output = array();
+      $val = 0;
+      exec("git pull 2>&1", $output, $val);
+      if ($val != 0) {
+        $errors++;
+      }
+      die("ERRORS: $errors<br />" . implode(" ", $output) . "<br />");
+      // MANUAL UPDATE END
     }
   }
 }
@@ -643,6 +662,14 @@ function restoreBackup() {
   }, "Restoring database, this may take a while...");
 }
 
+function manualUpdate() {
+  var data = new FormData();
+  data.append("a", "update");
+  sendRequest(data, function(objstring){
+
+  });
+}
+
 function updateEditForm() {
   var sel = document.getElementById("news_select").selectedIndex;
   var header = document.getElementById("news_header");
@@ -701,7 +728,6 @@ function clearFilter() {
   document.getElementById("credits_filter").value = "";
   filterCredits();
 }
-
 
 </script>
 </head>
@@ -800,10 +826,10 @@ Logged in as <b><?=$_SESSION["logged_in_user"]?></b>&nbsp;&nbsp;|&nbsp;&nbsp;<a 
     </tr>
   </table>
 <br />
+<br />
 </div>
 <div class="expandable" id="4">
 <h1>Backups</h1>
-  <input name="a" type="hidden" value="backups" />
   <select name="backup_select" class="textbox" id="backup_select">
   <?php
   foreach ($backups as $b) {
