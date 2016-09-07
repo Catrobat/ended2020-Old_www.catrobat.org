@@ -10,15 +10,6 @@ body {
   background: #EEE;
 }
 
-h1 {
-  margin: 0;
-  font-size: 18px;
-  height: 32px;
-  line-height: 32px;
-  width: 100%;
-  background: linear-gradient(#EEE, #FFF);
-}
-
 h2 {
   margin: 0 0 4px 0;
   font-size: 16px;
@@ -48,6 +39,25 @@ table {
   background: #FFF;
   border: 1px solid #999;
   margin: 16px;
+  height: auto;
+  overflow: hidden;
+}
+
+.expandable > h1 {
+  margin: 0;
+  font-size: 18px;
+  height: 32px;
+  line-height: 32px;
+  width: 100%;
+  background: linear-gradient(#EEE, #FFF);
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.expandable:not(#login) > h1:hover {
+  cursor: pointer;
+  background: #FFF;
 }
 
 .credits {
@@ -65,7 +75,8 @@ table {
 
 #credits-container {
   width: 60vw;
-  max-height: 50vh;
+  max-height: 480px;
+  max-height: 40vh;
   overflow: auto;
   background: #EEE;
   border-radius: 2px;
@@ -93,7 +104,7 @@ table {
   font-size: 14px;
   opacity: 0;
   padding: 16px 32px 16px 32px;
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid #CA3535;
   background-color: #FF8080;
   cursor: default;
@@ -108,7 +119,7 @@ table {
   font-size: 14px;
   opacity: 0;
   padding: 16px 32px 16px 32px;
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid #35CA35;
   background-color: #80FF80;
   cursor: default;

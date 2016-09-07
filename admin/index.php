@@ -1,4 +1,5 @@
 <?php
+
 // HTTPS enforcing by PHP not required since server runs in container and TLS is slapped on it from the outside
 //if(empty($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] !== "on") {
 //  header("Location: https://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], "/") + 1));
@@ -62,6 +63,11 @@ function backup_tables($mysqli, $fname) {
   return TRUE;
 }
 
+define("E_CONNECTION", 0);
+define("E_NOT_FOUND", -1);
+define("E_CREDENTIALS", -2);
+define("E_GROUP", -3);
+
 function login($user, $pass) {
 
   session_regenerate_id();
@@ -73,12 +79,12 @@ function login($user, $pass) {
     $_SESSION["logged_in_user"] = "Administrator";
     return 2;
   } else if ($user === super_user) {
-    return -2;
+    return E_CREDENTIALS;
   }
 
   ldap_set_option(NULL, LDAP_OPT_DEBUG_LEVEL, 7);
   
-  $out = 0;
+  $out = E_CONNECTION;
 
   $ldap_conn = ldap_connect(ldap_server);
 
@@ -89,10 +95,10 @@ function login($user, $pass) {
     // Search for user with given name
     $ldap_search_results = ldap_search($ldap_conn, ldap_dn, "cn=$user", array("displayname","memberof"));
     $ldap_record = ldap_get_entries($ldap_conn, $ldap_search_results);
-    $out = -1;
+    $out = E_NOT_FOUND;
     if($ldap_record["count"] > 0){
       $ldap_record = $ldap_record[0];
-      $out = -2;
+      $out = E_CREDENTIALS;
       // Try to login as the user
       if($bind2 = ldap_bind($ldap_conn, $ldap_record["dn"], $pass)) {
         // Check if user is in required group to login
@@ -101,13 +107,17 @@ function login($user, $pass) {
           $_SESSION["logged_in_user"] = $ldap_record["displayname"][0];
           $out = 1;
         } else {
-          $out = -3;
+          $out = E_GROUP;
         }
       }
     }
   }
   ldap_unbind($ldap_conn);
   return $out;
+}
+
+function is_url($link) {
+  return (preg_match("/^(ftp|http[s]?):\/\/(www.)?([^\.]+\.)+[a-z0-9]+.*$/i", $link) || $link === "");
 }
 
 $errors = 0;
@@ -161,7 +171,7 @@ closedir($dir);
 arsort($backups);
 
 if (isset($_POST["a"]) && !$errors) {
-  if ($_POST["a"] == "login") {
+  if ($_POST["a"] === "login") {
     // LOGIN
     if (($l = login($_POST["login_user"], $_POST["login_password"])) > 0) {
       // Do database backup on login
@@ -177,37 +187,40 @@ if (isset($_POST["a"]) && !$errors) {
     } else {
       $errors++;
       switch ($l) {
-        case 0:
+        case E_CONNECTION:
         $err_message .= "Could not connect to login server!<br />";
         break;
 
-        case -1:
-        case -2:
+        case E_NOT_FOUND:
+        case E_CREDENTIALS:
         $err_message .= "Invalid username and/or password!<br />";
         break;
 
-        case -3:
+        case E_GROUP:
         $err_message .= "No permission to login!<br />";
         break;
       }
     }
     // LOGIN END
   } else if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
-    // These actions can only be performed if logged in, log them in a file!
-    if (!file_exists("../logs") && !is_dir("../logs")) {
-      mkdir("../logs");         
-    } 
-    $logfile = fopen("../logs/edits.log", "a");
-    fwrite($logfile, date("[Y-m-d H:m:s]") . "[" . $_SESSION["logged_in_user"] . "] " . implode(", ", $_POST) . "\n");
-    fclose($logfile);
+    // These actions can only be performed if logged in!
     
-    if ($_POST["a"] == "logout") {
+    if ($_POST["a"] !== "logout") {
+      if (!file_exists("../logs") && !is_dir("../logs")) {
+        mkdir("../logs");         
+      } 
+      $logfile = fopen("../logs/edits.log", "a");
+      fwrite($logfile, date("[Y-m-d H:m:s]") . "[" . $_SESSION["logged_in_user"] . "] " . implode(", ", $_POST) . "\n");
+      fclose($logfile);
+    }
+    
+    if ($_POST["a"] === "logout") {
       // LOGOUT
       $_SESSION = array();
       session_destroy();
       header("Location: http://" . $_SERVER['HTTP_HOST'] . substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], "/") + 1));
       // LOGOUT END
-    } else if ($_POST["a"] == "addnews") {
+    } else if ($_POST["a"] === "addnews") {
       // ADD NEWS
       $header = $mysqli->real_escape_string(trim(strip_tags($_POST["header"])));
       $date = $mysqli->real_escape_string(trim($_POST["date"]));
@@ -222,7 +235,7 @@ if (isset($_POST["a"]) && !$errors) {
         $errors++;
         $err_message .= ($date == "" ? "Date must not be empty!<br />" : "\"$date\" is not a valid date format!<br />");
       }
-      $date = date("Y-m-d", strtotime($date));
+      $date = date("Y-m-d H:m:s", strtotime($date));
       if ($text == "") {
         $errors++;
         $err_message .= "Text must not be empty!<br />";
@@ -246,13 +259,20 @@ if (isset($_POST["a"]) && !$errors) {
           break;
         }
       }
-      if (!preg_match("/^(ftp|http[s]?):\/\/(www.)?([^\.]+\.)+[a-z0-9]+.*$/i", $link) && $link != "") {
+      if (!is_url($link)) {
         $errors++;
         $err_message .= "\"" . $link . "\" is not a valid link!<br />";
       }
       if (!$errors) {
-        if ($mysqli->query("INSERT INTO `news` (`headline`, `date`, `text`, `image`, `link`) VALUES ('$header', '$date 00:00:00', '$text', '$image', '$link');")) {
-          move_uploaded_file($_FILES["image"]["tmp_name"], "../img/news/" .$image);
+        $filename = $image;
+        for ($i = 2; file_exists("../img/news/$filename"); $i++) {
+          $p = strrpos($image, ".");
+          $n = substr($image, 0, $p);
+          $e = substr($image, $p);
+          $filename = $n . "_$i$e";
+        }
+        if ($mysqli->query("INSERT INTO `news` (`headline`, `date`, `text`, `image`, `link`) VALUES ('$header', '$date', '$text', '$filename', '$link');")) {
+          move_uploaded_file($_FILES["image"]["tmp_name"], "../img/news/$filename");
           $message .= "News post \"" . $header . "\" successfully added!<br />";
         } else {
           $errors++;
@@ -261,7 +281,7 @@ if (isset($_POST["a"]) && !$errors) {
         $mysqli->store_result();
       }
 
-      echo("ERRORS: " . $errors . "<br />" . $err_message . $message);
+      echo("ERRORS: $errors<br />$err_message$message");
       $news = array();
       if ($result = $mysqli->query("SELECT * FROM `news` ORDER BY date DESC")) {
         while ($data = $result->fetch_array()) {
@@ -270,7 +290,7 @@ if (isset($_POST["a"]) && !$errors) {
       }
       die(json_encode($news));
       // ADD NEWS END
-    } else if ($_POST["a"] == "editnews") {
+    } else if ($_POST["a"] === "editnews") {
       // EDIT NEWS
       if ($_POST["delete"] == 0) {
         $id = $_POST["select"];
@@ -287,7 +307,7 @@ if (isset($_POST["a"]) && !$errors) {
           $errors++;
           $err_message .= ($date == "" ? "Date must not be empty!<br />" : "\"$date\" is not a valid date format!<br />");
         }
-        $date = date("Y-m-d", strtotime($date));
+        $date = date("Y-m-d H:m:s", strtotime($date));
         if ($text == "") {
           $errors++;
           $err_message .= "Text must not be empty!<br />";
@@ -309,15 +329,24 @@ if (isset($_POST["a"]) && !$errors) {
             break;
           }
         }
-        if (!preg_match("/^(ftp|http[s]?):\/\/(www.)?([^\.]+\.)+[a-z0-9]+.*$/i", $link) && $link != "") {
+        if (!is_url($link)) {
           $errors++;
           $err_message .= "\"" . $link . "\" is not a valid link!<br />";
         }
         if (!$errors) {
-          if ($mysqli->query("UPDATE `news` SET `headline`='$header', `date`='$date 00:00:00', `text`='$text', " . (isset($_FILES["image"]) && is_uploaded_file($_FILES["image"]["tmp_name"]) ? "`image`='$image'," : "") . "`link`='$link' WHERE `id`='$id';")) {
+          $filename = $image;
+          if (isset($_FILES["image"]) && is_uploaded_file($_FILES["image"]["tmp_name"])) {
+            for ($i = 2; file_exists("../img/news/$filename"); $i++) {
+              $p = strrpos($image, ".");
+              $n = substr($image, 0, $p);
+              $e = substr($image, $p);
+              $filename = $n . "_$i$e";
+            }
+          }
+          if ($mysqli->query("UPDATE `news` SET `headline`='$header', `date`='$date', `text`='$text', " . (isset($_FILES["image"]) && is_uploaded_file($_FILES["image"]["tmp_name"]) ? "`image`='$filename'," : "") . "`link`='$link' WHERE `id`='$id';")) {
             $message .= "News post \"" . $header . "\" successfully edited!<br />";
             if (isset($_FILES["image"]) && is_uploaded_file($_FILES["image"]["tmp_name"])) {
-              move_uploaded_file($_FILES["image"]["tmp_name"], "../img/news/" .$image);
+              move_uploaded_file($_FILES["image"]["tmp_name"], "../img/news/$filename");
             }
           } else {
             $errors++;
@@ -337,7 +366,7 @@ if (isset($_POST["a"]) && !$errors) {
         $mysqli->store_result();
       }
 
-      echo("ERRORS: " . $errors . "<br />" . $err_message . $message);
+      echo("ERRORS: $errors<br />$err_message$message");
       $news = array();
       if ($result = $mysqli->query("SELECT * FROM `news` ORDER BY date DESC")) {
         while ($data = $result->fetch_array()) {
@@ -346,7 +375,7 @@ if (isset($_POST["a"]) && !$errors) {
       }
       die(json_encode($news));
       // EDIT NEWS END
-    } else if ($_POST["a"] == "backups") {
+    } else if ($_POST["a"] === "backups") {
       // BACKUP RESTORE
       $file = $_POST["select"];
       if (file_exists("backups/" . $file)) {
@@ -373,7 +402,7 @@ if (isset($_POST["a"]) && !$errors) {
         $err_message .= "Backup file \"" . $file . "\" does not exist!<br />";
       }
 
-      echo("ERRORS: " . $errors . "<br />" . $err_message . $message);
+      echo("ERRORS: $errors<br />$err_message$message");
       $news = array();
       if ($result = $mysqli->query("SELECT * FROM `news` ORDER BY date DESC")) {
         while ($data = $result->fetch_array()) {
@@ -390,7 +419,7 @@ if (isset($_POST["a"]) && !$errors) {
       }
       die(json_encode($credits));
       // BACKUP RESTORE END
-    } else if ($_POST["a"] == "addcredits") {
+    } else if ($_POST["a"] === "addcredits") {
       // ADD CREDITS
       $name = $mysqli->real_escape_string(trim(strip_tags($_POST["name"])));
       if ($name == "") {
@@ -407,7 +436,7 @@ if (isset($_POST["a"]) && !$errors) {
         $mysqli->store_result();
       }
 
-      echo("ERRORS: " . $errors . "<br />" . $err_message . $message);
+      echo("ERRORS: $errors<br />$err_message$message");
       $credits = array();
       if ($result = $mysqli->query("SELECT * FROM `credits`")) {
         while ($data = $result->fetch_array()) {
@@ -416,7 +445,7 @@ if (isset($_POST["a"]) && !$errors) {
       }
       die(json_encode($credits));
       // ADD CREDITS END
-    } else if ($_POST["a"] == "deletecredits") {
+    } else if ($_POST["a"] === "deletecredits") {
       // DELETE CREDITS
       $id = htmlspecialchars(trim(strip_tags($_POST["id"])));
       $name = htmlspecialchars(trim(strip_tags($_POST["name"])));
@@ -429,7 +458,7 @@ if (isset($_POST["a"]) && !$errors) {
       }
       $mysqli->store_result();
 
-      echo("ERRORS: $errors<br />" . $err_message . $message);
+      echo("ERRORS: $errors<br />$err_message$message");
       $credits = array();
       if ($result = $mysqli->query("SELECT * FROM `credits`")) {
         while ($data = $result->fetch_array()) {
@@ -438,7 +467,7 @@ if (isset($_POST["a"]) && !$errors) {
       }
       die(json_encode($credits));
       // DELETE CREDITS END
-    } else if ($_POST["a"] == "update") {
+    } else if ($_POST["a"] === "update") {
       // MANUAL UPDATE
       $output = array();
       $val = 0;
@@ -505,8 +534,7 @@ function setup() {
   updateCredits(<?=($logged_in ? json_encode($credits) : "{}")?>);
 }
 
-function sendRequest(params, callback, loadingmsg)
-{
+function sendRequest(params, callback, loadingmsg) {
   if (window.XMLHttpRequest)
     request = new XMLHttpRequest(); // Mozilla, Safari, Opera
   else if (window.ActiveXObject) {
@@ -539,11 +567,11 @@ function sendRequest(params, callback, loadingmsg)
       if (errnum > 0) {
         var obj = document.getElementById("errors");
         obj.innerHTML = message;
-        obj.style.opacity = "1";
+        obj.style.opacity = "0.9";
       } else {
         var obj = document.getElementById("success");
         obj.innerHTML = message;
-        obj.style.opacity = "1";
+        obj.style.opacity = "0.9";
         callback(response);
       }
     }
@@ -655,9 +683,7 @@ function restoreBackup() {
   data.append("a", "backups");
   data.append("select", sel.options[sel.selectedIndex].value);
   sendRequest(data, function(objstring){
-    //alert(objstring.substring(0, objstring.indexOf("<br />")));
     updateNews(JSON.parse(objstring.substring(0, objstring.indexOf("<br />"))));
-    //alert(objstring.substring(objstring.indexOf("<br />") + 6));
     updateCredits(JSON.parse(objstring.substring(objstring.indexOf("<br />") + 6)));
   }, "Restoring database, this may take a while...");
 }
@@ -729,12 +755,21 @@ function clearFilter() {
   filterCredits();
 }
 
+function toggleExpandable(obj) {
+  style = window.getComputedStyle(obj);
+  if (obj.parentNode.style.height != style.height) {
+    obj.parentNode.style.height = style.height;
+  } else {
+    obj.parentNode.style.height = "auto";
+  }
+}
+
 </script>
 </head>
 
 <body onload="javascript:setup()">
 
-<div id="errors" onclick="dismiss()" <?=((!$logged_in && $errors > 0) ? "style=\"opacity:1\"" : "")?>>
+<div id="errors" onclick="dismiss()" <?=((!$logged_in && $errors > 0) ? "style=\"opacity:0.9\"" : "")?>>
   <?=$err_message?>
 </div>
 
@@ -757,8 +792,8 @@ Logged in as <b><?=$_SESSION["logged_in_user"]?></b>&nbsp;&nbsp;|&nbsp;&nbsp;<a 
 </form>
 </div>
 
-<div class="expandable" id="1">
-<h1>News</h1>
+<div class="expandable">
+<h1 onclick="toggleExpandable(this)">News</h1>
   <table>
     <tr>
       <td>&nbsp;</td>
@@ -796,8 +831,8 @@ Logged in as <b><?=$_SESSION["logged_in_user"]?></b>&nbsp;&nbsp;|&nbsp;&nbsp;<a 
     </tr>
   </table>
 </div>
-<div class="expandable" id="2">
-<h1>Credits</h1>
+<div class="expandable">
+<h1 onclick="toggleExpandable(this)">Credits</h1>
   <table>
     <tr>
       <td><label for="credits_name">Name</label></td>
@@ -828,8 +863,8 @@ Logged in as <b><?=$_SESSION["logged_in_user"]?></b>&nbsp;&nbsp;|&nbsp;&nbsp;<a 
 <br />
 <br />
 </div>
-<div class="expandable" id="4">
-<h1>Backups</h1>
+<div class="expandable">
+<h1 onclick="toggleExpandable(this)">Backups</h1>
   <select name="backup_select" class="textbox" id="backup_select">
   <?php
   foreach ($backups as $b) {
@@ -844,7 +879,7 @@ Logged in as <b><?=$_SESSION["logged_in_user"]?></b>&nbsp;&nbsp;|&nbsp;&nbsp;<a 
 <br />&nbsp;<br />
 <?php } else { ?>
 <div id="logininfo">Not logged in! <a href="../">Back to catrobat.org</a></div>
-<div class="expandable" id="3">
+<div class="expandable" id="login">
 <h1>Login</h1>
 <form id="login" name="login" method="post" action="">
   <input name="a" type="hidden" value="login" />

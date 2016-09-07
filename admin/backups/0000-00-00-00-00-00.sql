@@ -5,7 +5,7 @@ CREATE TABLE `credits` (
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=459 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=470 DEFAULT CHARSET=utf8;
 
 INSERT INTO credits VALUES("269","Abdelbasset Amara");
 INSERT INTO credits VALUES("408","Adam Ujvari");
@@ -38,6 +38,7 @@ INSERT INTO credits VALUES("362","Andrew Deutschmann");
 INSERT INTO credits VALUES("225","Angelika Droisner");
 INSERT INTO credits VALUES("155","Angelika More");
 INSERT INTO credits VALUES("1","Anja Petri");
+INSERT INTO credits VALUES("468","Anja Reibenbacher");
 INSERT INTO credits VALUES("378","Anna Lickl");
 INSERT INTO credits VALUES("102","Annemarie Harzl");
 INSERT INTO credits VALUES("42","Anton Rieder");
@@ -52,6 +53,7 @@ INSERT INTO credits VALUES("196","Artur Termenji");
 INSERT INTO credits VALUES("80","B Maciek");
 INSERT INTO credits VALUES("386","Benjamin Bristow");
 INSERT INTO credits VALUES("69","Benjamin Grant");
+INSERT INTO credits VALUES("460","Benjamin Wullschleger");
 INSERT INTO credits VALUES("383","Bernadette Spieler");
 INSERT INTO credits VALUES("339","Bernd Baumann");
 INSERT INTO credits VALUES("204","Bernhard Ruttinger");
@@ -65,6 +67,7 @@ INSERT INTO credits VALUES("347","Christian Benkovic");
 INSERT INTO credits VALUES("310","Christian Burghard");
 INSERT INTO credits VALUES("23","Christian Hartinger");
 INSERT INTO credits VALUES("32","Christian Hofer");
+INSERT INTO credits VALUES("465","Christian Huber");
 INSERT INTO credits VALUES("393","Christian Jung");
 INSERT INTO credits VALUES("457","Christian Leopold");
 INSERT INTO credits VALUES("131","Christian Lesjak");
@@ -82,6 +85,7 @@ INSERT INTO credits VALUES("132","Christoph Woergoetter");
 INSERT INTO credits VALUES("306","Christopher Immervoll");
 INSERT INTO credits VALUES("268","Christopher Jelinek");
 INSERT INTO credits VALUES("351","Claudio Kirchmair");
+INSERT INTO credits VALUES("461","Clemens Stary");
 INSERT INTO credits VALUES("31","Daniel Burtscher");
 INSERT INTO credits VALUES("343","Daniel Ellmeier");
 INSERT INTO credits VALUES("233","Daniel Franz Neuhold");
@@ -108,6 +112,7 @@ INSERT INTO credits VALUES("61","Deena Mugien");
 INSERT INTO credits VALUES("427","Denis Munter");
 INSERT INTO credits VALUES("58","Denise Hoo");
 INSERT INTO credits VALUES("130","Dietmar Maurer");
+INSERT INTO credits VALUES("462","Dino Keskic");
 INSERT INTO credits VALUES("234","Domenik Melcher");
 INSERT INTO credits VALUES("440","Dominik Lindenbauer");
 INSERT INTO credits VALUES("251","Dominik Mößlang");
@@ -128,6 +133,7 @@ INSERT INTO credits VALUES("60","Fatin Ghazi");
 INSERT INTO credits VALUES("28","Ferdinand Knapitsch");
 INSERT INTO credits VALUES("136","Florian Hubner");
 INSERT INTO credits VALUES("198","Florian Schitter");
+INSERT INTO credits VALUES("463","Florian Schneider");
 INSERT INTO credits VALUES("162","Florian Sumann");
 INSERT INTO credits VALUES("414","Florian Weißensteiner");
 INSERT INTO credits VALUES("15","Florian Winkelbauer");
@@ -164,10 +170,12 @@ INSERT INTO credits VALUES("201","Ingrid Reip");
 INSERT INTO credits VALUES("67","Ivan Venuti");
 INSERT INTO credits VALUES("139","Jakob Strauss");
 INSERT INTO credits VALUES("277","Jakob Unterkofler");
+INSERT INTO credits VALUES("464","Jakov Matic");
 INSERT INTO credits VALUES("95","Jasmin Salihovic");
 INSERT INTO credits VALUES("71","Jean Charpentier");
 INSERT INTO credits VALUES("48","Jeton Arifi");
 INSERT INTO credits VALUES("57","Jia Lin Chong");
+INSERT INTO credits VALUES("467","Jiaqi Ning");
 INSERT INTO credits VALUES("64","Jintae Lee");
 INSERT INTO credits VALUES("434","Joachim Lesser");
 INSERT INTO credits VALUES("83","João Filipe Matos");
@@ -191,7 +199,7 @@ INSERT INTO credits VALUES("404","Kirshan Kumar Luhana");
 INSERT INTO credits VALUES("99","Kuang Hui Tseng");
 INSERT INTO credits VALUES("63","Kyoko Slany");
 INSERT INTO credits VALUES("374","Laura Bebek");
-INSERT INTO credits VALUES("456","Leo Novak");
+INSERT INTO credits VALUES("459","Lea Novak");
 INSERT INTO credits VALUES("6","Lisa Kehrer");
 INSERT INTO credits VALUES("324","Luca Franceschini");
 INSERT INTO credits VALUES("411","Lukas Fritz");
@@ -295,6 +303,7 @@ INSERT INTO credits VALUES("276","Peter Pranter");
 INSERT INTO credits VALUES("114","Peter Schmidl");
 INSERT INTO credits VALUES("30","Peter Tielsch");
 INSERT INTO credits VALUES("40","Peter Treitler");
+INSERT INTO credits VALUES("466","Peter Waldert");
 INSERT INTO credits VALUES("200","Petra Pupovac");
 INSERT INTO credits VALUES("397","Philipp Eisner");
 INSERT INTO credits VALUES("214","Philipp Koncar");
@@ -413,7 +422,7 @@ CREATE TABLE `news` (
   `image` text NOT NULL,
   `link` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 INSERT INTO news VALUES("1","Educators\' platform launched!","2016-01-30 00:00:00","Find, contribute, and share curricular material and tutorials about how Pocket Code can be used in schools!","educatrobat.jpg","http://edu.catrob.at/");
 INSERT INTO news VALUES("2","Be part of the #AliceGameJam with Pocket Code and Scratch!","2015-12-07 00:00:00","Participate in the Alice Game Jame with Pocket Code and Scratch during the Computer Science Education week from 12 7th to 13th! Create and design your own Alice themed game or story and share it with us!<br/>All information needed and some cool tutorial and media-stuff can be found on the special event website!<br/>Let\'s code and be part of something big!","AGJ_HoC.jpg","http://www.alicegamejam.com");
@@ -454,6 +463,8 @@ INSERT INTO news VALUES("36","Google Summer of Code 2016","2016-02-29 00:00:00",
 INSERT INTO news VALUES("37","Alice Game Jam Review","2016-03-10 00:00:00","Congratulations to the winners of the Alice Game Jam!<br/>Find a review, the winners and further information about this Game Jam on our G+ community page!","alicegamejamreview.jpg","https://plus.google.com/+CatrobatOrgAdmin/posts/TsQJsSzrUop");
 INSERT INTO news VALUES("38","Massive Open Online Course on Pocket Code","2016-04-10 00:00:00","With Google\'s CS4HS award, we created a MOOC for educators that includes 18 videos, many activities and excercises, and that has its own web community!","CS4HS_MOOC.jpg","http://catrob.at/fow");
 INSERT INTO news VALUES("39","Samsung and Catrobat #CodingForKids roadshow in yellow school bus","2016-05-01 00:00:00","@SamsungAT has joined forces with Catrobat to teach computational thinking skills to kids using Pocket Code using only smartphones!","SamsungRoadshow2016.jpg","http://catrob.at/CodingForKidsRoadshow");
+INSERT INTO news VALUES("41","Coding skills for refugees, learned directly on their smartphones!","2016-07-01 00:07:00","<p>Pocket Code is ideally suited for young refugees to learn how to develop Apps in their own languages.</p>","Refugees2016.jpg","http://catrob.at/bdpc");
+INSERT INTO news VALUES("42","Raspberry Pi, Arduino, and NFC now supported by Pocket Code!","2016-08-10 00:08:00","<p>Pocket Code is ready for your tinkering projects as well as ultra-fast prototyping of mobile IOT (Internet Of Things) apps connected to real hardware.</p>","iot.jpg","http://catrob.at/iot");
 
 
 
