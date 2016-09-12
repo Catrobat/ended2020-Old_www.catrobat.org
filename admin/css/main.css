@@ -75,9 +75,10 @@ table {
 
 #credits-container {
   width: 60vw;
-  max-height: 480px;
-  max-height: 40vh;
+  height: 240px;
+  height: 30vh;
   overflow: auto;
+  resize: vertical;
   background: #EEE;
   border-radius: 2px;
   border: 1px solid #999;

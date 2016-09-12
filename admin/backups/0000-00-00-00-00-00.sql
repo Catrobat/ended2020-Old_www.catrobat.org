@@ -5,7 +5,7 @@ CREATE TABLE `credits` (
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=470 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=471 DEFAULT CHARSET=utf8;
 
 INSERT INTO credits VALUES("269","Abdelbasset Amara");
 INSERT INTO credits VALUES("408","Adam Ujvari");
@@ -171,6 +171,7 @@ INSERT INTO credits VALUES("67","Ivan Venuti");
 INSERT INTO credits VALUES("139","Jakob Strauss");
 INSERT INTO credits VALUES("277","Jakob Unterkofler");
 INSERT INTO credits VALUES("464","Jakov Matic");
+INSERT INTO credits VALUES("470","Jamil Khan");
 INSERT INTO credits VALUES("95","Jasmin Salihovic");
 INSERT INTO credits VALUES("71","Jean Charpentier");
 INSERT INTO credits VALUES("48","Jeton Arifi");
@@ -422,7 +423,7 @@ CREATE TABLE `news` (
   `image` text NOT NULL,
   `link` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 
 INSERT INTO news VALUES("1","Educators\' platform launched!","2016-01-30 00:00:00","Find, contribute, and share curricular material and tutorials about how Pocket Code can be used in schools!","educatrobat.jpg","http://edu.catrob.at/");
 INSERT INTO news VALUES("2","Be part of the #AliceGameJam with Pocket Code and Scratch!","2015-12-07 00:00:00","Participate in the Alice Game Jame with Pocket Code and Scratch during the Computer Science Education week from 12 7th to 13th! Create and design your own Alice themed game or story and share it with us!<br/>All information needed and some cool tutorial and media-stuff can be found on the special event website!<br/>Let\'s code and be part of something big!","AGJ_HoC.jpg","http://www.alicegamejam.com");
