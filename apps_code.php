@@ -14,18 +14,18 @@
   	<h2 class="text">What our users think about Pocket Code</h2>
     <div class="text">
       <div>
-        <p>Super! Ein echter Hoffnungsschimmer f&uuml;r Menschen die nicht 100% ig Computeraffin sind aber dennoch programmieren wollen.</p>
-        <b>&#8211; Alex M.</b>
+        <p>Works excellent. Very easy to use. Couldn't find any issues.</p>
+        <b>&#8211; Stefan K.</b>
       </div>
       
       <div>
-        <p>Example Rating #2</p>
-        <b>&#8211; Max M.</b>
+        <p>Wonderful for people who are not familiar with programming but who want also to create something!</p>
+        <b>&#8211; Florian B.</b>
       </div>
       
       <div>
-        <p>Example Rating #3</p>
-        <b>&#8211; Maxine M.</b>
+        <p>Awesome! Perfect for casual game programming.</p>
+        <b>&#8211; Amel H.</b>
       </div>
     </div>
     
