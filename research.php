@@ -20,23 +20,49 @@
       <div class="date"></div>
   <!--<div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Catrobat_submission_20140427_hq.pdf">Download</a></div>-->
     </div><br /> 
-
+ 
     <div>
-      <div class="authors">Annemarie Harzl, Vesna Krnjic, Franz Schreiner, Wolfgang Slany</div>        
-      <div class="title">Comparing Purely Visual with Hybrid Visual/Textual Manipulation of Complex Formula on Smartphones</div>        
-      <div class="date">Workshop Paper, VLC 2013</div>
-  <!--<div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Comparing_Purely_Visual_with_Hybrid_Visual:Textual_Manipulation_of_Complex_Formula_on_Smartphones.pdf">Download</a></div>
-      <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/VLC2013Harzl.pptx">Download Presentation</a></div>-->
+      <div class="authors">Roxane Koitz</div>        
+      <div class="title">Formula Composition and Manipulation in Educational Programming Languages for Children and Teenagers</div>        
+      <div class="date">Unpublished Master's Thesis, Graz University of Technology, 2016</div>
     </div><br />
 
-    <div>
-      <div class="authors">Vesna Krnjic, Wolfgang Slany</div>        
-      <div class="title">Between Pragmatism and Infeasibility: Agile Usability for Children and Teens in a Very Large Multi-Year FOSS Project about Several Complex Mobile Apps and Mobile Websites</div>        
-      <div class="date">Workshop Paper, XP 2013: 14th International Conference on Agile Software Development, VIENNA.</div>
-  <!--<div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/xp2013_krnjic.pdf">Download</a></div>
-      <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/XP2013krnjic.pdf">Download Presentation</a></div>-->
+ 	<div>
+      <div class="authors">Stefan Jaindl</div>        
+      <div class="title">Social Media Software Integration for the Symfony Web Framework and Android and iOS Versions of the Catrobat Project</div>        
+      <div class="date">Unpublished Master's Thesis, Graz University of Technology, 2016</div>
     </div><br />
-
+    
+ 	<div>
+      <div class="authors">Adrian Schnedlitz</div>        
+      <div class="title">TimePunch - An Online Timetracking Tool for Education</div>        
+      <div class="date">Unpublished Master's Thesis, Graz University of Technology, 2016</div>
+    </div><br />
+    
+	<div>
+      <div class="authors">Marc Slavec</div>        
+      <div class="title">Integration of controlling Arduino boards via Bluetooth with Pocket Code for iOS using test-driven development</div>        
+      <div class="date">Unpublished Master's Thesis, Graz University of Technology, 2016</div>
+    </div><br />
+        
+     <div>
+      <div class="authors">Amra Dzombic</div>        
+      <div class="title">Pocket Toon A Smart Flip book</div>        
+      <div class="date">Unpublished Master's Thesis, Graz University of Technology, 2016</div>
+    </div><br />
+    
+       <div>
+      <div class="authors">Valentin Rock</div>        
+      <div class="title">Using MVVM to enhance cross platform development</div>        
+      <div class="date">Unpublished Master's Thesis, Graz University of Technology, 2015</div>
+    </div><br />
+        
+    <div>
+      <div class="authors">Matthias Plot</div>        
+      <div class="title">POCKET CODE – MINI TUTORIALS: Design eines Lernspiels für die Applikation Pocket Code</div>        
+      <div class="date">Unpublished Master's Thesis, FH JOANNEUM - University of Applied Science, 2015</div>
+    </div><br />
+    
     <div>
       <div class="authors">David Reisenberger</div>        
       <div class="title">Continuous Integration in an Android Open Source Project </div>        
@@ -85,7 +111,7 @@
 
     <div>
       <div class="authors">Maximilian Fellner</div>        
-      <div class="title">Specification of a Visual Programming Language by Example </div>        
+      <div class="title">Specification of a Visual Programming Language by Example </div>
       <div class="date">Unpublished Master's Thesis, Graz University of Technology, 2013</div>
   <!-- <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Master_s_Thesis_Maximilian_Fellner_11_2013.pdf">Download</a></div>
   <div class="down"><a href="www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Master_s_Thesis_Presentation_Maximilian_Fellner.ppt.zip">Download Presentation</a></div> -->
@@ -98,7 +124,23 @@
   <!-- <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/masterarbeit_schrack.pdf">Download</a></div>
   <div class="down"><a href="www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Master_s_Thesis_Presentation_Maximilian_Fellner.ppt.zip">Download Presentation</a></div> -->
     </div><br />
+    
+    <div>
+      <div class="authors">Annemarie Harzl, Vesna Krnjic, Franz Schreiner, Wolfgang Slany</div>
+      <div class="title">Comparing Purely Visual with Hybrid Visual/Textual Manipulation of Complex Formula on Smartphones</div>        
+      <div class="date">Workshop Paper, VLC 2013</div>
+  <!--<div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Comparing_Purely_Visual_with_Hybrid_Visual:Textual_Manipulation_of_Complex_Formula_on_Smartphones.pdf">Download</a></div>
+      <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/VLC2013Harzl.pptx">Download Presentation</a></div>-->
+    </div><br />
 
+    <div>
+      <div class="authors">Vesna Krnjic, Wolfgang Slany</div>        
+      <div class="title">Between Pragmatism and Infeasibility: Agile Usability for Children and Teens in a Very Large Multi-Year FOSS Project about Several Complex Mobile Apps and Mobile Websites</div>        
+      <div class="date">Workshop Paper, XP 2013: 14th International Conference on Agile Software Development, VIENNA.</div>
+  <!--<div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/xp2013_krnjic.pdf">Download</a></div>
+      <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/XP2013krnjic.pdf">Download Presentation</a></div>-->
+    </div><br />
+    
     <div>
       <div class="authors">Bernd Hollerit</div>        
       <div class="title">Usability Studies with Japanese Children for Mobile Applications: Conducting a Meta Analysis</div>        
