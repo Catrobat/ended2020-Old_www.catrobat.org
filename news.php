@@ -8,7 +8,19 @@
 <div class="content bottom-padding">
 
   <br />&nbsp;<br />
-    
+  
+     <a class="anchor" name="41" id="41"></a>
+      <div class="flex-container-h news">
+        <div style="order: 0"><img src="img/news/vision_video.png" alt="News-Image" /></div>
+        <div class="expandable">
+          <h2>What's Catrobat about?</h2>
+          <span>October 2016</span><br />
+          <div style="margin: 8px 0 16px 0;"><p>Giving humankind a better future. Get to know the vision of Catrobat in our latest YouTube Video.</p></div>
+                    <a class="button" href="https://youtu.be/G8VpnsGca_A" target="_blank">Visit</a>
+                  </div>
+      </div>
+      <hr /> 
+	  
    <a class="anchor" name="41" id="41"></a>
       <div class="flex-container-h news">
         <div style="order: 0"><img src="img/news/iot.jpg" alt="News-Image" /></div>
