@@ -14,18 +14,18 @@
   	<h2 class="text">What our users think about Pocket Paint</h2>
     <div class="text">
       <div>
-        <p>Gute app zum zeichnen. Passend zu pocket code. Hoffe nu auf mehr Funktionen wie zum Beispiel Texte einfügen (wie bei paint). Sonst perfekt und schnell</p>
-        <b>&#8211; Gisela G.</b>
+        <p>I discovered Pocket Paint by drawing some objects for Pocket Code. It is really an extensive and reasoned application for drawing/editing all kinds of images.</p>
+        <b>&#8211; Daniel E.</b>
       </div>
       
       <div>
-        <p>Example Rating #2</p>
-        <b>&#8211; Max M.</b>
+        <p>Well done! This app includes everything you need to get creative. big THANKS :)</p>
+        <b>&#8211; Andreas G.</b>
       </div>
       
       <div>
-        <p>Example Rating #3</p>
-        <b>&#8211; Maxine M.</b>
+        <p>Working with transparencies is easy and fast. That's what I was looking for!</p>
+        <b>&#8211; Isa B.</b>
       </div>
     </div>
     
