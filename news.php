@@ -8,10 +8,11 @@
 <div class="content bottom-padding">
 
   <br />&nbsp;<br />
-  
-     <a class="anchor" name="41" id="41"></a>
+  <!-- When adding news, make sure to increment the name and id fields as well as alter order between 0 and 1 -->
+	
+     <a class="anchor" name="42" id="42"></a>
       <div class="flex-container-h news">
-        <div style="order: 0"><img src="img/news/vision_video.png" alt="News-Image" /></div>
+        <div style="order: 1"><img src="img/news/vision_video.png" alt="News-Image" /></div>
         <div class="expandable">
           <h2>What's Catrobat about?</h2>
           <span>October 2016</span><br />
