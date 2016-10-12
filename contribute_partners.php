@@ -75,9 +75,9 @@
     <p>The Google team in Boston for promoting Catrobat and Pocket Code on Google Play for 
     Education, donating hardware, and for pushing us to give our best.</p>
     <p>Graz International Bilingual School's (GIBS) pupils, teachers (in particular Imelda Görög, 
-    Heinz Knasar, Florian Lassnig, and Patricia Raposo), as well as parents of pupils, for lots 
+    Heinz Knasar, Florian Lassnig, Shannon Wardell and Patricia Raposo), as well as parents of pupils, for lots 
     of cooperation and work together with our team, in classes, with Google, in electives, and with 
-    students from Graz University of Technology and Fachhochschule Joanneum.</p>
+    students from Graz University of Technology and FH JOANNEUM – University of Applied Sciences.</p>
     <p>Github for allowing us to use its infrastructure to host our repositories and developer pages.</p>
     <p>Microsoft Austria for supporting us with four Nokia Lumia 800 Windows Phone 7 devices.</p>
     <p>The TouchDevelop team at Microsoft Research for supporting us with 25 Nokia Lumia 
@@ -85,7 +85,7 @@
     <p>Keith Andrews for supporting us w.r.t. usability engineering.</p>
     <p>Peter Söser from the Institute of Electronics at Graz University of Technology for 
     help with the development of electronic circuit boards for our Arduino controlled robots.</p>
-    <p>Catherine Rollier, Seppo Gründler and Konrad Baumann for cooperating with all things related to
+    <p>Catherine Rollier, Seppo Gründler, Daniel Fabry and Konrad Baumann for cooperating with all things related to
     the improvement of the design, the user experience, as well as many other aspects of our
     project.</p>
     <p>Albert Wiltsche from the Institute of Architecture and Media for the help with the design 
