@@ -1,8 +1,4 @@
 <?php
-  
-include("credentials.php");
-include("update.php");
-
 $page = "home";
 $sub = "";
 if (isset($_GET["page"])) {
@@ -142,21 +138,21 @@ function viewRating(index) {
 <body class="<?=(($page == "apps" || $page == "press" || $page == "contribute") ? "sub-nav-margin" : "nav-margin")?>" onload="javascript:setupScripts()">
 
 <ul id="navigation">
-	<li id="menu"><a href="#">&equiv;</a></li>
+	<li id="menu"><a>&equiv;</a></li>
   <li id="logo"><a href="home"><img src="img/logo.png" alt="Logo" /></a></li>
-  <li<?=($page == "home" ? " class=\"active\"" : "")?>><a href="home">HOME</a></li>
-  <li<?=($page == "apps" ? " class=\"active\"" : "")?>><a href="apps">APPS</a>
+  <li<?=($page == "home" ? " class=\"active\"" : "")?>><a href="?page=home">HOME</a></li>
+  <li<?=($page == "apps" ? " class=\"active\"" : "")?>><a href="?page=apps">APPS</a>
     <ul>
-      <li<?=($sub == "code" ? " class=\"active\"" : "")?>><a href="apps/code">POCKET CODE</a></li>
-      <li<?=($sub == "paint" ? " class=\"active\"" : "")?>><a href="apps/paint">POCKET PAINT</a></li>
+      <li<?=($sub == "code" ? " class=\"active\"" : "")?>><a href="?page=apps&sub=code">POCKET CODE</a></li>
+      <li<?=($sub == "paint" ? " class=\"active\"" : "")?>><a href="?page=apps&sub=paint">POCKET PAINT</a></li>
       <!--<li<?=($sub == "mindstorms" ? " class=\"active\"" : "")?>><a href="apps/mindstorms">MINDSTORMS</a></li>
       <li<?=($sub == "phiro" ? " class=\"active\"" : "")?>><a href="apps/phiro">PHIRO</a></li>
       <li<?=($sub == "drone" ? " class=\"active\"" : "")?>><a href="apps/drone">DRONE</a></li>
       <li<?=($sub == "arduino" ? " class=\"active\"" : "")?>><a href="apps/arduino">ARDUINO</a></li>-->
     </ul>
   </li>
-  <li<?=($page == "news" ? " class=\"active\"" : "")?>><a href="news">NEWS</a></li>
-  <li<?=($page == "research" ? " class=\"active\"" : "")?>><a href="research">RESEARCH</a></li>
+  <li<?=($page == "news" ? " class=\"active\"" : "")?>><a href="?page=news">NEWS</a></li>
+  <li<?=($page == "research" ? " class=\"active\"" : "")?>><a href="?page=research">RESEARCH</a></li>
   <!--<li<?=($page == "press" ? " class=\"active\"" : "")?>><a href="press">PRESS</a>
     <ul>
       <li<?=($sub == "releases" ? " class=\"active\"" : "")?>><a href="press/releases">PRESS RELEASES</a></li>
@@ -164,11 +160,11 @@ function viewRating(index) {
       <li<?=($sub == "resources" ? " class=\"active\"" : "")?>><a href="press/resources">RESOURCES</a></li>
     </ul>
   </li>-->
-  <li<?=($page == "contribute" ? " class=\"active\"" : "")?>><a href="contribute">CONTRIBUTE</a>
+  <li<?=($page == "contribute" ? " class=\"active\"" : "")?>><a href="?page=contribute">CONTRIBUTE</a>
     <ul>
-      <li<?=($sub == "partners" ? " class=\"active\"" : "")?>><a href="contribute/partners">PARTNERS</a></li>
+      <li<?=($sub == "partners" ? " class=\"active\"" : "")?>><a href="?page=contribute&sub=partners">PARTNERS</a></li>
       <!--<li<?=($sub == "faq" ? " class=\"active\"" : "")?>><a href="contribute/faq">FAQ</a></li>-->
-      <li<?=($sub == "credits" ? " class=\"active\"" : "")?>><a href="contribute/credits">CREDITS</a></li>
+      <li<?=($sub == "credits" ? " class=\"active\"" : "")?>><a href="?page=contribute&sub=credits">CREDITS</a></li>
     </ul>
   </li>
   <li><a href="https://edu.catrob.at/" target="_blank" class="analytics">EDU</a></li>
