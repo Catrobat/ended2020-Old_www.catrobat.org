@@ -8,6 +8,131 @@
 <div class="content bottom-padding max-width">
 
   <h1>Credits</h1>
-  <h3>The Catrobat team includes:</h3>
-  Abdelbasset Amara, Adam Ujvari, Adrian Schnedlitz, Aiman Awwad, Ainul Husna Abdul Muin, Ajdin Vihric, Alex Nicoara, Alexander G&uuml;tler, Alexander Kalchauer, Alexander Kargl, Alexander Oberbucher, Alexander Oberegger, Alexander Wieland, Alexei Nicoara, Amel Hamidovic, Amra Dzombic, Andr&eacute; Tropper, Andrea H&ouml;fler, Andreas Abraham, Andreas Fr&uuml;hwirt, Andreas Gladik, Andreas Hofbauer, Andreas Maureder, Andreas M&uuml;ller, Andreas Voraberger, Andrej Knaus, Andrej M&uuml;ller, Andrew Deutschmann, Angelika Droisner, Angelika More, Anja Petri, Anja Reibenbacher, Anna Lickl, Annemarie Harzl, Anton Rieder, Anton Stjernst, Armend Zeqiraj, Armin Hutzler, Armin Wieser, Arnan Roger Sipitakiat, Arno Stauder, Artur Knaus, Artur Termenji, B Maciek, Benjamin Bristow, Benjamin Grant, Benjamin Wullschleger, Bernadette Spieler, Bernd Baumann, Bernhard Ruttinger, Bernhard Spitzer, Bernhard Trapp, Bernhard Winter, Bianca Jakobitsch, Bianca Teufl, Boris Kanjer, Christian Benkovic, Christian Burghard, Christian Hartinger, Christian Hofer, Christian Huber, Christian Jung, Christian Leopold, Christian Lesjak, Christian M. Hofer, Christian Reisinger, Christian Schindler, Christine Pichler, Christof Rabensteiner, Christof Stromberger, Christoph Heidenreich, Christoph Kahr, Christoph Pilz, Christoph Pozvek, Christoph Woergoetter, Christopher Immervoll, Christopher Jelinek, Claudio Kirchmair, Clemens Stary, Daniel Burtscher, Daniel Ellmeier, Daniel Franz Neuhold, Daniel Fritzsch, Daniel Ladenhauf, Daniel Lintschinger, Daniel Markart, Daniel Neuhold, Daniel Pail, Daniel Rossmann, Daniela Zierler, Darjan Salaj, David Kienreich, David Kikelj, David Kolb, David Marogy, David Niederkofler, David Prott, David Reisenberger, David Strohmaier, David Wittenbrink, Davor Kirbis, Deena Mugien, Denis Munter, Denise Hoo, Dietmar Maurer, Dino Keskic, Domenik Melcher, Dominik Lindenbauer, Dominik M&ouml;&szlig;lang, Dominik Schleicher, Dominik Widnig, Dominik Ziegler, Eberhard Ferner, Elena Mashkina, Elisabeth Heschl, Eric Gergely, Eva-Maria Trummer, Ewald Moitzi, Fabian Hartl, Fabian Kofler, Fabian Tschiatschek, Farhan Obisat, Fatin Ghazi, Ferdinand Knapitsch, Florian Hubner, Florian Schitter, Florian Schneider, Florian Sumann, Florian Wei&szlig;ensteiner, Florian Winkelbauer, Franz Schreiner, Gary Green, Georg Schober, Gerald Gsellmann, Gerald Lohnauer, Gerald Musser, Gerald Wagner, Gerhard Neuhold, Gerhild Grinschgl, Gerulf Binder, Geuk Joong Bang, Gottfried Selenko, Gregor Liebisch, Gregor Sitter, Hajnalka Torma, Hakan &Ouml;zkan, Hannes Hasenauer, Hans Dieter Knaus, Hans Peter Gugl, Hans-J&uuml;rgen Schr&ouml;ttner, Harald Schaffernak, Hedwig H&ouml;ller, Heimo Ernst Bischofter, Herbert Christian Lierzer, Herbert Mikl, Hulya Kara, Ilija Simic, Illya Boyko, Ines Vorraber, Ingrid Reip, Ivan Venuti, Jakob Strauss, Jakob Unterkofler, Jakov Matic, Jamil Khan, Jasmin Salihovic, Jean Charpentier, Jeton Arifi, Jia Lin Chong, Jiaqi Ning, Jintae Lee, Joachim Lesser, Jo&atilde;o Filipe Matos, Jochen Flachhuber, Johannes Iber, Johannes K&uuml;hnel, Johannes L&uuml;ftenegger, Johannes Singer, Johannes Zenz, Jordi LLi-Beltr&aacute;n, J&ouml;rg Hofer, Josef Filzmaier, Julia Sch&ouml;nhart, Julia Viehberger, J&uuml;rgen Wurzinger, K Lalinea, Kalpesh Surati, Karl Koch, Katharina Stadlmayr, Kirshan Kumar Luhana, Kuang Hui Tseng, Kyoko Slany, Laura Bebek, Lea Novak, Lisa Kehrer, Luca Franceschini, Lukas Fritz, Lukas Krisper, Lukas Loibnegger, Lukas Mayr, Lukas Pichler, Lukas Prokop, Lukas Radacher, Lukas Resch, Majda Osmic, Manfred Knapp, Manuel Haid, Manuel Jelinek, Manuel Polzhofer, Manuel Schweiger, Manuel Wallner, Manuel Zoderer, Marc Schober, Marc Slavec, Marco Meiser, Marco Steger, Marco Wallner, Mardiyanto Saahi, Maria Aumann, Maria Schrack, Mario Kolli, Mario Lins, Mario Pagger, Marko Burazer, Markus Hartmair, Markus Hobisch, Markus Hobl, Markus H&ouml;fer, Markus Nager, Markus Reiter-Haas, Markus Schmid, M&aacute;rta Turcs&aacute;nyi-Szab&oacute;, Martin Burtscher, Martin Erb, Martin Kerschbaumer, Martin Kurz, Martin Oswald, Martin Prinz, Martin Z&ouml;hrer, Martina Edelhofer, Marvin Zechner, Matthias Eichhaber, Matthias M&uuml;ller, Matthias Schlesinger, Matthias Sebastian Schlesinger, Matthias Traub, Mattias Rauter, Max L&ouml;ffler, Max Reinthaler, Max Schafzahl, Maximilian Fellner, Maximilian Sachs, Melanie Kleindienst, Michael Grebien, Michael Herold, Michael Koweindl, Michael Lang, Michael Maresch, Michael M&uuml;nzer, Michael Peitler, Michael Pittner, Michael Pletz, Michael Rabko, Michael Rieder, Michael Stessl, Michael Stradner, Mirhet Saracevic, Namik Delilovic, Nguyen Phuong Thao, Nikolaus Koller, Nikolaus Steininger, Nikolaus Tiesenhausen, Norbert Spot, Oliver Papst, Oliver Prentner, Oliver Zott, Othmar Ruprecht, Otto Touzil, Pabhasiri Mahatharadol, Pascal Sengler, Pascal Steiner, Patman Ghazi, Patrick Klampfl, Patrick Koch, Patrick Pongratz, Patrick Radkohl, Patrick Radl, Patrick Trummer, Patrik Hutter, Patrik Maier, Paul Melbinger, Paul Schreiner, Peter Kapfer, Peter Pranter, Peter Schmidl, Peter Tielsch, Peter Treitler, Peter Waldert, Petra Pupovac, Philipp Eisner, Philipp Koncar, Philipp Kremers, Philipp Neidh&ouml;fer, Philipp Pfleger, Philipp Purgaj, Philipp Taferner, Philipp Weissensteiner, Phillip Goriup, Piotr Schmidtke, Pulkit Chouhan, Ralph Samer, Raphael Sommer, Rayna Nikolova, Reinhard H&uuml;tter, Reinhold Seiss, Rene Obendrauf, Richard Aigner, Richard Schumi, Robert Painsi, Robert Riedl, Roland Dutzler, Roland Urbano, Roman Mauhart, Roxane Koitz, Rudolf Andreas Stumptner, Rudolf Josef Wagner, Rudolf Wei&szlig;enbacher, Sachi Alana Williamson, Safdar Zaman, Saif Aldeen Alsaifi, Samir Ramadani, Samitha Priyanath Jayathilaka, Samuel Sprung, Sander Latour, Sandra Fuchs, Sareh Choupani, Sebastian Gabl, Sebastian Krell, Sebastian Schrimpf, Sercan Akpolat, Severin Holzer-Graf, Shinyoung Kim, Simge Sezgin, Simone Lemmerer, Sjoerd Dirk Meijer, Smiai Oussama, Stefan B&uuml;rscher, Stefan Galler, Stefan Hohenwarter, Stefan Jaindl, Stefan Mayer, Stefan Neureiter, Stefan Oberacher, Stefan Padureanu, Stefan Pointner, Stefan Reichnauer, Stefan Simon, Stephan Fellhofer, Stephan Fr&uuml;hwirt, Suemeyra Mutlu, Tatiyana Domanova, Theresa Egger, Thomas Anderhuber, Thomas F&ouml;tschl, Thomas Fuchs, Thomas Gruber, Thomas Hirsch, Thomas Holzmann, Thomas Huber, Thomas Kaufmann, Thomas Kohl, Thomas Kriechbaumer, Thomas Kugi, Thomas Laubreiter, Thomas Leh, Thomas Lienhart, Thomas Loidolt, Thomas Mauerhofer, Thomas Prem, Thomas Rosmarin, Thomas Schranz, Tobias Gritschacher, Tobias Ibounig, Tobias Oblak, Tobias Striemitzer, Tobias Stumpfl, Tom Spiss, Tomislav Ausperger, Valentin Kassarnig, Valentin Rock, Vesna Krnjic, Viktoria Schlaipfer, Voraya Satitpatanaphan, Walter Tang, Werner Arnus, Wijnand Baretta, Witold Kranas, Wolfgang Karl, Wolfgang Slany, Wolfgang Wintersteller, Xenia Beltran, Yolanda Ursa and Zulfiqar Ali.
+  <b>Project Head and Founder</b><br/>
+  Wolfgang Slany <br/>
+  <br/>
+
+  <b>Project Management</b><br/>
+  Annemarie Harzl and Christian Schindler.<br/>
+  <br/>
+
+  <b>Designers</b><br/>
+  Anja Petri, Mario Kolli, Martina Edelhofer, Maria Schrack, Melanie Kleindienst, Lisa Kehrer, Davor Kirbis, 
+  Darjan Salaj, Amra Dzombic, Sebastian Gabl, Katharina Stadlmayr, and Nikolaus Steininger. <br/>
+  <br/>
+
+  <b>Active Senior Members (Developer)</b><br/>
+  Stefan Jaindl (Pocket Code Android), Stephan Fellhofer (Pocket Code Android, Jira), 
+  Markus Hobisch (Pocket Code Android Drone, Jira), Florian Winkelbauer (Musicdroid), 
+  Ajdin Vihric (Pocket Code Android), Adrian Schnedlitz (Pocket Code Android Arduino, Jira), 
+  Marc Slavec (Pocket Code iOS), Ralph Samer (Pocket Code iOS & Scratch to Catrobat Converter), 
+  Wolfgang Wintersteller (HTML5), Gregor Sitter (Catroweb), Marko Burazer (Catroweb), Christian Hartinger (Catroweb),
+  Robert Painsi (Pocket Code Android), Thomas Schranz (Pocket Code Android), Matthias Müller (Marketing), 
+  Paul Schreiner (Translations), Bernadette Spieler (Catroid), Peter Kapfer (Education). <br/>
+  <br/>
+
+  <b>Alumni Senior Members (Developer)</b><br/>
+  Sercan Akpolat, Ferdinand Knapitsch (Catroweb),  Daniel Markart (Pocket Code Android), Peter Tielsch (Pocket Code Android), 
+  Daniel Burtscher (Pocket Code Android), Christian Hofer (Catroweb), Roman Mauhart (Catroweb),
+  Stefan Mayer (Pocket Paint Android), Tobias Gritschacher (Catroweb), Othmar Ruprecht (Pocket Paint Android), 
+  Maximilian Fellner (Pocket Paint Android), Bernhard Spitzer (Pocket Code Android), Vesna Krnjic (Usability), 
+  Peter Treitler (Pocket Code Android), Alexander Gütler (Catroweb),
+  David Reisenberger (Pocket Code Android), Stephan Fellhofer (Pocket Code Android), Gerald Wagner (Drone), 
+  Markus Hobl (Pocket Code Android), Thomas Kaufmann (Pocket Code Android, Jenkins), Jeton Arifi (HTML5), 
+  Stefan Galler (Pocket Paint Android), Valentin Rock (WindowsPhone), Manuel Wallner (Pocket Code Android), 
+  Patrick Koch (Pocket Code Android), Stefan Simon (Pocket Code Android), and Franz Schreiner (Pocket Code Android).<br/>
+  <br/>
+
+  <b>All Members</b><br/>
+  Annemarie Harzl, Alexander Kalchauer, Othmar Ruprecht, Peter Treitler, Thomas Holzmann, Tom Spiss, 
+  Stefan Hohenwarter, Nikolaus Koller, Tobias Gritschacher, Oliver Prentner, Sercan Akpolat, 
+  Alexander Gütler, Peter Schmidl, Maximilian Fellner, Ferdinand Knapitsch,
+  Daniel Markart, David Reisenberger, Daniel Burtscher, Jörg Hofer, 
+  Christian Hofer, Roman Mauhart, Stefan Mayer, Ainul Husna Abdul Muin, Jia Lin Chong, 
+  Denise Hoo, Manuel Zoderer, Martin Oswald, Dietmar Maurer, Christian Lesjak, Christoph Woergoetter, 
+  Safdar Zaman, Johannes Iber, Hans Peter Gugl, Florian Hubner, Christoph Kahr, David Kikelj, 
+  Jakob Strauss, Pulkit Chouhan, Smiai Oussama, Boris Kanjer, Thomas Rosmarin, Stephan Fellhofer, 
+  Alex Nicoara, Bernhard Trapp, Hans-Jürgen Schröttner, Raphael Sommer, Gerald Wagner, Fatin Ghazi, 
+  Deena Mugien, Walter Tang, Thomas Loidolt, Christian Hartinger, Angelika More, Peter Tielsch, 
+  Gerald Musser, Roland Dutzler, Philipp Taferner, Otto Touzil, Max Löffler, Florian Sumann, 
+  Andreas Maureder, Manfred Knapp, Tobias Stumpfl, Markus Hobl, Andrea Höfler, Valentin Rock, 
+  Herbert Christian Lierzer, Mario Kolli, Thomas Kaufmann, Michael Pletz, 
+  Jeton Arifi, Matthias Traub, Patrick Koch, Robert Painsi, Daniel Fritzsch, Dominik Schleicher, 
+  Ilija Simic, Majda Osmic, Marco Steger, Maximilian Sachs, Michael Münzer, 
+  Michael Rieder, Peter Kapfer, Hannes Hasenauer, Gerhild Grinschgl, Andreas Frühwirt, 
+  Christof Stromberger, Markus Schmid, Mattias Rauter, Stefan Simon, Stefan Oberacher, Vesna Krnjic, 
+  Simge Sezgin, Artur Termenji, Samitha Priyanath Jayathilaka, Florian Schitter, Markus Höfer, 
+  Petra Pupovac, Ingrid Reip, Patman Ghazi, Suemeyra Mutlu, Bernhard Ruttinger, Julia Schönhart, 
+  Thomas Huber, Michael Rabko, Daniela Zierler, Lukas Krisper, Eberhard Ferner, 
+  Gerhard Neuhold, Rudolf Andreas Stumptner, Severin Holzer-Graf, Philipp Koncar, Sandra Fuchs, 
+  Thomas Kugi, Arno Stauder, Tomislav Ausperger, Heimo Ernst Bischofter, Tobias Oblak, 
+  Gerald Gsellmann, Norbert Spot, Sachi Alana Williamson, Saif Aldeen Alsaifi, Angelika Droisner, 
+  Thomas Gruber, Hakan Özkan, Fabian Tschiatschek, Lukas Resch, Andreas Abraham, Michael Peitler, 
+  Bianca Teufl, Daniel Franz Neuhold, Domenik Melcher, Elisabeth Heschl, 
+  Matthias Sebastian Schlesinger, Rene Obendrauf, Rudolf Josef Wagner, Armin Hutzler, 
+  Valentin Kassarnig, Johannes Singer, Stefan Pointner, Andreas Voraberger, Alexander Oberegger, 
+  Florian Winkelbauer, Karl Koch, Lukas Prokop, Philipp Weissensteiner, David Kolb, Martin Burtscher, 
+  Dominik Mößlang, Philipp Kremers, Dominik Widnig, Alexander Oberbucher, Christoph Pilz, 
+  David Strohmaier, Ewald Moitzi, Gottfried Selenko, Markus Hobisch, Matthias Eichhaber, 
+  Michael Koweindl, Samir Ramadani, Stefan Padureanu, Hedwig Höller, 
+  Eva-Maria Trummer, Stefan Galler, Simone Lemmerer, Christopher Jelinek, Abdelbasset Amara, 
+  Thomas Prem, Paul Melbinger, Maria Aumann, Rayna Nikolova, Hans Dieter Knaus, Franz Schreiner, 
+  Peter Pranter, Jakob Unterkofler, Stefan Jaindl, Bernhard Spitzer,
+  Dominik Ziegler, Daniel Pail, Christine Pichler, Manuel Wallner, 
+  Thomas Fuchs, Marco Meiser, Andreas Müller, Viktoria Schlaipfer,
+  Armend Zeqiraj, Stefan Neureiter, Thomas Kriechbaumer, 
+  Andreas Hofbauer, Philipp Neidhöfer, Richard Schumi, Max Reinthaler, Max Schafzahl, 
+  Daniel Neuhold, Florian Winkelbauer, Michael Stradner, Artur Knaus, Manuel Jelinek,
+  Martin Erb, Armin Wieser, Marko Burazer, Matthias Schlesinger,  
+  Markus Hartmair, Christopher Immervoll, Christian M. Hofer, Elena Mashkina, 
+  Roxane Koitz, Christian Burghard, Thomas Laubreiter, Namik Delilovic, Jasmin Salihovic, 
+  Gregor Sitter, Mirhet Saracevic, Tatiyana Domanova, Roland Urbano, Patrick Trummer, Ajdin Vihric, 
+  Rudolf Weißenbacher, Johannes Lüftenegger, Andreas Gladik, 
+  Marc Slavec, Luca Franceschini, Ralph Samer, Bernhard Winter, Daniel Ladenhauf, 
+  Karl Koch, Theresa Egger, Sebastian Krell, Thomas Anderhuber,
+  Manuel Polzhofer, Adrian Schnedlitz, Andreas Voraberger, Stefan Pointner,
+  Andrej Müller, Tobias Ibounig, Johannes Kühnel, Bernd Baumann, Gerald Lohnauer, Thomas Kohl, 
+  Thomas Mauerhofer, Daniel Ellmeier, Lukas Radacher, David Prott, Stephan Frühwirt, Christian Benkovic, 
+  Alexander Wieland, Fabian Hartl, Patrik Maier, Claudio Kirchmair, Michael Herold, Jürgen Wurzinger, 
+  Lukas Mayr, Nikolaus Tiesenhausen, Thomas Fötschl, Christian Reisinger, Thomas Schranz, 
+  Phillip Goriup, Markus Nager, Philipp Pfleger, Andrew Deutschmann, 
+  Christoph Heidenreich, Matthias Müller, Wolfgang Wintersteller, 
+  Alexander Oberbucher, Patrick Radkohl, Werner Arnus, Gerulf Binder, Martin Prinz, Marc Schober, 
+  Darjan Salaj, Thomas Lienhart, Laura Bebek, Illya Boyko, Aiman Awwad, Michael Grebien, Anna Lickl, 
+  Mario Lins, David Marogy, Manuel Haid, Christof Rabensteiner,  
+  Bernadette Spieler, Patrick Radl, André Tropper, Benjamin Bristow, Christian Schindler, 
+  Pascal Steiner, Bianca Jakobitsch, Samuel Sprung, Josef Filzmaier, Philipp Purgaj, 
+  Christian Jung, Johannes Zenz, Michael Pittner, Philipp Eisner, 
+  Sebastian Schrimpf, Zulfiqar Ali, Richard Aigner, Daniel Rossmann, Georg Schober, Stefan Bürscher, 
+  Kirshan Kumar Luhana, Robert Riedl, 
+  Amel Hamidovic, Adam Ujvari, David Wittenbrink, Thomas Hirsch, Lukas Fritz, 
+  Marvin Zechner, Marco Wallner, Florian Weißensteiner, Lukas Loibnegger, 
+  Amra Dzombic, Wolfgang Karl, Paul Schreiner, Andrej Knaus, Michael Lang, Oliver Zott, 
+  Mario Pagger, Markus Reiter-Haas, Thomas Gruber, Patrick Klampfl, Patrick Pongratz, 
+  Denis Munter, Fabian Kofler, Sebastian Gabl, Tobias Striemitzer, Jochen Flachhuber, 
+  Harald Schaffernak, Joachim Lesser, Daniel Lintschinger, 
+  David Niederkofler, Martin Kerschbaumer, Alexander Kargl, Eric Gergely, Dominik Lindenbauer, 
+  Patrik Hutter, Gregor Liebisch, David Kienreich, Christoph Pozvek, Thomas Leh, 
+  Manuel Schweiger, Reinhold Seiss, Stefan Reichnauer, Julia Viehberger, 
+  Martin Kurz, Ines Vorraber, Herbert Mikl, Lukas Pichler, Christian Leopold, 
+  Lea Novak, Oliver Papst, Benjamin Wullschleger, Clemens Stary, Dino Keskic, 
+  Florian Schneider, Jakov Matic, Christian Huber, Peter Waldert, Jiaqi Ning, 
+  Anja Reibenbacher, David Eckhard, and Wolfgang Slany.<br/>
+  <br/>
+
+  <h3>The Catrobat translators team for all languages besides English and German includes:</h3>
+  Sercan Akpolat (Turkish, French), Ainul Husna Abdul Muin (Malay), Jia Lin Chong (Malay, Chinese 
+  (Simplified Han)), Denise Hoo (Malay, Chinese (Traditional Han)), Alex Nicoara (Romanian, Russian), 
+  Fatin Ghazi (Malay), Deena Mugien (Malay), Walter Tang (Malay), Kyoko Slany (Japanese), 
+  Jintae Lee (Korean), Shinyoung Kim (Korean), 
+  Farhan Obisat (Arabic), Ivan Venuti (Italian), Gary Green (British English), Benjamin Grant (Australian English),
+  Hulya Kara (Turkish), Jean Charpentier (French, France), Wijnand Baretta (Dutch), Sjoerd Dirk Meijer (Dutch), 
+  Sander Latour (Dutch), Tatiyana Domanova (Russian), Xenia Beltran (Spanish), Yolanda Ursa (Spanish), 
+  Márta Turcsányi-Szabó (Hungarian), Witold Kranas (Polish), B Maciek (Polish), K Lalinea (Polish),
+  Piotr Schmidtke (Polish), João Filipe Matos (Portuguese, Portugal), Andrej Müller (Slovenian),
+  Pascal Sengler (French, France), Hajnalka Torma (Hungarian), Aiman Awwad (Arabic), Voraya Satitpatanaphan (Thai),
+  Pabhasiri Mahatharadol (Thai), Kalpesh Surati (Gujarati), Sareh Choupani (Persian), Anton Stjernst (Swedish),
+  Alexei Nicoara (Romanian, Russian), Mirhet Saracevic (Croatian,Serbian), Jasmin Salihovic (Croatian, Serbian),
+  Arnan Roger Sipitakiat (Thai), Geuk Joong Bang (Korean), Jordi LLi-Beltrán (Spanish), 
+  Kuang Hui Tseng (Traditional Chinese), Nguyen Phuong Thao (Vietnamese), Jamil Khan (Urdu).
 </div>
