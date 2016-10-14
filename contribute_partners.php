@@ -24,6 +24,7 @@
       <a href="http://www.cs4hs.com/" target="_blank"><img src="img/partners/cs4hs.png" alt="Google - CS4Hs" title="Google - CS4Hs" /></a>
       <a href="https://summerofcode.withgoogle.com/" target="_blank"><img src="img/partners/gsoc.png" alt="Google Summer of Code" title="Google Summer of Code" /></a>
       <a href="https://www.google.com/edu/" target="_blank"><img src="img/partners/googleforeducation.png" alt="Google Play for Education" title="Google Play for Education" /></a>
+	  <a href="http://www.samsung.com/" target="_blank"><img src="img/partners/samsung.png" alt="Samsung" title="Samsung /></a>
       <a href="http://www.robotixedu.com/" target="_blank"><img src="img/partners/robotix.png" alt="Robotix Learning Solutions" title="Robotix Learning Solutions" /></a>
       <a href="https://code.org/" target="_blank"><img src="img/partners/codeorg.png" alt="Code.org" title="Code.org" /></a>
       <a href="https://hourofcode.com/" target="_blank"><img src="img/partners/hourofcode.png" alt="Hour of Code" title="Hour of Code" /></a>
