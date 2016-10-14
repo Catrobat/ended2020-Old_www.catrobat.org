@@ -1,0 +1,167 @@
+body {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background: #467177 url(../img/landing/AGJ-Landingpage-BG-only.jpg) no-repeat top center; 
+	background-size: contain;
+    background-repeat: repeat-x;
+    background-position: center;
+}
+
+.main {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+}
+
+.characters {
+width: 100%;
+overflow: hidden;
+}
+
+
+.content {
+	text-align: center;
+	display: block;
+	position: absolute;
+margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+overflow: hidden;
+}
+
+.content img {
+	margin: auto;
+}
+
+.counter
+{
+	    text-align:center;
+		margin: auto;
+		display: block;
+}
+
+.counter-row {
+       margin: auto;
+}
+
+
+.circle {
+	border-radius: 50%;
+	background-color: #424242;
+	opacity: 0.8;
+	float:left;
+	text-align: center;
+	vertical-align: middle;
+    font-weight: bold;
+	color: white;
+	font-family: Source Sans Pro;
+}
+
+.counter_description {
+	width: 100px;
+	float:left;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+    font-weight: lighter;
+	color: white;
+	font-family: Source Sans Pro;
+	font-size: 20pt;
+}
+.info
+{
+	    text-align:center;
+		width: 100%;
+		margin: auto;
+		margin-bottom: 1em;
+		display: block;
+		float: left;
+		color: white;
+		font-size: 15pt;
+}
+
+.hashtag
+{
+	color: #F7D358;
+    font-weight: bold;
+	margin-left: 10pt;
+	margin-right:10pt;
+}
+
+
+
+@media(min-width: 850px)
+{
+	.characters img {
+		width: 100%;
+	}
+}
+
+@media (max-width: 849px){
+		.characters img {
+		width: 125%;
+	margin-left: -12.5%;
+	}
+}
+
+@media (min-width: 650px) {
+
+
+
+	.content {
+		width: 600px;
+		top: 47%;
+	}
+
+
+	.counter
+	{
+		width: 400px;
+	}
+
+	.circle {
+		width: 100px;
+		height: 100px; 
+		margin-left: 10px;
+		margin-right: 10px;
+		padding-top: 0.1em;
+		font-size: 45pt;
+	}
+}
+
+@media (max-width: 650px) {
+
+	.characters img {
+	width:125%;
+	margin-left: -12.5%;
+	}
+
+	.content {
+		width: 100%;
+		top: 33%;
+	}
+
+	.content img{
+		max-width: 90%;
+	}
+
+
+	.counter
+	{
+		width: 400px;
+	}
+
+	.circle {
+		width: 100px;
+		height: 100px; 
+		margin-left: 10px;
+		margin-right: 10px;
+		padding-top: 0.1em;
+		font-size: 45pt;
+	}
+}
