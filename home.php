@@ -40,6 +40,7 @@
 
 <div class="content white bottom-padding" style="background-color: #17a5b8; margin-top: 48px;">
 	<div style="max-width: 1024px; margin: auto;">
+    <a class="anchor" name="news" id="news"></a>
     <h1>Featured Activities</h1>
     
     <br />

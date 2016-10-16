@@ -31,106 +31,106 @@ ga('create', 'UA-42270417-8', 'auto');
 ga('send', 'pageview');
 
 function setupScripts() {
-	// Extern links
-	var elements = document.getElementsByTagName("a");
-	for (var i = 0; i < elements.length; i++) {
-		if (elements[i].getAttribute("target") == "_blank") {
-			addLinkEvent(elements[i]);
-		}
-	}
-	
-	// User ratings
-	var rdiv = document.getElementById("user-ratings");
-	if (rdiv) {
-		ratings_container = rdiv.children[0];
-		ratings_container.pos = 0;
-		ratings_container.len = ratings_container.children[1].children.length;
-		ratings_container.t = -1;
-		ratings_container.children[ratings_container.children.length - 1].innerHTML = "";
-		var maxh = 0;
-		for (var i = 0; i < ratings_container.len; i++) {
-			ratings_container.children[ratings_container.children.length - 1].innerHTML += "<a href=\"javascript:viewRating(" + i + ")\">&bull;</a>"
-			if (ratings_container.children[1].children[i].clientHeight > maxh) {
-				maxh = ratings_container.children[1].children[i].clientHeight;
-			}
-			ratings_container.children[1].children[i].style.display = "none";
-		}
-	  ratings_container.style.height = maxh + rdiv.offsetHeight + "px";
-		scrollRatings();
-	}
-	
-	// View more divs
-	var elements = document.getElementsByClassName("expandable");
-	for (var i = 0; i < elements.length; i++) {
-		if (elements[i].clientHeight > 320) {
-			elements[i].style.maxHeight = "320px";
-			var div = document.createElement("DIV");
-			var a = document.createElement("A");
-			var viewmore = "&nbsp;<br/><span>&nbsp;&nbsp;&nbsp;&nbsp;</span> Show more <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>";
-			var viewless = "<span>&nbsp;&nbsp;&nbsp;&nbsp;</span> Show less <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>";
-			a.innerHTML = viewmore;
-			a.href = "#";
-			a.addEventListener("click", function (event) {
-				var d = this.parentNode.parentNode;
-				if (d.style.maxHeight == "320px") {
-					this.innerHTML = viewless;
-					d.style.maxHeight = "100000px";
-					this.parentNode.className = "less";
-				} else {
-					this.innerHTML = viewmore;
-					d.style.maxHeight = "320px"
-					this.parentNode.className = "more";
-				}
-				event.preventDefault();
-			});
-			div.className = "more";
-			div.appendChild(a);
-			elements[i].appendChild(div);
-		}
-	}
+  // Extern links
+  var elements = document.getElementsByTagName("a");
+  for (var i = 0; i < elements.length; i++) {
+    if (elements[i].getAttribute("target") == "_blank") {
+      addLinkEvent(elements[i]);
+    }
+  }
+  
+  // User ratings
+  var rdiv = document.getElementById("user-ratings");
+  if (rdiv) {
+    ratings_container = rdiv.children[0];
+    ratings_container.pos = 0;
+    ratings_container.len = ratings_container.children[1].children.length;
+    ratings_container.t = -1;
+    ratings_container.children[ratings_container.children.length - 1].innerHTML = "";
+    var maxh = 0;
+    for (var i = 0; i < ratings_container.len; i++) {
+      ratings_container.children[ratings_container.children.length - 1].innerHTML += "<a href=\"javascript:viewRating(" + i + ")\">&bull;</a>"
+      if (ratings_container.children[1].children[i].clientHeight > maxh) {
+        maxh = ratings_container.children[1].children[i].clientHeight;
+      }
+      ratings_container.children[1].children[i].style.display = "none";
+    }
+    ratings_container.style.height = maxh + rdiv.offsetHeight + "px";
+    scrollRatings();
+  }
+  
+  // View more divs
+  var elements = document.getElementsByClassName("expandable");
+  for (var i = 0; i < elements.length; i++) {
+    if (elements[i].clientHeight > 320) {
+      elements[i].style.maxHeight = "320px";
+      var div = document.createElement("DIV");
+      var a = document.createElement("A");
+      var viewmore = "&nbsp;<br/><span>&nbsp;&nbsp;&nbsp;&nbsp;</span> Show more <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>";
+      var viewless = "<span>&nbsp;&nbsp;&nbsp;&nbsp;</span> Show less <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>";
+      a.innerHTML = viewmore;
+      a.href = "#";
+      a.addEventListener("click", function (event) {
+        var d = this.parentNode.parentNode;
+        if (d.style.maxHeight == "320px") {
+          this.innerHTML = viewless;
+          d.style.maxHeight = "100000px";
+          this.parentNode.className = "less";
+        } else {
+          this.innerHTML = viewmore;
+          d.style.maxHeight = "320px"
+          this.parentNode.className = "more";
+        }
+        event.preventDefault();
+      });
+      div.className = "more";
+      div.appendChild(a);
+      elements[i].appendChild(div);
+    }
+  }
 }
 
 
 function addLinkEvent(obj) {
   obj.addEventListener("click", function(event) {
-		event.preventDefault();
-	  // get url and reconstruct it for ga
-	  var url = obj.href;
-	  var server = url.match(/((http[s]?|ftp):\/\/)?(www.)?([^\/]+)/i)[4];
-		if (obj.className.indexOf("analytics") != -1) {
-			if (url.indexOf("?") != -1) {
-				// ? already present
-				url += "&";
-			} else {
-				url += "?"
-			}
-			url += "utm_source=catrobat.org&utm_medium=Homepage&utm_campaign=catrobat.org%20-%20" + server;
-		}
-	  // send event to ga
-	  ga('send', 'event', 'out-link', 'click', server);
-		window.open(url, "_blank");
+    event.preventDefault();
+    // get url and reconstruct it for ga
+    var url = obj.href;
+    var server = url.match(/((http[s]?|ftp):\/\/)?(www.)?([^\/]+)/i)[4];
+    if (obj.className.indexOf("analytics") != -1) {
+      if (url.indexOf("?") != -1) {
+        // ? already present
+        url += "&";
+      } else {
+        url += "?"
+      }
+      url += "utm_source=catrobat.org&utm_medium=Homepage&utm_campaign=catrobat.org%20-%20" + server;
+    }
+    // send event to ga
+    ga('send', 'event', 'out-link', 'click', server);
+    window.open(url, "_blank");
   });
 }
 
 function scrollRatings() {
-	var ratings = ratings_container.children[1];
-	var buttons = ratings_container.children[ratings_container.children.length - 1];
-	for (var i = 0; i < ratings_container.len; i++) {
-		ratings.children[i].style.display = (i == ratings_container.pos) ? "block" : "none";
-		buttons.children[i].className = (i == ratings_container.pos) ? "active" : "";
-	}
-	ratings_container.t = window.setTimeout(scrollRatings, 4000);
-	ratings_container.pos = (ratings_container.pos + 1) % ratings_container.len;
+  var ratings = ratings_container.children[1];
+  var buttons = ratings_container.children[ratings_container.children.length - 1];
+  for (var i = 0; i < ratings_container.len; i++) {
+    ratings.children[i].style.display = (i == ratings_container.pos) ? "block" : "none";
+    buttons.children[i].className = (i == ratings_container.pos) ? "active" : "";
+  }
+  ratings_container.t = window.setTimeout(scrollRatings, 4000);
+  ratings_container.pos = (ratings_container.pos + 1) % ratings_container.len;
 }
 
 function viewRating(index) {
-	var ratings = ratings_container.children[1];
-	var buttons = ratings_container.children[ratings_container.children.length - 1];
-	window.clearTimeout(ratings_container.t);
-	for (var i = 0; i < ratings_container.len; i++) {
-		ratings.children[i].style.display = (i == index) ? "block" : "none";
-		buttons.children[i].className = (i == index) ? "active" : "";
-	}
+  var ratings = ratings_container.children[1];
+  var buttons = ratings_container.children[ratings_container.children.length - 1];
+  window.clearTimeout(ratings_container.t);
+  for (var i = 0; i < ratings_container.len; i++) {
+    ratings.children[i].style.display = (i == index) ? "block" : "none";
+    buttons.children[i].className = (i == index) ? "active" : "";
+  }
 }
 </script>
 </head>
@@ -138,7 +138,7 @@ function viewRating(index) {
 <body class="<?=(($page == "apps" || $page == "press" || $page == "contribute") ? "sub-nav-margin" : "nav-margin")?>" onload="javascript:setupScripts()">
 
 <ul id="navigation">
-	<li id="menu"><a>&equiv;</a></li>
+  <li id="menu"><a>&equiv;</a></li>
   <li id="logo"><a href="home"><img src="img/logo.png" alt="Logo" /></a></li>
   <li<?=($page == "home" ? " class=\"active\"" : "")?>><a href="?page=home">HOME</a></li>
   <li<?=($page == "apps" ? " class=\"active\"" : "")?>><a href="?page=apps">APPS</a>
@@ -175,24 +175,24 @@ function viewRating(index) {
 // Include content depending on $page
 // check if $page is valid
 $valid_pages = array("home" => array(),
-										 "apps" => array("code", "paint"),
-										 "news" => array(),
-										 "research" => array(),
-										 "contribute" => array("partners", "credits"),
-										 "imprint" => array(),
-										 "license" => array("additional", "agpl_v3", "ccbysa_v4", "user"),
-										 "policies" => array(),
-										 "terms" => array(),
+                     "apps" => array("code", "paint"),
+                     "news" => array(),
+                     "research" => array(),
+                     "contribute" => array("partners", "credits"),
+                     "imprint" => array(),
+                     "license" => array("additional", "agpl_v3", "ccbysa_v4", "user"),
+                     "policies" => array(),
+                     "terms" => array(),
                      "404" => array());
-			 
+       
 if (array_key_exists($page, $valid_pages) && ($sub == "" || in_array($sub, $valid_pages[$page]))) {
-	if ($sub != "") {
-		include($page . "_" . $sub . ".php");
-	} else {
-		include($page . ".php"); 
-	}
+  if ($sub != "") {
+    include($page . "_" . $sub . ".php");
+  } else {
+    include($page . ".php"); 
+  }
 } else {
-	include("404.php");
+  include("404.php");
 }
 ?>
 </div>
