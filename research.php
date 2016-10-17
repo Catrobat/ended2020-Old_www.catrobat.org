@@ -14,13 +14,13 @@
   <hr />
   
   <div class="max-width">
-    <div>
-      <div class="authors">Wolfgang Slany</div>        
-      <div class="title">Tinkering with Pocket Code, a Scratch-like programming app for your smartphone </div>        
-      <div class="date"></div>
-  <!--<div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Catrobat_submission_20140427_hq.pdf">Download</a></div>-->
-    </div><br /> 
- 
+	
+     <div>
+      <div class="authors">Anja Petri, Bernadette Spieler</div>        
+      <div class="title">Engaging and playful activities with smartphones in school contexts</div>        
+      <div class="date">Presentation, Scratch@MIT2016, Boston, 2016</div>
+     </div><br />
+
     <div>
       <div class="authors">Roxane Koitz</div>        
       <div class="title">Formula Composition and Manipulation in Educational Programming Languages for Children and Teenagers</div>        
@@ -50,7 +50,19 @@
       <div class="title">Pocket Toon A Smart Flip book</div>        
       <div class="date">Unpublished Master's Thesis, Graz University of Technology, 2016</div>
     </div><br />
-    
+
+     <div>
+      <div class="authors">Anja Petri, Christian Schindler, Wolfgang Slany, Bernadette Spieler, Jonathan Smith</div>        
+      <div class="title">Pocket Game Jams: a Constructionist Approach at Schools</div>        
+      <div class="date">Conference Paper, 17th International Conference on Human-Computer Interaction with Mobile Devices and Services Adjunct, Copenhagen, 2015</div>
+     </div><br />
+
+    <div>	 
+	  <div class="authors">Stephan Fellhofer, Annemarie Harzl, Wolfgang Slany</div>        
+      <div class="title">Scaling and Internationalizing an Agile FOSS Project: Lessons Learned</div>        
+      <div class="date">Conference Paper, Open Source Systems: Adoption and Impact - 11th IFIP WG 2.13 International Conference, Florence, 2015</div>
+    </div><br /> 
+	
        <div>
       <div class="authors">Valentin Rock</div>        
       <div class="title">Using MVVM to enhance cross platform development</div>        
@@ -62,7 +74,20 @@
       <div class="title">POCKET CODE – MINI TUTORIALS: Design eines Lernspiels für die Applikation Pocket Code</div>        
       <div class="date">Unpublished Master's Thesis, FH JOANNEUM - University of Applied Science, 2015</div>
     </div><br />
-    
+	
+    <div>
+      <div class="authors">Wolfgang Slany</div>        
+      <div class="title">Tinkering with Pocket Code, a Scratch-like programming app for your smartphone</div>        
+      <div class="date">Conference Paper, Constructionism 2014 International Conference, Vienna, 2014</div>
+  <!--<div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Catrobat_submission_20140427_hq.pdf">Download</a></div>-->
+    </div><br /> 
+	
+    <div>	 
+	  <div class="authors">Wolfgang Slany</div>        
+      <div class="title">Pocket code: a scratch-like integrated development environment for your phone</div>        
+      <div class="date">Conference Paper, Conference on Systems, Programming, and Applications: Software for Humanity, SPLASH '14, Portland, 2014</div>
+    </div><br /> 
+	
     <div>
       <div class="authors">David Reisenberger</div>        
       <div class="title">Continuous Integration in an Android Open Source Project </div>        
@@ -109,6 +134,19 @@
   <div class="down"><a href="#">Download Presentation</a></div> -->
     </div><br />
 
+ 	
+    <div>	 
+	  <div class="authors">Annemarie Harzl, Philipp Neidhoefer, Valentin Rock, Maximilian Schafzahl, Wolfgang Slany</div>        
+      <div class="title">A Scratch-like visual programming system for Microsoft Windows Phone 8</div>        
+      <div class="date">Conference Contribution, Splash'13, Indianapolis, 2013</div>
+    </div><br />  	
+	
+    <div>	 
+	  <div class="authors">Wolfgang Slany</div>        
+      <div class="title">Catrobat: A mobile visual programming system inspired by Scratch</div>        
+      <div class="date">Conference Contribution, Scratch Conference, Bremen, 2013</div>
+    </div><br /> 
+	
     <div>
       <div class="authors">Maximilian Fellner</div>        
       <div class="title">Specification of a Visual Programming Language by Example </div>
@@ -128,7 +166,7 @@
     <div>
       <div class="authors">Annemarie Harzl, Vesna Krnjic, Franz Schreiner, Wolfgang Slany</div>
       <div class="title">Comparing Purely Visual with Hybrid Visual/Textual Manipulation of Complex Formula on Smartphones</div>        
-      <div class="date">Workshop Paper, VLC 2013</div>
+      <div class="date">Workshop Paper, VLC 2013 - International Workshop on Visual Languages and Computing, Brighton , 2013</div>
   <!--<div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Comparing_Purely_Visual_with_Hybrid_Visual:Textual_Manipulation_of_Complex_Formula_on_Smartphones.pdf">Download</a></div>
       <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/VLC2013Harzl.pptx">Download Presentation</a></div>-->
     </div><br />
@@ -136,7 +174,7 @@
     <div>
       <div class="authors">Vesna Krnjic, Wolfgang Slany</div>        
       <div class="title">Between Pragmatism and Infeasibility: Agile Usability for Children and Teens in a Very Large Multi-Year FOSS Project about Several Complex Mobile Apps and Mobile Websites</div>        
-      <div class="date">Workshop Paper, XP 2013: 14th International Conference on Agile Software Development, VIENNA.</div>
+      <div class="date">Workshop Paper, XP 2013: 14th International Conference on Agile Software Development, Vienna, 2013</div>
   <!--<div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/xp2013_krnjic.pdf">Download</a></div>
       <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/XP2013krnjic.pdf">Download Presentation</a></div>-->
     </div><br />
@@ -170,6 +208,18 @@
       <div class="date">Unpublished Master's Thesis, Graz University of Technology, 2013</div>
   <!-- <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/MasterThesis-AngelikaMore.pdf">Download</a></div> -->
     </div><br />
+	
+    <div>	 
+	  <div class="authors">Wolfgang Slany</div>        
+      <div class="title">Catroid: a mobile visual programming system for children</div>        
+      <div class="date">Conference Paper,The 11th International Conference on Interaction Design and Children, IDC '12, Bremen, 2012</div>
+    </div><br /> 
+	
+    <div>	 
+	  <div class="authors">Wolfgang Slany</div>        
+      <div class="title">A mobile visual programming system for Android smartphones and tablets</div>        
+      <div class="date">Conference Paper, 2012 IEEE Symposium on Visual Languages and Human-Centric Computing, Innsbruck, 2012</div>
+    </div><br /> 
 
     <div>
       <div class="authors">Daniel Burtscher</div>        
@@ -207,6 +257,13 @@
   <!-- <div class="down"><a href="http://www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/Master_s_Thesis_Tobias_Gritschacher.pdf">Download</a></div>
   <div class="down"><a href="www.ist.tugraz.at/catrobat/pub/Main/ThesesAndPublicationsAboutCatrobat/presentation_20111011.pptx">Download Presentation</a></div> -->
     </div><br />
+	
+    <div>	 
+	  <div class="authors">Wolfgang Slany</div>        
+      <div class="title">Mobile Scratch Programming on Android Smart Phones: Usability and New Features</div>        
+      <div class="date">Conference Poster, Scratch@MIT2010, Boston, 2010</div>
+    </div><br /> 
+	
     
   </div>
 </div>
