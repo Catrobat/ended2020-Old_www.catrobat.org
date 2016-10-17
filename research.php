@@ -20,6 +20,12 @@
       <div class="title">Engaging and playful activities with smartphones in school contexts</div>        
       <div class="date">Presentation, Scratch@MIT2016, Boston, 2016</div>
      </div><br />
+	 
+     <div>
+      <div class="authors">Annemarie Harzl</div>        
+      <div class="title">Combining FOSS and Kanban: An Action Research </div>        
+      <div class="date">Chapter, Open Source Systems: Integrating Communities, 2016</div>
+     </div><br />
 
     <div>
       <div class="authors">Roxane Koitz</div>        
@@ -55,6 +61,12 @@
       <div class="authors">Anja Petri, Christian Schindler, Wolfgang Slany, Bernadette Spieler, Jonathan Smith</div>        
       <div class="title">Pocket Game Jams: a Constructionist Approach at Schools</div>        
       <div class="date">Conference Paper, 17th International Conference on Human-Computer Interaction with Mobile Devices and Services Adjunct, Copenhagen, 2015</div>
+     </div><br />
+	 
+     <div>
+      <div class="authors">Annemarie Harzl</div>        
+      <div class="title">Combining Kanban and FOSS: Can it work?</div>        
+      <div class="date">Conference Paper, 16th International Conference on Agile Software Development, Helsinki, 2015</div>
      </div><br />
 
     <div>	 
