@@ -29,22 +29,245 @@
 </head>
 
 <body>
+	<script>
+		function displaySuscribe(){
+			if(document.getElementById('hidden_suscribe').style.display=='block') {
+				document.getElementById('hidden_suscribe').style.display='none';
+			}else{
+				document.getElementById('hidden_suscribe').style.display='block';
+			}
+		}
+	</script>	
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-galaxy navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="img/logo.png" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav nav-galaxy">
+                    <li><a class="scroll" href="#about">About</a></li>
+                    <li><a class="scroll" href="#event">Event</a></li>
+                    <li><a class="scroll" href="#participate">Participate</a></li>
+                    <li><a href="howto_class_en.html">Class Participation</a></li>
+                    <li><a href="graphics_en.html">Graphics</a></li>
+                    <li><a href="faq_en.html">FAQs</a></li>
+                    <li><a href="javascript:void(0)" onClick="displaySuscribe();">Newsletter</a></li>
+                </ul>
+            </div>
+		<div id="hidden_suscribe">
+			<div id="hidden_subs-title">Subscribe to the Pocket Code Newsletter</div>
+
+        <div id="hidden_subs-form">
+            <form action="//catrobat.us11.list-manage.com/subscribe/post?u=5b5a960a1f0b53cf06ac2b5a2&amp;id=ce7367db20"  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <input type="email" value="" name="EMAIL" class="required form-control email InputEmail" id="mce-EMAIL" placeholder="Enter your E-Mail">
+                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default email-btn">
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            </form>
+        </div>
+        <p>
+        <div id="hidden_close">
+            <a href="javascript:void(0)" onClick="displaySuscribe();">[X]</a>
+        </div>
+        </p>
+      </div>
+    </nav>
+    </nav>
+
 	<div class="block-header">
 		<div id="top_image_bg_EN">
 			<img src="img/header_EN.png" id="header-image">
 			<div id="info">
-				<span id="hash">COMING SOON IN SELECTED COUNTRIES</span>
+				<span id="hash">#GalaxyGameJam</span>
+				<p>until 31-12-2016</p>
 			</div>
 		</div>
 	</div>
 
-	 <footer>
+    <div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><a id="about">ABOUT</a></h1>
+                </div>
+                <div class="col-md-4">
+                    <h2>#GalaxyGameJam</h2>
+                    <p>Grab your smartphone and explore distant galaxies! At the #GalaxyGameJam you can create your very own Android app. Design it with our Pocket Code app and become part of
+                        our mission to outer space. The best astronauts will receive awesome prizes!</p>
+                    <h2>Our mission to the galaxy</h2>
+                    <p>Together with Samsung we're making a trip into space. But we need your help! The #GalaxyGameJam invites you and your friends to create a game, animation, or any kind of
+                        other app using Pocket Code, and experience the mysteries of the galaxy on your smartphone.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="intext_logo">
+                        <img src="img/pc-headline.png"></img>
+                    </div>
+                    <p>With Pocket Code we aim to inspire kids, teenagers, and young adults to create their very own games and interactive stories directly on their smartphones. The intuitive "Lego"-style interface allows everyone to program without any previous programming experience.</p>
+                    <h3>Pocket Code is available for free on</h3>
+                    <div class="play-btn">
+                        <a target="_blank" href="http://catrob.at/pc"><img src="img/GooglePlay.png" /></a>
+                    </div>
+                    <h2>Social Media</h2>
+                    <p>Follow our social media channels to stay tuned.</p>
+                    <p><a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="img/social/facebook.png" class="social"></a><a target="_blank" href="https://twitter.com/pocket_code"><img src="img/social/twitter.png" class="social"></a><a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="img/social/google.png" class="social"></a></p>
+                </div>
+                <div class="col-md-4">
+                    <div class="decor">
+                        <a href="http://www.pocketcode.org" target="blank_"><img src="img/device-GGJ.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+
+    <div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><a id="event">EVENT</a></h1>
+                </div>
+                <div class="col-md-4">
+                    <h2>Details</h2>
+                    <p>This game jam is carried out in cooperation with Samsung in selected countries. You can submit your app created with Pocket Code until <b><nobr>31-12-2016</nobr> 23:59 (AoE = <nobr>UTC-12</nobr> time zone)</b>.
+                    </p>
+                    <h2>Theme</h2>
+                    <p>It’s all about our mission to outer space! Create your own games and stories about distant galaxies. Don’t forget to take the colorful characters <a href="graphics_en.html">Lynx, Panda, and Pingu</a> with you on your journey.</p>
+                    </div>
+                <div class="col-md-4">
+                    <h2>Who can be part of our mission to outer space?</h2>
+                    <p>You can either take part as a single creator or in a team of up to three creators. Depending on your age you will be assigned to a suitable category (from around 13 to 17 years, or 18+). If you work in a team, the age of the oldest team member will be taken into account. You can also participate together with your classmates in the category “School Class”. In this case your class will be able to submit multiple programs, and in selected countries there are also awesome prizes for teachers of participating classes.</p>
+                            <h2>How can I be part of the mission?</h2>
+                            <p>More detailed information about the registration process can be found in the section <a class="scroll" href="#participate">“Participate”</a>.</p>
+                </div>
+                <div class="col-md-4 decor">
+                    <h2>What can I win if I participate?</h2>
+                    <p>Thanks to the support of Samsung we are able to reward selected astronauts with great prizes in selected countries. Create your very own program that contributes to our mission to outer space and upload it with the <a href="http://catrob.at/pc">Pocket Code app</a>! Take your chance to win a new
+                        computer, tablet, smartphone, robot, or other awesome prizes.</p>
+                    <div class="decor">
+                        <img src="img/prizes.png">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /container -->
+    </div>
+
+
+    <div class="block block-blue_bg">
+        <div class="container rel">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><a id="participate">PARTICIPATE WITH POCKET CODE</a></h1>
+                </div>
+                <div class="col-md-4">
+                    <h2>How to participate?</h2>
+                    <p>Decide whether you want to work on your own or in a team. If you want to participate together with your classmates, please inform your teacher. Follow the “First Steps and Rules” and start creating your Pocket Code project.</p>
+                    <h2>How to learn coding?</h2>
+                    <p>If you don’t have any experience in coding, don’t be afraid, it’s easier than you think! The “Help” button inside the Pocket Code app guides you to a tutorial overview where we have provided some great examples for beginners. Furthermore, there is a big community behind Pocket Code that provides a huge set of existing programs on the web from which you can draw inspiration. You can find them by clicking the “Explore” button inside the Pocket Code app.</p>
+                    <h2>Find the right materials for your program</h2>
+                    <p>To make it easier for you we have provided special <a href="graphics_en.html">media assets</a> which you may use during the game jam. Please read through our <a href="faq_en.html">FAQs</a> to get more information about the media library.</p>
+                    <div class="decor">
+                        <img src="img/pingu.png" width = "90%">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h2>First steps and rules</h2>
+                        <p>
+                            If you work in a team, please choose a team name. If you want to participate as a whole class, please contact your teacher so he/she can fill in the <a href="groups_en.html">application form</a>.
+                        </p>
+                        <p>
+                            First, let’s have a look at the <a href="graphics_en.html">media library</a> in which we provided some awesome graphics for you. You can use them to make your program more colorful and they will give you some good ideas for your app. Of course you may use third-party graphics, but please respect copyrights and license requirements.
+                        </p>
+                        <p>
+                            As the program has to include the outer space theme, you will have to think about what kind of program (game, animation, etc.) you want to create. You might already have some great ideas after having
+                                a look at the media assets.
+                        </p>
+                          <p>In order to make your app even more interesting you can implement some of the following features (they are optional, and not all will fit to every program):
+			<br>
+                          <br>&nbsp;&nbsp; &#9733; A welcome screen
+                          <br>&nbsp;&nbsp; &#9733; A short description
+                          <br>&nbsp;&nbsp; &#9733; A "You have won!" screen
+                          <br>&nbsp;&nbsp; &#9733; A game-over screen
+                          <br>&nbsp;&nbsp; &#9733; Sounds or music
+                          <br>&nbsp;&nbsp; &#9733; Sensors
+                          <br>&nbsp;&nbsp; &#9733; A second level
+                          <br>&nbsp;&nbsp; &#9733; Collisions
+                          <br>&nbsp;&nbsp; &#9733; A foreign language
+                         </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Submission</h2>
+                    <p>After you have finished your app, upload it to pocketcode.org in order to submit it. You can easily achieved this by clicking on the top menu. </p>
+                    <p><img src="img/upload-eng.png" width = "90%"></p>
+                    <p>After you have logged in or registered yourself, the upload dialog is shown. There you can change the name of your game and also add a description. Please include the hashtag #GalaxyGameJam. After you hit 'Upload' a dialog is shown that you can now view your uploaded program on our community site. Tap on 'Show program'.</p>
+                    <p><img src="img/anzeigen-eng.png" width = "90%"></p>
+                    <p>Now you can see your program on our community site. During this event we have added a button for the submission there. Just scroll down a bit and hit the submit button to submit your program.</p>
+                     <p><img src="img/abgabebutton-eng.png" width = "90%"></p>
+                    <p>After that you need to fill out the submission form. Now your program will be displayed on our <a href="https://share.catrob.at/pocketgalaxy/">Wall of Fame</a>. Please note that you can adapt and re-upload your program with the same name as often as you like until <nobr>31-12-2016</nobr> 23:59 (AoE = <nobr>UTC-12</nobr> time zone).</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /container -->
+    </div>
+
+<div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row">
+                <div class="col-md-12">
+                  <h1><a id="event">PARTICIPATE WITH SCRATCH &amp; SNAP!</a></h1>
+                </div>
+                <div class="col-md-4">
+                    <div class="intext_logo">
+                      <img src="img/scratch-headline.png"></img>
+                    </div>
+                    <br>
+                    <p>You can also participate using Scratch. Our friends from the MIT created their own <b>Galaxy Game Jam Studio</b> where you can find and use all the Galaxy Game Jam characters.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="intext_logo">
+                      <img src="img/snap-headline.png"></img>
+                    </div>
+                    <br>
+                    <p>You can also use Snap! to create your galaxy-themed game, use our graphics and characters, and submit it to our #GalaxyGameJam. You find more information at the Snap! website.</p>
+                </div>
+                <div class="col-md-4 decor">
+                <p>Games and programs created with Scratch and Snap! can also be submitted until <nobr>31-12-2016</nobr>. However, prizes can only be won for games that have been created with Pocket Code.</p>
+                    <div class="decor">
+                        <img src="img/scratch-cat.png" width = "75%">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /container -->
+    </div>
+
+    <footer>
 		 <div class="container">
 		 <div class="footer_social">
          <a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="img/social/facebook.png" class="social"></a>
 		 <a target="_blank" href="https://twitter.com/pocket_code"><img src="img/social/twitter.png" class="social"></a>
 		 <a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="img/social/google.png" class="social"></a>
 		 </div>
+		 <a href="imprint_en.html">Imprint, Privacy &amp; Legal</a> |
+		 <a href="contact_en.html">Contact</a> |
 		 <a target="_blank" href="http://www.catrobat.org/">©&nbsp;2016 Catrobat</a>
 		 </div>
     </footer>

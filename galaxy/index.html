@@ -37,28 +37,36 @@
      <script type="text/javascript">
      switch (geoplugin_countryCode()) {
        case "AT":
-	 window.location = "main_at.html";
+	 window.location = "http://www.galaxygamejam.com/main_at.html";
 	 break;
-       case "DE":
-	 window.location = "main_en.html";
+       case	"IT":
+	 window.location = "http://www.galaxygamejam.com/main_it.html";
+	 break;
+       case	"TH":
+	 window.location = "http://www.galaxygamejam.com/main_en.html";
+	 break;
+       case	"DE":
+	 window.location = "http://www.galaxygamejam.com/main_at.html";
 	 break;
        case	"UK":
-	 window.location = "main_en.html";
+	 window.location = "http://www.galaxygamejam.com/main_en.html";
 	 break;
        case	"US":
-	 window.location = "main_en.html";
+	if (geoplugin_city() != 'Mountain View') { 	// Mountain View address can be due to Google Chrome web optimization, so it might not be right.
+		window.location = "http://www.galaxygamejam.com/main_en.html";
+	 }
 	 break;
        case	"IN":
-	 window.location = "main_en.html";
+	 window.location = "http://www.galaxygamejam.com/main_en.html";
 	 break;
        case	"JP":
-	 window.location = "main_en.html";
+	 window.location = "http://www.galaxygamejam.com/main_en.html";
 	 break;
        case	"KR":
-	 window.location = "main_en.html";
+	 window.location = "http://www.galaxygamejam.com/main_en.html";
 	 break;
        case	"ES":
-	 window.location = "main_en.html";
+	 window.location = "http://www.galaxygamejam.com/main_en.html";
 	 break;
     }
     </script>
