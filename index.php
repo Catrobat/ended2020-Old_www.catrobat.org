@@ -183,6 +183,7 @@ $valid_pages = array("home" => array(),
                      "license" => array("additional", "agpl_v3", "ccbysa_v4", "user"),
                      "policies" => array(),
                      "terms" => array(),
+                     "cs4hs" => array(),
                      "404" => array());
        
 if (array_key_exists($page, $valid_pages) && ($sub == "" || in_array($sub, $valid_pages[$page]))) {
