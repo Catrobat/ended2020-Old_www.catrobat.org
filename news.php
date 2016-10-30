@@ -14,7 +14,7 @@
       <div class="flex-container-h news">
         <div style="order: 0"><img src="img/news/GalaxyGameJam640x430.png" alt="News-Image" /></div>
         <div class="expandable">
-          <h2>Take part in the our global online Game creation event until 2016-12-31!</h2>
+          <h2>Take part in our global online game creation event until 2016-12-31!</h2>
           <span>October 2016</span><br />
           <div style="margin: 8px 0 16px 0;"><p>Win fantastic prizes from Samsung!! Held in cooperation with partners from all over the world!</p></div>
                     <a class="button" href="http://www.galaxygamejam.com/" target="_blank">Visit</a>
