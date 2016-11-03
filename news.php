@@ -10,6 +10,18 @@
   <br />&nbsp;<br />
   <!-- When adding news, make sure to increment the name and id fields as well as alter order between 0 and 1 -->
 
+     <a class="anchor" name="44" id="44"></a>
+      <div class="flex-container-h news">
+        <div style="order: 1"><img src="img/news/CSEdWeek16.png" alt="News-Image" /></div>
+        <div class="expandable">
+          <h2>Be part of the Computer Science Education Week with Pocket Code!</h2>
+          <span>December 2016</span><br />
+          <div style="margin: 8px 0 16px 0;"><p>From December 5th to 11th, kids, teenagers and adults worldwide learn together how to create their own games during the Hour of Code. Find Pocket Code's #GalaxyGameJam among many other great tutorials for beginners!</p></div>
+                    <a class="button" href="https://code.org/learn" target="_blank">Visit</a>
+                  </div>
+      </div>
+      <hr /> 
+	  
      <a class="anchor" name="43" id="43"></a>
       <div class="flex-container-h news">
         <div style="order: 0"><img src="img/news/GalaxyGameJam640x430.png" alt="News-Image" /></div>
