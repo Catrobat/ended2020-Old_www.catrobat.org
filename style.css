@@ -261,8 +261,8 @@ img {
 
 #contact {
   background-color: #14162d;
-  height: 50%;
   padding-top: 50px;
+  overflow: hidden;
 }
 
 .contact_container {
@@ -304,12 +304,12 @@ img {
 }
 .email-btn {
   display: inline;
-  float: right;
   background-color: #fd7722;
   color:white;
   border: none;
   font-size: 1.1em;
   font-weight: 900;
+  margin-top: 10px;
 }
 
 #community {
