@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="utf-8">
@@ -31,15 +31,14 @@
 <body>
 	<script>
 	
-	
-	var xhttpNav = new XMLHttpRequest();
-	xhttpNav.onreadystatechange = function() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			document.getElementById("navbar").innerHTML = this.responseText;
 		}
 	};
-	xhttpNav.open("GET", "navigation.html", true);
-	xhttpNav.send();
+	xhttp.open("GET", "navigation.html", true);
+	xhttp.send();
 	
 	var xhttpFooter = new XMLHttpRequest();
 	xhttpFooter.onreadystatechange = function() {
@@ -64,7 +63,7 @@
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only">Menu navigazione</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -74,17 +73,17 @@
             <div id="navbar" class="navbar-collapse collapse">
 			<!-- FOR TRANSLATION: Keep this Navigation Version as Backup -> please translate the file navigation.html which will overwrite this Navigation -->
 				<ul class="nav nav-galaxy">
-					<li><a href="main.html#about">Home</a></li>
+					<li><a href="index.html#about">Home</a></li>
 				</ul>
 				<a href="../index.html?select=true"><div class="language-icon"></div></a>
             </div>
 		<div id="hidden_suscribe">
-			<div id="hidden_subs-title">Subscribe to the Pocket Code Newsletter</div>
+			<div id="hidden_subs-title">Sottoscrivi la Newsletter di Pocket Code</div>
 
         <div id="hidden_subs-form">
             <form action="//catrobat.us11.list-manage.com/subscribe/post?u=5b5a960a1f0b53cf06ac2b5a2&amp;id=ce7367db20"  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                    <input type="email" value="" name="EMAIL" class="required form-control email InputEmail" id="mce-EMAIL" placeholder="Enter your E-Mail">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default email-btn">
+                    <input type="email" value="" name="EMAIL" class="required form-control email InputEmail" id="mce-EMAIL" placeholder="Inserisci la tua E-Mail">
+                    <input type="submit" value="Sottoscrivi" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default email-btn">
                     <div id="mce-responses" class="clear">
                         <div class="response" id="mce-error-response" style="display:none"></div>
                         <div class="response" id="mce-success-response" style="display:none"></div>
@@ -100,15 +99,12 @@
     </nav>
     </nav>
 
-<!-- START OF TRANSLATED PART -->	
-
- 
 	<div class="block-header">
-		<div id="top_image_bg_EN">
+		<div id="top_image_bg">
 			<img src="img/header.png" id="header-image">
 			<div id="info">
 				<span id="hash">#GalaxyGameJam</span>
-				<p>until 31-12-2016</p>
+				<p>Termina il 31/12/2016</p>
 			</div>
 		</div>
 	</div>
@@ -118,27 +114,25 @@
             <!-- Main component for a primary marketing message or call to action -->
             <div class="row">
                 <div class="col-md-12">
-                    <h1><a id="about">ABOUT</a></h1>
+                    <h1><a id="about">INFORMAZIONI</a></h1>
                 </div>
                 <div class="col-md-4">
                     <h2>#GalaxyGameJam</h2>
-                    <p>Grab your smartphone and explore distant galaxies! At the #GalaxyGameJam you can create your very own Android app. Design it with our Pocket Code app and become part of
-                        our mission to outer space. The best astronauts will receive awesome prizes!</p>
-                    <h2>Our mission to the galaxy</h2>
-                    <p>Together with Samsung we're making a trip into space. But we need your help! The #GalaxyGameJam invites you and your friends to create a game, animation, or any kind of
-                        other app using Pocket Code, and experience the mysteries of the galaxy on your smartphone.</p>
+                    <p>Esplora galassie distanti con il tuo smartphone! Durante il #GalaxyGameJam puoi creare una tua App per Android. Fallo usando l'app Pocket Code e partecipa alla nostra missione nello spazio. Gli astronauti pi&ugrave; fortunati possono vincere dei premi!</p>
+                    <h2>La nostra missione nella galassia</h2>
+                    <p>Insieme a Samsung siamo pronti per un viaggio nello spazio. Ma abbiamo bisogno di idee originali! Sei invitato, insieme ai tuoi amici, a  partecipare al #GalaxyGameJam per creare giochi, animazioni o qualsiasi altro tipo di app ti venga in mente usando Pocket Code.</p>
                 </div>
                 <div class="col-md-4">
                     <div class="intext_logo">
                         <img src="../img/pc-headline.png"></img>
                     </div>
-                    <p>With Pocket Code we aim to inspire kids, teenagers, and young adults to create their very own games and interactive stories directly on their smartphones. The intuitive "Lego"-style interface allows everyone to program without any previous programming experience.</p>
-                    <h3>Pocket Code is available for free on</h3>
+                    <p>Il team di Pocket Code vorrebbe ispirare ragazzi, teenagers e giovani a ideare e progettare le proprie app, creandole direttamente sul proprio smartphone. Grazie ad un'interfaccia intitiva, nello stile dei "mattoncini Lego", permette la creazione di app anche a chi non ha precedenti esperienze di programmazione.</p>
+                    <h3>Pocket Code &egrave; disponibile gratuitamente su</h3>
                     <div class="play-btn">
                         <a target="_blank" href="http://catrob.at/pc"><img src="../img/GooglePlay.png" /></a>
                     </div>
                     <h2>Social Media</h2>
-                    <p>Follow our social media channels to stay tuned.</p>
+                    <p>Seguici sui nostri canali nei principali social network e tieniti aggiornato sul progetto.</p>
                     <p><a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="../img/social/facebook.png" class="social"></a><a target="_blank" href="https://twitter.com/pocket_code"><img src="../img/social/twitter.png" class="social"></a><a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="../img/social/google.png" class="social"></a></p>
                 </div>
                 <div class="col-md-4">
@@ -156,25 +150,24 @@
             <!-- Main component for a primary marketing message or call to action -->
             <div class="row">
                 <div class="col-md-12">
-                    <h1><a id="event">EVENT</a></h1>
+                    <h1><a id="event">EVENTO</a></h1>
                 </div>
                 <div class="col-md-4">
-                    <h2>Details</h2>
-                    <p>This game jam is carried out in cooperation with Samsung in selected countries. You can submit your app created with Pocket Code until <b><nobr>31-12-2016</nobr> 23:59 (AoE = <nobr>UTC-12</nobr> time zone)</b>.
+                    <h2>Dettagli</h2>
+                    <p>L'evento &egrave;, in alcune nazioni, sponsorizzato da Samsung. Per partecipare, puoi inviare la tua App, creata con Pocket Code, fino al <b><nobr>31/12/2016</nobr> alle 23:59</b>.
                     </p>
-                    <h2>Theme</h2>
-                    <p>It’s all about our mission to outer space! Create your own games and stories about distant galaxies. Don’t forget to take the colorful characters <a href="graphics.html">Lynx, Panda, and Pingu</a> with you on your journey.</p>
+                    <h2>TEMA</h2>
+                    <p>Partecipa ambientando un gioco o una storia in qualche galassia lontana. Non ti dimenticare di portare con te personaggi simpatici e colorati, come <a href="graphics.html">Lynce, Panda e Pingu</a> per rendere unico il tuo viaggio.</p>
                     </div>
                 <div class="col-md-4">
-                    <h2>Who can be part of our mission to outer space?</h2>
-                    <p>You can either take part as a single creator or in a team of up to three creators. Depending on your age you will be assigned to a suitable category (from around 13 to 17 years, or 18+). If you work in a team, the age of the oldest team member will be taken into account. You can also participate together with your classmates in the category “School Class”. In this case your class will be able to submit multiple programs, and in selected countries there are also awesome prizes for teachers of participating classes.</p>
-                            <h2>How can I be part of the mission?</h2>
-                            <p>More detailed information about the registration process can be found in the section <a class="scroll" href="#participate">“Participate”</a>.</p>
+                    <h2>Come si pu&ograve; partecipare alla missione nello spazio?</h2>
+                    <p>Puoi partecipare come singolo o con un  team di al pi&ugrave; tre persone. In bae alla tua et&agrave; parteciperai all'interno di un'opportuna categoria (da circa 13 anni fino ai 17, oppure dai 18 anni in poi). Nel caso tu partecipi con un team, la tua categoria &egrave; determinata dall'et&agrave; del membro pi&ugrave; anziano del team. Infine puoi partecipare insieme alla tua classe in una categoria speciale, chiamata “Classe scolastica”. In questo caso la classe pu&ograve; inviare pi&ugrave; di un programma e, in certe nazioni, sono previsti dei premi anche per i docenti delle classi che partecipano all'evento.</p>
+                            <h2>Come posso fare parte della missione?</h2>
+                            <p>Ulteriori informazioni sul processo di registrazione possono essere trovate nella sezione <a class="scroll" href="#participate">“Participa”</a>.</p>
                 </div>
                 <div class="col-md-4 decor">
-                    <h2>What can I win if I participate?</h2>
-                    <p>Thanks to the support of Samsung we are able to reward selected astronauts with great prizes in selected countries. Create your very own program that contributes to our mission to outer space and upload it with the <a href="http://catrob.at/pc">Pocket Code app</a>! Take your chance to win a new
-                        computer, tablet, smartphone, robot, or other awesome prizes.</p>
+                    <h2>Cosa si pu&ograve; vincere?</h2>
+                    <p>Grazie al supporto di Samsung possiamo assegnare, in alcune nazioni, dei meravigliosi premi. Crea il tuo programma che permetter&agrave; di arricchire la nostra missione e caricalo con l'app <a href="http://catrob.at/pc">Pocket Code</a>! Avrai la possibilit&agrave; di vincere computer, tablet, smartphone, robot o altri strabilianti premi.</p>
                     <div class="decor">
                         <img src="img/prizes.png">
                     </div>
@@ -191,53 +184,52 @@
             <!-- Main component for a primary marketing message or call to action -->
             <div class="row">
                 <div class="col-md-12">
-                    <h1><a id="participate">PARTICIPATE WITH POCKET CODE</a></h1>
+                    <h1><a id="participate">PARTICIPA CON POCKET CODE</a></h1>
                 </div>
                 <div class="col-md-4">
-                    <h2>How to participate?</h2>
-                    <p>Decide whether you want to work on your own or in a team. If you want to participate together with your classmates, please inform your teacher. Follow the “First Steps and Rules” and start creating your Pocket Code project.</p>
-                    <h2>How to learn coding?</h2>
-                    <p>If you don’t have any experience in coding, don’t be afraid, it’s easier than you think! The “Help” button inside the Pocket Code app guides you to a tutorial overview where we have provided some great examples for beginners. Furthermore, there is a big community behind Pocket Code that provides a huge set of existing programs on the web from which you can draw inspiration. You can find them by clicking the “Explore” button inside the Pocket Code app.</p>
-                    <h2>Find the right materials for your program</h2>
-                    <p>To make it easier for you we have provided special <a href="graphics.html">media assets</a> which you may use during the game jam. Please read through our <a href="faq.html">FAQs</a> to get more information about the media library.</p>
+                    <h2>Come posso participare?</h2>
+                    <p>Decidi se vuoi partecipare da solo, con un team o con la tua classe. In quest'ultimo caso informa il tuo docente. Segui “Primi passi e regole” e inizia a creare il tuo progetto con Pocket Code.</p>
+                    <h2>Come imparare a programmare?</h2>
+                    <p>Non preoccuparti se non hai alcuna esperienza di programmazione, &egrave; pi&ugrave; semplice di quel che potresti pensare! Il pulsante “Aiuto” all'interno dell'app di Pocket Code ti porta a dei semplici tutorial, utili per iniziare. Inoltre c'&egrave; una community disposta ad aiutarti e puoi scaricare un'enorme quantit&agrave; di programmi gi&agrave; sviluppati dal sito web del programma; essi possono diventare un'ottima fonte di ispirazione per creare il tuo gioco. Puoi accdervi facendo click sul pulsante “Esplora” da dentro l'app.</p>
+                    <h2>Materiale utile per partire</h2>
+                    <p>Per semplificare la creazione dei personaggi, abbiamo creato delle <a href="graphics.html">risorse grafiche</a> che puoi liberamente utilizzare nei toi giochi. Puoi trovare i dettagli sui termini d'uso leggendo le <a href="faq.html">FAQ</a>.</p>
                     <div class="decor">
                         <img src="../img/pingu.png" width = "90%">
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h2>First steps and rules</h2>
+                    <h2>Primi passi e regole</h2>
                         <p>
-                            If you work in a team, please choose a team name. If you want to participate as a whole class, please contact your teacher so he/she can fill in the <a href="groups.html">application form</a>.
+                            Se decidi di lavorare in team, inizia con scegliere un nome da dare al team. Se pensi di poter partecipare con la tua classe, invita un tuo docente a riempire questo <a href="groups.html">modulo</a>.
                         </p>
                         <p>
-                            First, let’s have a look at the <a href="graphics.html">media library</a> in which we provided some awesome graphics for you. You can use them to make your program more colorful and they will give you some good ideas for your app. Of course you may use third-party graphics, but please respect copyrights and license requirements.
+                            Poi dai un'occiata alla <a href="graphics.html">libreria dei personaggi</a> per prendere ispirazione da alcuni disegni creati per te. Usali pure dentro la tua app o, pi&ugrave; sempliemente, per prendere spunto per l'ambientazione del tuo gioco. Certamente puoi usare personaggi e disegni forniti da terze parti, ma ti invitiamo a prestare attenzione ad eventuali copyright e licenze d'uso.
                         </p>
                         <p>
-                            As the program has to include the outer space theme, you will have to think about what kind of program (game, animation, etc.) you want to create. You might already have some great ideas after having
-                                a look at the media assets.
+                            Siccome l'app deve avere come tema lo spazio, pensa a che tipo di programma vuoi creare (un gioco, un'animazione, una storia, e cos&igrave; via).
                         </p>
-                          <p>In order to make your app even more interesting you can implement some of the following features (they are optional, and not all will fit to every program):
+                          <p>Per renderla maggiormente interessante ti suggeriamo alcune caratteristiche che l'App potrebbe avere (sono solo dei suggerimenti che puoi usare oppure no; non sei obbligato a utilizzarli):
 			<br>
-                          <br>&nbsp;&nbsp; &#9733; A welcome screen
-                          <br>&nbsp;&nbsp; &#9733; A short description
-                          <br>&nbsp;&nbsp; &#9733; A "You have won!" screen
-                          <br>&nbsp;&nbsp; &#9733; A game-over screen
-                          <br>&nbsp;&nbsp; &#9733; Sounds or music
-                          <br>&nbsp;&nbsp; &#9733; Sensors
-                          <br>&nbsp;&nbsp; &#9733; A second level
-                          <br>&nbsp;&nbsp; &#9733; Collisions
-                          <br>&nbsp;&nbsp; &#9733; A foreign language
+                          <br>&nbsp;&nbsp; &#9733; Una pagina di benvenuto
+                          <br>&nbsp;&nbsp; &#9733; Una breve descrizione
+                          <br>&nbsp;&nbsp; &#9733; Una schermata per quando vinci
+                          <br>&nbsp;&nbsp; &#9733; Una schermata di gioco finito
+                          <br>&nbsp;&nbsp; &#9733; Musica o suoni
+                          <br>&nbsp;&nbsp; &#9733; Sensori
+                          <br>&nbsp;&nbsp; &#9733; Un secondo livello
+                          <br>&nbsp;&nbsp; &#9733; Collisione tra personaggi
+                          <br>&nbsp;&nbsp; &#9733; Un'altra lingua straniera
                          </p>
                 </div>
                 <div class="col-md-4">
-                    <h2>Submission</h2>
-                    <p>After you have finished your app, upload it to pocketcode.org in order to submit it. You can easily achieved this by clicking on the top menu. </p>
+                    <h2>Invio</h2>
+                    <p>Quando hai finito di creare l'app, potrai caricarla sul sito pocketcode.org in modo da poterla inserire nei progetti partecipanti all'evento. Per farlo puoi, da dentro l'app, fare click sul menu posto in alto. </p>
                     <p><img src="img/upload.png" width = "90%"></p>
-                    <p>After you have logged in or registered yourself, the upload dialog is shown. There you can change the name of your game and also add a description. Please include the hashtag #GalaxyGameJam. After you hit 'Upload' a dialog is shown that you can now view your uploaded program on our community site. Tap on 'Show program'.</p>
+                    <p>Una volta che hai fatto la registrazione oppure effettuato il log in, viene mostrata l'opzione di upload. Una volta selezionato puoi inserire il nome del gioco e aggiungere una descrizione. Per cortesia inserisci, nella descrizione, anche l'hashtag #GalaxyGameJam. Quando premi su 'Upload' un messaggio appropriato viene mostrato e potrai vedere l'app caricata sul sito della community. Premi su 'Mostra programma'.</p>
                     <p><img src="img/program.png" width = "90%"></p>
-                    <p>Now you can see your program on our community site. During this event we have added a button for the submission there. Just scroll down a bit and hit the submit button to submit your program.</p>
+                    <p>Ora, se tutto &egrave; andata a buon fine, puoi vedere il tuo programma sul sto della community. Fintantoch&egrave; dura l'evento, vedrai, sul sito sotto il tuo programma, un pulsante per la sottomissione all'evento. Premi tale pulsante al fine di inserire i tuoi dati e completare la sottomissione della tua app.</p>
                      <p><img src="img/submit.png" width = "90%"></p>
-                    <p>After that you need to fill out the submission form. Now your program will be displayed on our <a href="https://share.catrob.at/pocketgalaxy/">Wall of Fame</a>. Please note that you can adapt and re-upload your program with the same name as often as you like until <nobr>31-12-2016</nobr> 23:59 (AoE = <nobr>UTC-12</nobr> time zone).</p>
+                    <p>Una volta completata la sottmissione, il tuo programma comparir&agrave; nella <a href="https://share.catrob.at/pocketgalaxy/">Wall of Fame</a>. Ricordati che potrai modifiare anche successivamente il tuo programma, purch&egrave;, quando rifai l'upload, non cambi il suo nome. Questo lo puoi fare fino al giorno <nobr>31/12/2016</nobr> ore 23:59.</p>
                 </div>
             </div>
 
@@ -250,24 +242,24 @@
             <!-- Main component for a primary marketing message or call to action -->
             <div class="row">
                 <div class="col-md-12">
-                  <h1><a id="event">PARTICIPATE WITH SCRATCH &amp; SNAP!</a></h1>
+                  <h1><a id="event">PARTICIPA CON SCRATCH &amp; SNAP!</a></h1>
                 </div>
                 <div class="col-md-4">
                     <div class="intext_logo">
                       <img src="../img/scratch-headline.png"></img>
                     </div>
                     <br>
-                    <p>You can also participate using Scratch. Our friends from the MIT created their own <b>Galaxy Game Jam Studio</b> where you can find and use all the Galaxy Game Jam characters.</p>
+                    <p>Puoi partecipare all'evento anche utilizzando Scratch. I nostri amici dell'MIT hanno creato un proprio <b>Galaxy Game Jam Studio</b> dove puoi trovare tutti i personaggi del Galaxy Game Jam e utilizzarli nei tuoi progetti.</p>
                 </div>
                 <div class="col-md-4">
                     <div class="intext_logo">
                       <img src="../img/snap-headline.png"></img>
                     </div>
                     <br>
-                    <p>You can also use Snap! to create your galaxy-themed game, use our graphics and characters, and submit it to our #GalaxyGameJam. You find more information at the Snap! website.</p>
+                    <p>Se vuoi, puoi anche usare Snap! per la creazione dei tuoi giochi galattici, usando i nostri personaggi e le altre risorse grafiche e, infine, partecipare al #GalaxyGameJam. Trovi maggiori informazioni sul sito di Snap!.</p>
                 </div>
                 <div class="col-md-4 decor">
-                <p>Games and programs created with Scratch and Snap! can also be submitted until <nobr>31-12-2016</nobr>. However, prizes can only be won for games that have been created with Pocket Code.</p>
+                <p>Anche per i programmi e i gochi creati con Scratch e Snap! possono essere inviati entro il <nobr>31/12/2016</nobr>. I premi sono a disposizione solo per i giochi creati con Pocket Code.</p>
                     <div class="decor">
                         <img src="img/scratch-cat.png" width = "75%">
                     </div>
@@ -277,20 +269,16 @@
         </div>
         <!-- /container -->
     </div>
-	
-<!-- END OF TRANSLATED PART FOR THIS PAGE - THANKS! -->	
-
 
     <footer id="footer">
-	 <!-- FOR TRANSLATION: Keep this Footer Version as Backup -> please translate the file footer.html which will overwrite this footer -->
 		 <div class="container">
 		 <div class="footer_social">
          <a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="../img/social/facebook.png" class="social"></a>
 		 <a target="_blank" href="https://twitter.com/pocket_code"><img src="../img/social/twitter.png" class="social"></a>
 		 <a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="../img/social/google.png" class="social"></a>
 		 </div>
-		 <a href="imprint.html">Imprint, Privacy &amp; Legal</a> |
-		 <a href="contact.html">Contact</a> |
+		 <a href="imprint.html">Imprint, Privacy &amp; Note Legali</a> |
+		 <a href="contact.html">Contatti</a> |
 		 <a target="_blank" href="https://www.catrobat.org/">©&nbsp;2016 Catrobat</a>
 		 </div>
     </footer>

@@ -51,39 +51,39 @@
 	  if (force_selection != "true") {
 		 switch (geoplugin_countryCode()) {
 		   case "AT":
-		 window.location = "https://www.galaxygamejam.com/AT/main.html";
+		 window.location = "https://www.galaxygamejam.com/AT/index.html";
 		 break;
 		   case	"IT":
-		 window.location = "https://www.galaxygamejam.com/IT/main.html";
+		 window.location = "https://www.galaxygamejam.com/IT/index.html";
 		 break;
 		   case	"TH":
-		 window.location = "https://www.galaxygamejam.com/EN/main.html";
+		 window.location = "https://www.galaxygamejam.com/EN/index.html";
 		 break;
 		   case	"DE":
-		 window.location = "https://www.galaxygamejam.com/AT/main.html";
+		 window.location = "https://www.galaxygamejam.com/AT/index.html";
 		 break;
 		   case	"UK":
-		 window.location = "https://www.galaxygamejam.com/EN/main.html";
+		 window.location = "https://www.galaxygamejam.com/EN/index.html";
 		 break;
 		   case	"US":
 		if (geoplugin_city() != 'Mountain View') { 	// Mountain View address can be due to Google Chrome web optimization, so it might not be right.
-			window.location = "https://www.galaxygamejam.com/EN/main.html";
+			window.location = "https://www.galaxygamejam.com/EN/index.html";
 		 }
 		 break;
 		   case	"IN":
-		 window.location = "https://www.galaxygamejam.com/EN/main.html";
+		 window.location = "https://www.galaxygamejam.com/EN/index.html";
 		 break;
 		   case	"JP":
-		 window.location = "https://www.galaxygamejam.com/EN/main.html";
+		 window.location = "https://www.galaxygamejam.com/EN/index.html";
 		 break;
 		   case	"KR":
-		 window.location = "https://www.galaxygamejam.com/EN/main.html";
+		 window.location = "https://www.galaxygamejam.com/EN/index.html";
 		 break;
 		   case	"ES":
-		 window.location = "https://www.galaxygamejam.com/ES/main.html";
+		 window.location = "https://www.galaxygamejam.com/ES/index.html";
 		 break;
 		   case	"PL":
-		 window.location = "https://www.galaxygamejam.com/PL/main.html";
+		 window.location = "https://www.galaxygamejam.com/PL/index.html";
 		 break;
 		}
 	  }
@@ -124,11 +124,11 @@
 
             function selectMain() {
                 var selected_country_code = document.getElementById("country_selector_code").value;
-                if (selected_country_code == 'at') window.open("AT/main.html", "_self");
-				else if(selected_country_code == 'it') window.open("IT/main.html", "_self");
-				else if(selected_country_code == 'pl') window.open("PL/main.html", "_self");
-				else if(selected_country_code == 'es') window.open("ES/main.html", "_self");
-                else window.open("EN/main.html", "_self");
+                if (selected_country_code == 'at') window.open("AT/index.html", "_self");
+				else if(selected_country_code == 'it') window.open("IT/index.html", "_self");
+				else if(selected_country_code == 'pl') window.open("PL/index.html", "_self");
+				else if(selected_country_code == 'es') window.open("ES/index.html", "_self");
+                else window.open("EN/index.html", "_self");
             }
         </script>
     <!-- Bootstrap core JavaScript
