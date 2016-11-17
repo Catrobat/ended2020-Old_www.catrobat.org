@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/favicon.png">
+
+    <title>Galaxy Game Jam</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<script>
+	
+	var xhttpNav = new XMLHttpRequest();
+	xhttpNav.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("navbar").innerHTML = this.responseText;
+		}
+	};
+	xhttpNav.open("GET", "navigation.html", true);
+	xhttpNav.send();
+	
+	var xhttpFooter = new XMLHttpRequest();
+	xhttpFooter.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("footer").innerHTML = this.responseText;
+		}
+	};
+	
+		function displaySuscribe(){
+			if(document.getElementById('hidden_suscribe').style.display=='block') {
+				document.getElementById('hidden_suscribe').style.display='none';
+			}else{
+				document.getElementById('hidden_suscribe').style.display='block';
+			}
+		}
+	</script>	
+	
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-galaxy navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">                     <span class="sr-only">Cambiar navegación</span>                     <span class="icon-bar"></span>                     <span class="icon-bar"></span>                     <span class="icon-bar"></span>                 </button>
+                <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav nav-galaxy">
+                    <li><a href="main_en-draft.html#about">Home</a></li>
+                </ul>
+            </div>
+		<div id="hidden_suscribe">
+			<div id="hidden_subs-title">Suscríbete a las Noticias de Pocket Code</div>
+
+        <div id="hidden_subs-form">
+            <form action="//catrobat.us11.list-manage.com/subscribe/post?u=5b5a960a1f0b53cf06ac2b5a2&amp;id=ce7367db20"  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <input type="email" value="" name="EMAIL" class="required form-control email InputEmail" id="mce-EMAIL" placeholder="Introduce tu correo electrónico">
+                    <input type="submit" value="Suscríbete" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default email-btn">
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            </form>
+        </div>
+        <p>
+        <div id="hidden_close">
+            <a href="javascript:void(0)" onclick="displaySuscribe();">[X]</a>
+        </div>
+        </p>
+      </div>
+    </nav>
+
+    <div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row" height="100%">
+                <div class="col-md-12">
+                    <h1><a id="about">Gráficos para tu juego</a></h1>
+				</div>
+                
+				<div class="col-md-4">
+					<h2>Personajes</h2>
+					<p>Conoce a nuestros pequeños Aventureros Espaciales que hemos creado para los uses en tus juegos. Estás invitado a cambiarlos y adaptarlos de la forma que quieras.</p>
+					<p>¡Diviértete descubriendo tu propia Galaxia junto a ellos!</p>
+					<p>Encontrarás todos los recursos gráficos en nuestra <a target="blank_" href="https://share.catrob.at/pocketcode/pocket-library/looks">biblioteca de medios de Pocket Code.</a> Cuando agregas un objeto nuevo o una nueva vista de un objeto, puedes seleccionarlos con el botón "Biblioteca de Medios" (segundo desde la izquierda después de pulsar ligeramente en "+").</p>
+					<h2>Fondos</h2>
+					<p>También hemos creado algunos fondos para tus juegos. Por supuesto puedes cambiarlos de la forma que quieras.</p>
+					<p>Para usarlos, simplemente visita nuestra <a target="blank_" href="https://share.catrob.at/pocketcode/pocket-library/backgrounds">Biblioteca de Medios de Pocket Code.</a> Cuando añades un fondo nuevo, puedes seleccionarlo con el botón "Biblioteca de Medios" (segundo por la izquierda después de pulsar en "+").</p>
+				</div>
+				<div class="col-md-6">
+				        <div class="poster">
+						<img src="../img/assets/elephant.png"/>
+						</div>
+				        <div class="poster">
+						<img src="../img/assets/fish.png"/>
+						</div>
+				        <div class="poster">
+						<img src="../img/assets/hubble.png"/>
+						</div>
+				        <div class="poster">
+						<img src="../img/assets/lynx.png"/>
+						</div>
+				        <div class="poster">
+						<img src="../img/assets/panda.png"/>
+						</div>
+                         <div class="poster">
+						<img src="../img/assets/penguin.png"/>
+						</div>
+                        <div class="poster">
+						<img src="../img/assets/racoon.png"/>
+						</div>
+                        <div class="poster">
+						<img src="../img/assets/bg1.png"/>
+						</div>
+                        <div class="poster">
+						<img src="../img/assets/bg2.png"/>
+						</div>
+                        <div class="poster">
+						<img src="../img/assets/bg3.png"/>
+						</div>
+                        <div class="poster">
+						<img src="../img/assets/bg4.png"/>
+						</div>
+                        <div class="poster">
+						<img src="../img/assets/bg5.png"/>
+						</div>
+                        <div class="poster">
+						<img src="../img/assets/bg6.png"/>
+						</div>
+				</div>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+
+	
+	 <footer>
+		 <div class="container">
+		 <div class="footer_social">
+         <a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="../img/social/facebook.png" class="social"></a>
+		 <a target="_blank" href="https://twitter.com/pocket_code"><img src="../img/social/twitter.png" class="social"></a>
+		 <a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="../img/social/google.png" class="social"></a>
+		 </div>
+		 <a href="imprint.html">Aviso legal, Privacidad y Legal</a> | <a href="contact.html">Contacto</a> | <a target="_blank" href="https://www.catrobat.org/">&nbsp;© 2016 Catrobat</a>
+		 </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-42270417-9', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

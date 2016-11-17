@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/favicon.png">
+
+    <title>Galaxy Game Jam</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<script>
+	
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("navbar").innerHTML = this.responseText;
+		}
+	};
+	xhttp.open("GET", "navigation.html", true);
+	xhttp.send();
+	
+	var xhttpFooter = new XMLHttpRequest();
+	xhttpFooter.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("footer").innerHTML = this.responseText;
+		}
+	};
+	xhttpFooter.open("GET", "footer.html", true);
+	xhttpFooter.send();
+	
+		function displaySuscribe(){
+			if(document.getElementById('hidden_suscribe').style.display=='block') {
+				document.getElementById('hidden_suscribe').style.display='none';
+			}else{
+				document.getElementById('hidden_suscribe').style.display='block';
+			}
+		}
+	</script>	
+	
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-galaxy navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Menu navigazione</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+			<!-- FOR TRANSLATION: Keep this Navigation Version as Backup -> please translate the file navigation.html which will overwrite this Navigation -->
+				<ul class="nav nav-galaxy">
+					<li><a href="main.html#about">Home</a></li>
+				</ul>
+				<a href="../index.html?select=true"><div class="language-icon"></div></a>
+            </div>
+		<div id="hidden_suscribe">
+			<div id="hidden_subs-title">Sottoscivi la Newsletter di Pocket Code</div>
+
+        <div id="hidden_subs-form">
+            <form action="//catrobat.us11.list-manage.com/subscribe/post?u=5b5a960a1f0b53cf06ac2b5a2&amp;id=ce7367db20"  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <input type="email" value="" name="EMAIL" class="required form-control email InputEmail" id="mce-EMAIL" placeholder="Inserisci qui la tua E-Mail">
+                    <input type="submit" value="Sottoscrivi" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default email-btn">
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            </form>
+        </div>
+        <p>
+        <div id="hidden_close">
+            <a href="javascript:void(0)" onClick="displaySuscribe();">[X]</a>
+        </div>
+        </p>
+      </div>
+    </nav>
+
+    <div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row" height="100%">
+                <div class="col-md-12">
+                    <h1><a id="about">Imprint</a></h1>
+					<p>Questo sito web e l'evento Galaxy Game Jam sono gestiti da<br/>
+					the International Catrobat Association,<br/>
+					un'organizzazione non-profit che si trova a Graz, in Austria (EU). <br/><br/>
+					Web: <a href="https://www.catrobat.org/" target="_blank">www.catrobat.org</a><br/>
+					Contatti: <a href="mailto:contact@catrobat.org">contact@catrobat.org</a><br/><br/>
+					International Catrobat Association<br/>
+					c/o Institute of Software Technology<br/>
+					Graz University of Technology<br/>
+					Inffeldgasse 16B/II<br/>
+					8010 Graz, Austria - European Union</p>
+					
+		<h1>Privacy</h1>
+					<p>
+					I dati raccolti dal modulo di sottomissione dei gruppi che partecipano al progetto verranno usati e salvati dall'associazione su menzionata al fine di organizzare il Galaxy Game Jam durante lo svolgimento e subito dopo la fine del progetto; tale gestione include la notifica ai vincitori e l'invio di materiale informativo sul Galaxy Game Jam.
+			Puoi chiedere la cancellazione di tutti i dati contattandoci via E-Mail o via posta tradizionale (per i dettagli leggi sotto) in qualsiasi momento e senza doverci fornire alcuna motivazione. Ovviamente, senza i dati forniti, non sar&agrave; pi&ugrave; possibile partecpare all'evento Galaxy Game Jam.
+					</p>
+					<p>
+					Tutte le regole sulla privacy sono cosultabili in <a href="http://developer.catrobat.org/privacy_policy" target="_blank">questa</a> pagina.
+					</p>
+					
+		<h1>Termini e conditizioni</h1>
+					<ol>
+						<li>L'evento viene organizzato e gestito da International Catrobat Association, con sede in Graz, Austria (da qui in poi menzionata semplicemente con "Catrobat"), con il supporto di Samsung Electronics. L'eventuale foro competente &egrave; situato in Austria.</li>
+						<li>Le sottomissioni all'evento sono possbili fino alle ore 23:59 del giorno 1-12-2016 23:59 (AoE = UTC-12).</li>
+						<li>Possono partecipare tutte le persone maggiorenni. Per i minorenni &egrave; necessario il consenso del legale rappresentante.</li>
+						<li>Tutti i membri del team e dell'organizzazione Catrobat, appartenenti all'Institute of Software Technology della Graz University of Technology, dipendenti della Samsung, come pure eventuali figli e congiunti o altri partner legali sono esclusi da qualsiasi concorso a premi legato all'evento.</li>
+						<li>La partecipazione consiste nell'inviare un programma creato con Pocket Code e che &egrave; ambientato nel tema "Galaxy" (Galattico) e che hanno riempito il modulo di sottomissione, in tempo utile ed entro la data sopramenzionata.</li>
+						<li>Qualsiasi informazione personale raccolta attraverso il modulo di sottomissione verr&agrave; usata solo per la gestione della competizione. Catrobat si reserva il diritto di escludere quei partecipanti che hanno inviato dati parziali o errati.</li>
+						<li>Tutti i programmi inviati dalle nazioni in cui sono previsti i premi, e che rispettano le condizioni del concorso, sono candidabili per ricevere i premi.</li>
+						<li>I vincitori saranno sorteggiati dagli organizzatori in maniera casale tra tutte le sottomissioni; questo avverr&agrave; nel gennaio 2017.</li>
+						<li>I vincitori riceveranno una e-mail di notifica a gennaio 2017 da Catrobat. I vincitori dovranno rispondere alla e-mail entro 4 settimane dal ricevimento dela notifica. I vincitori che non rispondono in tale periodo non potranno pi&ugrave; ricevere i premi e non potranno pi&ugrave; pretendere la loro assegnazione.</li>
+						<li>In nessun caso sar&agrave; possibile convertire i premi in denaro.</li>
+						<li>Qualsiasi ricorso legale viene escluso a priori accEttando di partecipare al progetto. Non c'&egrave; alcun diritto da reclamare in sede legale per partecipare al progetto.</li>
+						<li>Catrobat pu&ograve;, in qualsiasi momento e senza alcuna notifica precedente, a sua sola discrezione, escludere o rimuovere una qualsiasi sotomissione e/o rimuovere l'account utente se tale utente contraddice lo spirito e le intenzioni del concorso.</li>
+						<li>La partecipazione &egrave; gratuita.</li>
+					</ol>
+		<h1>Uso di Pocket Code</h1>
+					<p>
+					Il software Free Open Source "Pocket Code" &egrave; disponibile gratuitamente su <a href="http://catrob.at/pc">Google Play</a>.<br/>
+					Per poter usare Pocket Code si devono accettare tutti i <a href="http://developer.catrobat.org/terms_of_use_and_service" target="_blank">Termini d'uso e del servizio</a>.
+					
+					</p>
+				</div>
+                
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+
+	
+	 <footer id="footer">
+		 <div class="container">
+		 <div class="footer_social">
+         <a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="../img/social/facebook.png" class="social"></a>
+		 <a target="_blank" href="https://twitter.com/pocket_code"><img src="../img/social/twitter.png" class="social"></a>
+		 <a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="../img/social/google.png" class="social"></a>
+		 </div>
+		 <a href="imprint.html">Imprint, Privacy &amp; Note Legali</a> | 
+		 <a href="contact.html">Contatti</a> | 
+		 <a target="_blank" href="https://www.catrobat.org/">©&nbsp;2016 Catrobat</a>
+		 </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-42270417-9', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

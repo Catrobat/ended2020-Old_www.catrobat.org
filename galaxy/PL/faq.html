@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.png">
+
+    <title>Galaxy Game Jam</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<script>
+	
+	
+	var xhttpNav = new XMLHttpRequest();
+	xhttpNav.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("navbar").innerHTML = this.responseText;
+		}
+	};
+	xhttpNav.open("GET", "navigation.html", true);
+	xhttpNav.send();
+	
+	var xhttpFooter = new XMLHttpRequest();
+	xhttpFooter.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("footer").innerHTML = this.responseText;
+		}
+	};
+	xhttpFooter.open("GET", "footer.html", true);
+	xhttpFooter.send();
+		function displaySuscribe(){
+			if(document.getElementById('hidden_suscribe').style.display=='block') {
+				document.getElementById('hidden_suscribe').style.display='none';
+			}else{
+				document.getElementById('hidden_suscribe').style.display='block';
+			}
+		}
+	</script>	
+	
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-galaxy navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                     <span class="sr-only">Włącz nawigację</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                 </button>
+                <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+			<!-- FOR TRANSLATION: Keep this Navigation Version as Backup -> please translate the file navigation.html which will overwrite this Navigation -->
+				<ul class="nav nav-galaxy">
+					<li><a href="main.html#about">Home</a></li>
+				</ul>
+				<a href="../index.html?select=true"><div class="language-icon"></div></a>
+            </div>
+		<div id="hidden_suscribe">
+			<div id="hidden_subs-title">Subskrybuj biuletyn Pocket Code</div>
+
+        <div id="hidden_subs-form">
+            <form action="//catrobat.us11.list-manage.com/subscribe/post?u=5b5a960a1f0b53cf06ac2b5a2&amp;id=ce7367db20"  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <input type="email" value="" name="EMAIL" class="required form-control email InputEmail" id="mce-EMAIL" placeholder="Wpisz swój e-mail">
+                    <input type="submit" value="Subskrybuj" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default email-btn">
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            </form>
+        </div>
+        <p>
+        <div id="hidden_close">
+            <a href="javascript:void(0)" onclick="displaySuscribe();">[X]</a>
+        </div>
+        </p>
+      </div>
+    </nav>
+
+    <div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row" height="100%">
+<div class="col-md-8">
+          <h1>Najczęściej Zadawane Pytania (FAQ)</h1>
+	  <br />
+          <ul>
+            <li><a class="scroll" href="#faq1">Co to jest "Pocket Code"?</a></li>
+            <li><a class="scroll" href="#faq2">Jak się nauczyć kodowania?</a></li>
+            <li><a class="scroll" href="#faq3">Czy to jest darmowe?</a></li>
+            <li><a class="scroll" href="#faq4">Kto stoi za Pocket Code?</a></li>
+            <li><a class="scroll" href="#faq5">Jakich multimediów można użyć?</a></li>
+            <li><a class="scroll" href="#faq6">Gdzie można znaleźć więcej informacji na temat licencji tego projektu?</a></li>
+            <li><a class="scroll" href="#faq7">Co trzeba zrobić aby wziąć udział w Game Jam?</a></li>
+            <li><a class="scroll" href="#faq8">Jak mogę przesłać projekt?</a></li>
+            <li><a class="scroll" href="#faq9">Co się stanie po przesłaniu mojego projektu?</a></li>
+            <li><a class="scroll" href="#faq10">Czy są przewidziane jakieś nagrody??</a></li>
+            <li><a class="scroll" href="#faq11">Jak mogę skontaktować się z wami?</a></li>
+            <li><a class="scroll" href="#faq12">Czy mogę otrzymywać dodatkowe materiały na temat Galaxy Game Jam?</a></li>
+            <li><a class="scroll" href="#faq13">Jak mogę pomóc?</a></li>
+            <li><a class="scroll" href="#faq14">Czy mogę wziąć udział z moją szkołą lub klasą?</a></li>
+          </ul>
+
+        </div>
+		        <div class="col-md-4 decor">
+          <div class="graphic">
+          <img width="250" src="../img/characters/lynx.png"/>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+	
+          <h2><a id="faq1">Co to jest "Pocket Code"?</a></h2>
+		  <p>Pocket Code to darmowy wizualny język programowania dla smartfonów. To pozwala na tworzenie w łatwy sposób własnych gier, animacji lub historii z bloków, bez żadnej wcześniejszej wiedzy, bezpośrednio na urządzeniu. Chcesz wiedzieć więcej na ten temat? Odwiedź <a href="http://www.pocketcode.org" target="blank_">www.pocketcode.org</a>.</p>
+  
+		  <h2><a id="faq2">Jak się nauczyć kodowania?</a></h2>
+          <p>Aby nieco wprowadzić Cię, zapewniamy kilka samouczków na <a target="_blank" href="http://catrob.at/help">naszej stronie</a>. Można tam znaleźć kilka ciekawych przykładów, Samouczki i dodatkowe materiały krok po kroku pomogą Ci stworzyć Twój pierwszy program!</p>
+	  
+          <h2><a id="faq3">Czy to jest darmowe?</a></h2>
+		  <p>Uczestnictwo w Galaxy Game Jam jest całkowicie za darmo!</p>
+          <p>Pocket Code również jest dostępna za darmo na <a target="_blank" href="http://catrob.at/pc">Google Play</a> i nie zawiera żadnych płatnych aplikacji, reklam ani innych kosztów. Baw się Pocket Code!</p>
+					
+          <h2><a id="faq4">Kto stoi za Pocket Code?</a></h2>
+          <p>Kieszeni kod jest rozwijany przez międzynarodowe stowarzyszenie non-profit Catrobat. Już ponad 500 osób pomogło w stworzeniu tego darmowego oprogramowania Open Source i tym samym przyczyniło się do kodowania tak łatwego, jak to tylko możliwe. Więcej informacji o Catrobat na stronie <a target="_blank" href="https://www.catrobat.org">www.catrobat.org</a>.</p>       
+	
+          <h2><a id="faq5">Jakich multimediów można użyć?</a></h2>
+          <p>Nie chcemy w żaden sposób ograniczać Twojej kreatywności, więc nie stawiamy żadnych wymagań. Jednak prosimy szanować prawa autorskie innych osób i nie należy używać treści bez zgody ich twórcy. Możesz znaleźć mnóstwo rzeczy dostępnych na licencji Creative Commons, których możesz użyć. Zajrzyj na stronę <a target="_blank" href="https://search.creativecommons.org/">search.creativecommons.org</a>.</p>
+	  
+          <h2><a id="faq6">Gdzie można znaleźć więcej informacji na temat licencji tego projektu?</a></h2>
+          <p>Wszystkie programy, które są przekazywane do Galaxy Game Jam są dostępne na licencji wolnego otwartego oprogramowania i Creative Commons. Te licencje umożliwiają wykorzystanie i modyfikowanie wszystkich treści, tak długo, jak są poprawnie przypisane i publikowane na tej samej licencji.</p>
+		  <p>Szczegółowe informacje na stronie <a target="_blank" href="http://developer.catrobat.org/licenses_of_uploaded_catrobat_programs">"Licencje przesyłanych programów Catrobat"</a>.</p>
+	 
+          <h2><a id="faq7">Co trzeba zrobić aby wziąć udział w Game Jam?</a></h2>
+          <p>Należy postępować zgodnie z instrukcjami na naszej <a href="../index.html">stronie głównej</a>. To jest to!</p>
+	  
+          <h2><a id="faq8">Jak mogę przesłać projekt?</a></h2>
+		  <p>Aby przesłać projekt, należy wysłać go przez Pocket Code. Następnie otwórz stronę przesłanego projektu za pomocą przycisku "Przeglądaj" w Pocket Code i kliknij przycisk przesyłania do Galaxy Game Jam znajdujący się na stronie Twojego programu. Przechodząc do strony "Mój profil" w obszarze "Przeglądaj" (wybierz ikonę swojego awatara w prawym górnym rogu) i przewijając w dół można znaleźć wszystkie programy (jednak uważaj, żeby przypadkowo nie usunąć jednego z nich, naciskając "x" obok ikony programu). Szczegółowe umowy prywatności i warunki uczestnictwa znajdują się w formularzach i <a href="imprint.html">tutaj</a>.</p>
+          <p>Nie zapomnij, proszę, aby oznaczyć kategorie w opisie projektu #GalaxyGameJam. Jeśli zostały wprowadzone zmiany do programu po prostu ponownie wyślij podczas trwania akcji!</p>
+	
+          <h2><a id="faq9">Co się stanie po przesłaniu mojego programu?</a></h2>
+          <p>Po zakończeniu procesu wysyłania, program możesz znaleźć na naszej Ścianie Sławy, gdzie możesz podzielić się nim z przyjaciółmi i rodziną. Po zakończeniu akcji wszyscy zwycięzcy zostaną poinformowani mailem. Aby być na bieżąco możesz również zapisać się do biuletynu!</p>
+	  
+          <h2><a id="faq10">Czy są przewidziane jakieś nagrody?</a></h2>
+          <p>Nasi lokalni sponsorzy przewidują jakieś fajne nagrody dla różnych kategorii! Zajrzyj na stronę główną, aby znaleźć wszystkie informacje o nich. Będziemy także dostarczać regularne aktualizacje nagród przez nasz biuletyn!</p>
+	
+          <h2><a id="faq11">Jak mogę skontaktować się z wami?</a></h2>
+          <p>Jeśli masz jakieś pytania lub po prostu chcesz do nas napisać, użyj, proszę, mediów społecznościowych lub linku Kontakt na dole strony!</p>
+	  
+          <h2><a id="faq12">Czy mogę otrzymywać dodatkowe materiały na temat Galaxy Game Jam?</a></h2>
+          <p>Wszystkie aktualizacje Galaxy Game Jam będą publikowane na oficjalnych kanałach mediów społecznościowych Pocket Code. Ponadto aktualizacje będziemy regularnie przesyłać za pośrednictwem biuletynu Pocket Code.</p>
+		  <p>Jeśli chcesz otrzymać plakaty dla szkoły lub klubu kodowania, zajrzyj na <a href="groups.html">stronę Grupy Uczestników</a> lub skontaktuj się z nami bezpośrednio!</p>
+	  	  	  
+          <h2><a id="faq13">Jak mogę pomóc?</a></h2>	 
+		  <p>Aby to wydarzenie było tak popularne, jak to możliwe, proszę podziel się nim z przyjaciółmi, rodziną lub za pomocą mediów społecznościowych.</p>
+		  <p>Jeśli chcesz jeszcze aktywniej zaangażować się, np. pomagając w tłumaczeniu naszych stron internetowych, aplikacji lub plakatów na swój język, skontaktuj się z nami <a href="mailto:contact@catrobat.org">bezpośrednio</a>!</p>
+		  
+          <h2><a id="faq14">Czy mogę wziąć udział z moją szkołą lub klasą?</a></h2>	 
+		  <p>Cieszymy się widząc klasy i szkoły uczestniczące w Galaxy Game Jam! W wybranych krajach nauczyciele klas uczestniczących w akcji mogą również wygrać wspaniałe nagrody. Dowiedz się więcej na <a href="howto_class.html">tej stronie!</a></p>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+	</div>
+
+	
+	 <footer id="footer">
+		 <div class="container">
+		 <div class="footer_social">
+         <a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="../img/social/facebook.png" class="social"></a>
+		 <a target="_blank" href="https://twitter.com/pocket_code"><img src="../img/social/twitter.png" class="social"></a>
+		 <a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="../img/social/google.png" class="social"></a>
+		 </div>
+		 <a href="imprint.html">Stopka redakcyjna, Polityka prywatności &amp; zapisy prawne</a> |
+ <a href="contact.html">Kontakt</a> |
+ <a target="_blank" href="https://www.catrobat.org/">©&nbsp;2016 Catrobat</a>
+		 </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-42270417-9', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

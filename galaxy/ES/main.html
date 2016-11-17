@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/favicon.png">
+
+    <title>Galaxy Game Jam</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<script>
+	
+	var xhttpNav = new XMLHttpRequest();
+	xhttpNav.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("navbar").innerHTML = this.responseText;
+		}
+	};
+	xhttpNav.open("GET", "navigation.html", true);
+	xhttpNav.send();
+	
+	var xhttpFooter = new XMLHttpRequest();
+	xhttpFooter.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("footer").innerHTML = this.responseText;
+		}
+	};
+	
+		function displaySuscribe(){
+			if(document.getElementById('hidden_suscribe').style.display=='block') {
+				document.getElementById('hidden_suscribe').style.display='none';
+			}else{
+				document.getElementById('hidden_suscribe').style.display='block';
+			}
+		}
+	</script>	
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-galaxy navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">                     <span class="sr-only">Cambiar navegación</span>                     <span class="icon-bar"></span>                     <span class="icon-bar"></span>                     <span class="icon-bar"></span>                 </button>
+                <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav nav-galaxy">
+                    <li><a href="main.html#about">Home</a></li>
+                </ul>
+            </div>
+		<div id="hidden_suscribe">
+			<div id="hidden_subs-title">Suscríbete a las Noticias de Pocket Code</div>
+
+        <div id="hidden_subs-form">
+            <form action="//catrobat.us11.list-manage.com/subscribe/post?u=5b5a960a1f0b53cf06ac2b5a2&amp;id=ce7367db20"  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <input type="email" value="" name="EMAIL" class="required form-control email InputEmail" id="mce-EMAIL" placeholder="Introduce tu correo electrónico">
+                    <input type="submit" value="Suscríbete" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default email-btn">
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            </form>
+        </div>
+        <p>
+        <div id="hidden_close">
+            <a href="javascript:void(0)" onclick="displaySuscribe();">[X]</a>
+        </div>
+        </p>
+      </div>
+    </nav>
+    </nav>
+
+	<div class="block-header">
+		<div id="top_image_bg_EN">
+			<img src="img/header.png" id="header-image">
+			<div id="info">
+				<span id="hash">#GalaxyGameJam</span>
+				<p>hasta el 31/12/2016</p>
+			</div>
+		</div>
+	</div>
+
+    <div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><a id="about">ACERCA DE</a></h1>
+                </div>
+                <div class="col-md-4">
+                    <h2>#GalaxyGameJam</h2>
+                    <p>¡Coge tu teléfono y explora galaxias lejanas! En el #GalaxyGameJam puedes crear tu propia aplicación Android. Diséñala con tu app Pocket Code y forma parte de nuestra misión al espacio exterior. ¡Los mejores astronautas recibirán increíbles premios!</p>
+                    <h2>Nuestra misión en la galaxia</h2>
+                    <p>Junto con Samsung estamos haciendo un viaje al espacio. ¡Pero necesitamos tu ayuda! El #GalaxyGameJam te invita a ti y a tus amigos a crear un juego, animación o cualquier tipo de aplicación usando Pocket Code y experimentar los misterios de la galaxia en tu smartphone.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="intext_logo">
+                        <img src="../img/pc-headline.png"></img>
+                    </div>
+                    <p>Con Pocket Code nuestro objetivo es inspirar a niños, muchachos y adultos jóvenes a crear sus propios juegos y cuentos interactivos directamente en sus teléfonos inteligentes. La interfaz intuitiva al estilo "Lego" permite programar a cualquiera sin ninguna experiencia previa en programación.</p>
+                    <h3>Pocket Code está disponible gratis en</h3>
+                    <div class="play-btn">
+                        <a target="_blank" href="http://catrob.at/pc"><img src="../img/GooglePlay.png" /></a>
+                    </div>
+                    <h2>Redes Sociales</h2>
+                    <p>Sigue nuestros canales en redes sociales para estar al día.</p>
+                    <p><a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="../img/social/facebook.png" class="social"></a><a target="_blank" href="https://twitter.com/pocket_code"><img src="../img/social/twitter.png" class="social"></a><a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="../img/social/google.png" class="social"></a></p>
+                </div>
+                <div class="col-md-4">
+                    <div class="decor">
+                        <a href="http://www.pocketcode.org" target="blank_"><img src="img/device-GGJ.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+
+    <div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><a id="event">EVENTO</a></h1>
+                </div>
+                <div class="col-md-4">
+                    <h2>Detalles</h2>
+                    <p>Esta "game jam" se lleva a cabo en cooperación con Samsung en algunos países. Puedes enviar tu aplicación creada con Pocket Code hasta <b><nobr>31/12/2016</nobr> 23:59 (AoE = zona horaria <nobr>UTC-12</nobr>)</b>.
+                    </p>
+                    <h2>Tema</h2>
+                    <p>¡Se trata de nuestra misión al espacio exterior! Crea tus propios juegos e historias sobre galaxias distantes. No olvides llevar contigo los coloridos personajes <a href="graphics.html">Lince, Panda y Pingu</a> en tu viaje.</p>
+                    </div>
+                <div class="col-md-4">
+                    <h2>¿Quién puede ser parte de nuestra misión al espacio exterior?</h2>
+                    <p>Puedes tomar parte como un creador individual o en un equipo de hasta tres creadores. Dependiendo de tu edad se te asignará una categoría adecuada (de alrededor de 13 a 17 años, o 18 años en adelante). Si trabajas en equipo, la edad del miembro más viejo del equipo será la que cuente. También puedes participar junto con tus compañeros de clase en la categoría "Clase Escolar". En este caso la clase podrá de presentar varios programas, y en algunos países también hay increíbles premios para los profesores de las clases participantes.</p>
+                            <h2>¿Cómo puedo ser parte de la misión?</h2>
+                            <p>Puedes encontrar información más detallada sobre el proceso de registro en la sección <a class="scroll" href="#participate">"Participa"</a>.</p>
+                </div>
+                <div class="col-md-4 decor">
+                    <h2>¿Qué puedo ganar si participo?</h2>
+                    <p>Gracias al apoyo de Samsung podemos recompensar a astronautas seleccionados con grandes premios en países concretos. ¡Crea tu propio programa que ayude a nuestra misión al espacio exterior y súbelo con la <a href="http://catrob.at/pc">app de Pocket Code</a>! Consigue tu oportunidad de ganar un nuevo ordenador, tablet, smartphone, robot u otros increíbles premios.</p>
+                    <div class="decor">
+                        <img src="img/prizes.png">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /container -->
+    </div>
+
+
+    <div class="block block-blue_bg">
+        <div class="container rel">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h1><a id="participate">PARTICIPAR CON POCKET CODE</a></h1>
+                </div>
+                <div class="col-md-4">
+                    <h2>¿Cómo participar?</h2>
+                    <p>Decide si quieres trabajar por tu cuenta o en un equipo. Si quieres participar junto con sus compañeros de clase, por favor, díselo a tu profesor. Siga los "Primeras Pasos y Reglas" y empieza a crear tu proyecto Pocket Code.</p>
+                    <h2>¿Cómo aprender a programar?</h2>
+                    <p>Si no tienes ninguna experiencia en programación, no tengas miedo, ¡es más fácil de lo que piensas! El botón de "Ayuda" dentro de la app Pocket Code te guía a un tutorial resumido donde hemos proporcionado algunos grandes ejemplos para principiantes. Además, hay una gran comunidad detrás de Pocket Code que aporta un enorme montón de programas en la web desde la que puedes tomar inspiración. Puedes encontrarlos haciendo clic en el botón "Explorar" dentro de la aplicación Pocket Code.</p>
+                    <h2>Encuentra los materiales adecuados para tu programa</h2>
+                    <p>Para hacerlo más fácil para ti te proporcionamos <a href="graphics.html">medios</a> especiales que puedes utilizar durante el game jam. Por favor lee nuestras <a href="faq.html">Preguntas Frecuentes</a> para obtener más información acerca de la biblioteca de medios.</p>
+                    <div class="decor">
+                        <img src="../img/pingu.png" width = "90%">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h2>Primeros Pasos y Reglas</h2>
+                        <p>
+                            Si trabajas en un equipo, por favor elige un nombre de equipo. Si quieres participar como una clase completa, ponte en contacto con tu maestro para que él o ella puede rellenar el <a href="groups.html">formulario de solicitud</a>.
+                        </p>
+                        <p>
+                            En primer lugar, echemos un vistazo a la <a href="graphics.html">biblioteca de medios</a> en la que hemos preparado unos impresionantes gráficos para ti. Puedes utilizarlos para hacer tu programa más colorido y te darán algunas buenas ideas para tu app. Por supuesto puedes utilizar gráficos de otros, pero por favor respeta los derechos de autor y los requisitos de licencia.
+                        </p>
+                        <p>
+                            Como el programa tiene que incluir el tema del espacio exterior, deberás pensar sobre qué tipo de programa (juego, animación, etc.) deseas crear. Podrías tener algunas buenas ideas después de echar un vistazo a los recursos de la biblioteca de medios.
+                        </p>
+                          <p>Para hacer tu aplicación más interesante puedes implementar algunas de las siguientes características (son opcionales, y no todas encajan en cualquier programa): 
+
+<br>
+<br>&nbsp;&nbsp;&#9733; Ana pantalla de bienvenida 
+<br>&nbsp;&nbsp;&#9733; Una breve descripción 
+<br>&nbsp;&nbsp;&#9733; Una pantalla "¡Has ganado!" 
+<br>&nbsp;&nbsp;&#9733; Una pantalla de fin del juego 
+<br>&nbsp;&nbsp;&#9733; Sonidos o música 
+<br>&nbsp;&nbsp;&#9733; Sensores 
+<br>&nbsp;&nbsp;&#9733; Un segundo nivel 
+<br>&nbsp;&nbsp;&#9733; Colisiones 
+<br>&nbsp;&nbsp;&#9733; Una lengua extranjera
+                         </p>
+                </div>
+                <div class="col-md-4">
+                    <h2>Envío</h2>
+                    <p>Cuando hayas terminado tu aplicación, súbela a pocketcode.org para presentarla. Puedes hacerlo fácilmente haciendo clic en el menú superior. </p>
+                    <p><img src="img/upload.png" width = "90%"></p>
+                    <p>Después de haberte identificado o registrado, se muestra el diálogo de subida. Ahí puedes cambiar el nombre de tu juego y también agregar una descripción. Por favor incluye la etiqueta #GalaxyGameJam. Después de pulsar 'Subir' se muestra un cuadro de diálogo indicando que ahora puedes ver tu programa ya subido a nuestra comunidad web. Pulsa 'Mostrar programa'.</p>
+                    <p><img src="img/program.png" width = "90%"></p>
+                    <p>Ahora puedes ver tu programa en nuestra comunidad web. Durante este evento hemos añadido un botón para la presentación. Sólo baja un poco y pulsa el botón Enviar para presentar tu programa.</p>
+                     <p><img src="img/submit.png" width = "90%"></p>
+                    <p>Después de esto, necesitas rellenar el formulario de envío. Ahora tu programa se mostrará en nuestro <a href="https://share.catrob.at/pocketgalaxy/">Muro de la Fama</a>. Por favor, ten en cuenta que puedes adaptar y volver a subir el programa con el mismo nombre tantas veces como quieras hasta el <nobr>31/12/2016</nobr> 23:59 (AoE = <nobr>UTC-12</nobr> zona horaria).</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /container -->
+    </div>
+
+<div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row">
+                <div class="col-md-12">
+                  <h1><a id="event">¡PARTICIPA CON SCRATCH &amp; SNAP!</a></h1>
+                </div>
+                <div class="col-md-4">
+                    <div class="intext_logo">
+                      <img src="../img/scratch-headline.png"></img>
+                    </div>
+                    <br>
+                    <p>También puedes participar usando Scratch. Nuestros amigos del MIT crearon su propio <b>Galaxy Game Jam Studio</b> donde puedes encontrar y utilizar todos los personajes de Galaxy Game Jam.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="intext_logo">
+                      <img src="../img/snap-headline.png"></img>
+                    </div>
+                    <br>
+                    <p>También puedes utilizar Snap! para crear tu juego galáctico, utiliza nuestros gráficos y caracteres y envíialo a nuestro #GalaxyGameJam. Encontrarás más información en la web de Snap!.</p>
+                </div>
+                <div class="col-md-4 decor">
+                <p>Los juegos y programas creados con Scratch y Snap! también puede presentarse hasta el <nobr>31/12/2016</nobr>. Sin embargo, sólo se pueden ganar premios con los juegos que se han creado con Pocket Code.</p>
+                    <div class="decor">
+                        <img src="img/scratch-cat.png" width = "75%">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /container -->
+    </div>
+
+    <footer>
+		 <div class="container">
+		 <div class="footer_social">
+         <a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="../img/social/facebook.png" class="social"></a>
+		 <a target="_blank" href="https://twitter.com/pocket_code"><img src="../img/social/twitter.png" class="social"></a>
+		 <a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="../img/social/google.png" class="social"></a>
+		 </div>
+		 <a href="imprint.html">Aviso legal, Privacidad y Legal</a> | <a href="contact.html">Contacto</a> | <a target="_blank" href="https://www.catrobat.org/">&nbsp;© 2016 Catrobat</a>
+		 </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-42270417-9', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

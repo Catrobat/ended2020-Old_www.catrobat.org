@@ -1,0 +1,182 @@
+body {
+    background: transparent;
+    display: table-cell;
+    vertical-align: middle;
+}
+html {
+    background: url(../img/landing_bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: table;
+   margin: auto;
+}
+html, body {
+    height: 100%;
+}
+
+#button img{
+  width:40%;
+  height:40%;
+}
+
+#items {
+		text-align: center;
+}
+
+#items h1 {
+    color: #FFFFFF;
+    font-size: 15pt;
+    margin-top: 70px;
+}
+
+#hash {
+    color: #F7D358;
+    font-weight: bold;
+    font-size: 20pt;
+}
+#date {
+    color: #FFFFFF;
+    font-size: 20pt;
+}
+
+#samsung_logo{
+  position: absolute;
+  left: 0;
+	right: 0;
+  bottom: 5%;
+}
+
+#samsung_logo img{
+  width: 15%;
+}
+
+@media only screen and (min-width:992px)  and (max-width: 1200px){
+  #items h1 {
+      font-size: 10pt;
+      margin-top: 50px;
+  }
+
+  #logo img{
+    width: 70%;
+    height: 70%;
+  }
+
+  #hash {
+      font-size: 15pt;
+  }
+  #date {
+      font-size: 15pt;
+  }
+
+  #country_selector{
+    width: 200px;
+    font-size: 10pt;
+  }
+
+  #button img{
+    width:30%;
+    height:30%;
+  }
+}
+
+@media only screen and (min-width:545px)  and (max-width: 991px){
+  #items h1 {
+      font-size: 7pt;
+      margin-top: 50px;
+  }
+
+  #logo img{
+    width: 60%;
+    height: 60%;
+  }
+
+  #samsung_logo img{
+    width: 30%;
+  }
+
+  #hash {
+      font-size: 13pt;
+  }
+  #date {
+      font-size: 13pt;
+  }
+
+  #country_selector{
+    width: 150px;
+    font-size: 8pt;
+  }
+
+  #button img{
+    width:25%;
+    height:25%;
+  }
+}
+
+
+
+@media only screen and (min-width:360px)  and (max-width: 544px){
+  #items h1 {
+      font-size: 7pt;
+      margin-top: 50px;
+  }
+
+  #logo img{
+    width: 50%;
+    height: 50%;
+  }
+
+  #samsung_logo img{
+    width: 30%;
+  }
+
+  #hash {
+      font-size: 10pt;
+  }
+  #date {
+      font-size: 10pt;
+  }
+
+  #country_selector{
+    width: 150px;
+    font-size: 8pt;
+  }
+
+  #button img{
+    width:25%;
+    height:25%;
+  }
+}
+
+@media only screen and (min-width:0px) and (max-width: 359px) {
+  #items h1 {
+      font-size: 10pt;
+      margin-top: 20px;
+  }
+
+  #logo img{
+    display: none;
+  }
+
+  #samsung_logo img{
+    width: 30%;
+  }
+
+  #hash {
+      font-size: 10pt;
+  }
+  #date {
+      font-size: 10pt;
+  }
+
+  #country_selector{
+    width: 150px;
+    font-size: 8pt;
+  }
+
+  #button img{
+    width:50%;
+    height:50%;
+  }
+}

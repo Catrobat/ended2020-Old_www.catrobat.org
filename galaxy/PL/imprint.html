@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.png">
+
+    <title>Galaxy Game Jam</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<script>
+	
+	
+	var xhttpNav = new XMLHttpRequest();
+	xhttpNav.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("navbar").innerHTML = this.responseText;
+		}
+	};
+	xhttpNav.open("GET", "navigation.html", true);
+	xhttpNav.send();
+	
+	var xhttpFooter = new XMLHttpRequest();
+	xhttpFooter.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			document.getElementById("footer").innerHTML = this.responseText;
+		}
+	};
+	xhttpFooter.open("GET", "footer.html", true);
+	xhttpFooter.send();
+		function displaySuscribe(){
+			if(document.getElementById('hidden_suscribe').style.display=='block') {
+				document.getElementById('hidden_suscribe').style.display='none';
+			}else{
+				document.getElementById('hidden_suscribe').style.display='block';
+			}
+		}
+	</script>	
+	
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-galaxy navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                     <span class="sr-only">Włącz nawigację</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                 </button>
+                <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" /></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+	    <ul class="nav nav-galaxy">
+			<!-- FOR TRANSLATION: Keep this Navigation Version as Backup -> please translate the file navigation.html which will overwrite this Navigation -->
+				<ul class="nav nav-galaxy">
+					<li><a href="main.html#about">Home</a></li>
+				</ul>
+				<a href="../index.html?select=true"><div class="language-icon"></div></a>
+            </div>
+		<div id="hidden_suscribe">
+			<div id="hidden_subs-title">Subskrybuj biuletyn Pocket Code</div>
+
+        <div id="hidden_subs-form">
+            <form action="//catrobat.us11.list-manage.com/subscribe/post?u=5b5a960a1f0b53cf06ac2b5a2&amp;id=ce7367db20"  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <input type="email" value="" name="EMAIL" class="required form-control email InputEmail" id="mce-EMAIL" placeholder="Wpisz swój e-mail">
+                    <input type="submit" value="Subskrybuj" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default email-btn">
+                    <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            </form>
+        </div>
+        <p>
+        <div id="hidden_close">
+            <a href="javascript:void(0)" onclick="displaySuscribe();">[X]</a>
+        </div>
+        </p>
+      </div>
+    </nav>
+
+    <div class="block block-blue_bg">
+        <div class="container">
+            <!-- Main component for a primary marketing message or call to action -->
+            <div class="row" height="100%">
+                <div class="col-md-12">
+                    <h1><a id="about">Stopka redakcyjna</a></h1>
+					<p>Ta strona internetowa, a także Galaxy Game Jam są obsługiwane przez <br/> International Catrobat Association, <br/> organizację non-profit z siedzibą w Graz, Austria (Unia Europejska). <br/> <br/>
+ Strona: <a href="https://www.catrobat.org/de/" target="_blank">www.catrobat.org</a> <br/>
+ Kontakt: <a href="mailto:contact@catrobat.org">contact@catrobat.org</a> <br/> <br/>
+ International Catrobat Association<br/>
+ c/o Institute of Software Technology<br/>
+ Graz University of Technology<br/>
+ Inffeldgasse 16B/II<br/>
+ 8010 Graz, Austria - European Union</p>
+					
+		<h1>Ochrona prywatności</h1>
+					<p>
+					Dane uzyskane podczas składania projektu oraz udziału w grupach będą używane i przechowywane przez wspomniane stowarzyszenie organizujące Galaxy Game Jam, które to zawiera w sobie powiadomienie o zwycięzcach i wysłanie materiałów informacyjnych o Galaxy Game Jam, podczas i wkrótce po tym zdarzeniu. Możesz wycofać zgodę na wykorzystywanie danych kontaktując się z nami za pośrednictwem poczty elektronicznej lub poczty (szczegóły powyżej) w dowolnym czasie i bez żadnego uzasadnienia. Jednak ze względu na brak danych, uczestnictwo w Game Jam nie będzie dłużej możliwe.
+					</p>
+					<p>
+					Ogólne zasady prywatności w Catrobat są dostępne <a href="http://developer.catrobat.org/privacy_policy" target="_blank">tutaj</a>.
+					</p>
+					
+		<h1>Regulamin</h1>
+					<ol>
+						<li>Wydarzenie jest organizowane przez International Catrobat Association, z siedzibą w Graz, Austria (dalej zwanych "Catrobat"), przy wsparciu Samsung Electronics. Prawo właściwe: Austria.</li>
+						<li>Zgłoszenia do konkursu są możliwe do 31-12-2016 23:59 (AoE = UTC-12).</li>
+						<li>Kwalifikowane są wszystkie osoby fizyczne w wieku 18 lat i powyżej. Niepełnoletni potrzebują zgody prawnego opiekuna.</li>
+						<li>Członkowie organizacji Catrobat i zespół, Instytut Technologii Oprogramowania Graz University of Technology, pracownicy firmy Samsung, a także ich dzieci i małżonkowie lub partnerzy życiowi są wykluczone z możliwości otrzymywania nagród.</li>
+						<li>Participation consists of submitting a program created with Pocket Code around the "Galaxy" theme as well as submitting the filled-out entry form until the above mentioned submission deadline.</li>
+						<li>Dane osobowe gromadzone na formularzach zgłoszeniowych będą używane wyłącznie do przeprowadzenia konkursu. Catrobat zastrzega sobie prawo do wykluczenia uczestników z niepoprawnymi lub brakującymi danymi.</li>
+						<li>In selected countries, all submitted programs that adhere to the Galaxy theme will be eligible for winning prizes.</li>
+						<li>Zwycięzcy będą wybrani przez organizatorów losowo spośród wszystkich rozpatrzonych zgłoszeń w styczniu 2017 roku.</li>
+						<li>Zwycięzcy zostaną powiadomieni w styczniu 2017 roku przez Catrobat za pośrednictwem E-Mail i muszą oni odpowiedzieć w ciągu 4 tygodni do powiadomienia. Zwycięzcy, którzy nie udzielają odpowiedzi w tym terminie nie będą uprawnieni do nagrody po zakończeniu, i wszelkie ich roszczenia do nagrody zostaną utracone.</li>
+						<li>Realizacja nagród w gotówce nie jest możliwa w żadnym przypadku.</li>
+						<li>Droga prawna jest wykluczona. Nie istnieją żadne roszczenia prawne do udziału.</li>
+						<li>Catrobat może w dowolnym momencie, bez wcześniejszego powiadomienia i według własnego uznania, wyłączyć lub usunąć z udziału w konkursie lub zamknąć konto użytkownika, jeśli zostanie on uznany za sprzecznego z duchem i intencją game jam.</li>
+						<li>Uczestnictwo jest bezpłatne.</li>
+					</ol>
+		<h1>Korzystanie z Pocket Code</h1>
+					<p>
+					Wolne i otwarte oprogramowanie "Pocket Code" jest dostępne bez ograniczeń w <a href="http://catrob.at/pc">Google Play</a>. <br/>
+ Aby używać Pocket Code musisz zaakceptować nasze <a href="http://developer.catrobat.org/terms_of_use_and_service" target="_blank">Warunki i zasady użytkowania</a>.
+					
+					</p>
+				</div>
+                
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+
+	
+	 <footer id="footer">
+		 <div class="container">
+		 <div class="footer_social">
+         <a target="_blank" href="https://www.facebook.com/CatrobatPocketCode/"><img src="../img/social/facebook.png" class="social"></a>
+		 <a target="_blank" href="https://twitter.com/pocket_code"><img src="../img/social/twitter.png" class="social"></a>
+		 <a target="_blank" href="https://plus.google.com/communities/116816272940643231129"><img src="../img/social/google.png" class="social"></a>
+		 </div>
+		 <a href="imprint.html">Stopka redakcyjna, Polityka prywatności &amp; zapisy prawne</a> |
+ <a href="contact.html">Kontakt</a> |
+ <a target="_blank" href="https://www.catrobat.org/">©&nbsp;2016 Catrobat</a>
+		 </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-42270417-9', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
