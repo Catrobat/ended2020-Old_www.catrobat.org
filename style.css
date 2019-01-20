@@ -128,6 +128,10 @@ img {
   padding: 0;
 }
 
+.download-buttons img {
+	width: 50%;
+}
+
 #start {
   padding-top: 140px; /* height of header */
   background-image: url('images/startseite.jpg');
